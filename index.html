@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FOIL Franchise Growth Partner</title>
+<style>
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,'Noto Sans KR',sans-serif;color:#fff;background:radial-gradient(circle at 20% 10%, rgba(168,85,247,0.28), transparent 28%),radial-gradient(circle at 80% 10%, rgba(236,72,153,0.22), transparent 24%),linear-gradient(180deg,#0a0513 0%,#12071f 45%,#09050f 100%)}
+a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.header{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);background:rgba(10,5,19,0.82);border-bottom:1px solid rgba(255,255,255,.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand-top{font-size:11px;letter-spacing:.35em;color:rgba(245,208,254,.72);text-transform:uppercase}
+.brand-name{font-size:20px;font-weight:700;margin-top:6px}
+.nav{display:flex;gap:24px;font-size:14px;color:rgba(255,255,255,.68)}
+.hero{padding:64px 0 44px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.chip{display:inline-block;padding:11px 16px;border-radius:999px;border:1px solid rgba(244,114,182,.2);background:rgba(217,70,239,.1);color:#f5d0fe;font-size:14px}
+h1{margin:20px 0 0;font-size:72px;line-height:1.04;letter-spacing:-.04em;font-weight:900}
+.grad{background:linear-gradient(90deg,#f0abfc,#c4b5fd,#f9a8d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-desc{margin-top:24px;max-width:840px;font-size:22px;line-height:1.7;color:rgba(255,255,255,.76)}
+.badge-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.badge{border:1px solid rgba(244,114,182,.14);background:rgba(255,255,255,.05);color:#faf5ff;padding:10px 16px;border-radius:999px;font-size:14px}
+.hero-img,.section-img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:26px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.cta-grid,.feature-grid,.card-grid,.gallery-grid,.form-grid,.mini-grid{display:grid;gap:16px}
+.cta-grid{grid-template-columns:repeat(3,1fr);margin-top:28px}
+.cta-card{padding:22px;border-radius:24px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04)}
+.cta-card.active{border-color:rgba(244,114,182,.35);background:linear-gradient(135deg, rgba(217,70,239,.18), rgba(139,92,246,.14));box-shadow:0 18px 40px rgba(140,70,255,.22)}
+.cta-badge{display:inline-block;padding:6px 10px;font-size:11px;font-weight:700;border-radius:999px;border:1px solid rgba(244,114,182,.2);background:rgba(217,70,239,.1);color:#f5d0fe}
+.cta-title{margin-top:14px;font-size:22px;font-weight:800} .cta-desc{margin-top:8px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.65)}
+.btn-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;border-radius:18px;font-size:15px;font-weight:700}
+.btn-primary{color:#fff;background:linear-gradient(90deg,#d946ef,#8b5cf6);box-shadow:0 20px 40px rgba(88,28,135,.35)}
+.btn-secondary{border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.92)}
+.mini-grid{grid-template-columns:repeat(3,1fr);margin-top:26px}
+.mini-card,.panel,.feature-item,.gallery-card,.mail-card,.contact-info,.form-card{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);backdrop-filter:blur(14px)}
+.mini-card{padding:20px;border-radius:24px} .mini-title{font-size:18px;font-weight:800} .mini-desc{margin-top:8px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.6)}
+section{padding:88px 0} .section-head{max-width:860px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:#f5d0fe}
+h2{font-size:54px;line-height:1.14;letter-spacing:-.03em;margin:16px 0 0;font-weight:900}
+.section-desc{margin-top:20px;font-size:20px;line-height:1.75;color:rgba(255,255,255,.68)}
+.card-grid{grid-template-columns:repeat(3,1fr);margin-top:42px}
+.card{padding:28px;border-radius:30px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05)}
+.card.top{border-color:rgba(244,114,182,.2);background:linear-gradient(135deg, rgba(217,70,239,.14), rgba(139,92,246,.08));box-shadow:0 15px 40px rgba(140,70,255,.18)}
+.num{font-size:14px;font-weight:900;letter-spacing:.25em;color:#f0abfc}
+.label-pill{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;padding:6px 10px;border-radius:999px;border:1px solid rgba(244,114,182,.2);background:rgba(217,70,239,.1);color:#f5d0fe}
+.card h3{margin:18px 0 0;font-size:30px;line-height:1.2} .card p{margin:16px 0 0;font-size:16px;line-height:1.8;color:rgba(255,255,255,.65)}
+.diagram,.crm-wrap{max-width:980px;margin:34px auto 0;padding:28px;border-radius:28px;border:1px solid rgba(255,255,255,.1);background:#130a1f}
+.diagram-flow{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.diagram-step{flex:0 1 150px;min-width:140px;text-align:center} .diagram-box{padding:18px 12px;border-radius:18px;background:linear-gradient(90deg,#d946ef,#8b5cf6);font-weight:800} .diagram-arrow{font-size:24px;color:#f9a8d4;margin-top:10px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0} .filter-btn{padding:10px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.08);color:#fff;font-weight:700;cursor:pointer} .filter-btn.active{background:#d946ef;border-color:#d946ef}
+.crm-table{border-radius:22px;overflow:hidden;background:rgba(0,0,0,.32);font-size:14px}
+.crm-head,.crm-row{display:grid;grid-template-columns:1.1fr .8fr 1fr .8fr .9fr .9fr .7fr}
+.crm-head{background:rgba(0,0,0,.45);padding:14px 16px;font-weight:800}
+.crm-row{padding:14px 16px;border-top:1px solid rgba(255,255,255,.08);align-items:center}
+.status-new{color:#4ade80} .status-mid{color:#facc15} .status-deal{color:#f472b6}
+.memo{position:relative;display:inline-block;cursor:pointer;text-decoration:underline}
+.memo-tip{display:none;position:absolute;left:0;top:-48px;background:#09090b;border:1px solid rgba(255,255,255,.12);padding:10px 12px;border-radius:12px;white-space:nowrap;font-size:12px;z-index:20}
+.memo:hover .memo-tip{display:block}
+.split-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;max-width:980px;margin:28px auto 0} .feature-grid{grid-template-columns:repeat(2,1fr);margin-top:30px} .feature-item{padding:16px;border-radius:18px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.84)}
+.gallery-grid{grid-template-columns:repeat(2,1fr);margin-top:28px;max-width:980px} .gallery-card{padding:12px;border-radius:22px} .gallery-title{margin-top:12px;font-size:18px;font-weight:800} .gallery-desc{margin-top:6px;font-size:14px;line-height:1.7;color:rgba(255,255,255,.62)}
+.contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;max-width:1040px;margin:0 auto} .contact-info,.form-card{padding:34px;border-radius:32px}
+.contact-list{margin-top:26px;display:grid;gap:8px;font-size:14px;line-height:1.8;color:rgba(255,255,255,.72)}
+.form-grid{grid-template-columns:1fr 1fr} .form-grid, .inline-grid{display:grid;gap:14px} label{display:block;margin-bottom:8px;font-size:14px;color:rgba(255,255,255,.72)}
+input, textarea{width:100%;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:#0d0716;color:#fff;font-size:14px;outline:none} textarea{resize:vertical;min-height:130px}
+.mode-buttons{display:flex;flex-wrap:wrap;gap:10px} .mode-btn{border:1px solid rgba(255,255,255,.15);padding:10px 14px;border-radius:999px;font-size:14px;background:transparent;color:rgba(255,255,255,.82);cursor:pointer} .mode-btn.active{border-color:rgba(244,114,182,.3);background:rgba(217,70,239,.15);color:#fff}
+.inline-grid{grid-template-columns:1fr 1fr;margin-top:14px}
+.mail-wrap{padding-top:16px} .mail-card{padding:26px;border-radius:28px;background:linear-gradient(135deg, rgba(217,70,239,.12), rgba(139,92,246,.10))}
+.mail-label{font-size:12px;font-weight:800;letter-spacing:.3em;color:#f5d0fe;text-transform:uppercase} .mail-title{margin-top:12px;font-size:30px;font-weight:900;line-height:1.25} .mail-desc{margin-top:14px;font-size:15px;line-height:1.8;color:rgba(255,255,255,.72)} .mail-link{display:inline-flex;margin-top:16px;padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-weight:700}
+footer{border-top:1px solid rgba(255,255,255,.08);margin-top:14px} .footer-inner{display:flex;justify-content:space-between;gap:16px;padding:28px 0;font-size:14px;color:rgba(255,255,255,.42)}
+@media (max-width:1100px) {.hero-grid,.split-2,.contact-grid{grid-template-columns:1fr} .cta-grid,.card-grid,.feature-grid,.gallery-grid,.form-grid,.mini-grid{grid-template-columns:1fr} .crm-head,.crm-row{grid-template-columns:repeat(3,1fr)} h1{font-size:50px} h2{font-size:38px} .nav{display:none} .footer-inner{flex-direction:column}}
+
+@media (max-width:768px){
+.container{padding:0 16px}
+.header-inner{padding:14px 0}
+.brand-top{font-size:10px;letter-spacing:.24em}
+.brand-name{font-size:16px}
+.hero{padding:34px 0 18px}
+.chip{font-size:12px;padding:9px 12px}
+h1{font-size:40px;line-height:1.08}
+h2{font-size:32px;line-height:1.18}
+.hero-desc,.section-desc{font-size:16px;line-height:1.75}
+.badge-row{gap:8px}
+.badge{font-size:12px;padding:8px 12px}
+.cta-grid,.card-grid,.feature-grid,.gallery-grid,.form-grid,.mini-grid,.split-2,.contact-grid{grid-template-columns:1fr}
+.cta-card,.card,.mini-card,.contact-info,.form-card,.gallery-card{border-radius:22px}
+section{padding:62px 0}
+.diagram,.crm-wrap{padding:18px;border-radius:22px}
+.diagram-step{flex:1 1 100%}
+.diagram-arrow{display:none}
+.crm-head,.crm-row{grid-template-columns:1fr 1fr 1fr}
+.crm-head div:nth-child(2),.crm-row div:nth-child(2),
+.crm-head div:nth-child(5),.crm-row div:nth-child(5),
+.crm-head div:nth-child(7),.crm-row div:nth-child(7){display:none}
+.hero-img,.section-img{aspect-ratio:4/3}
+.btn{width:100%}
+.btn-row{display:grid;grid-template-columns:1fr;gap:12px}
+.footer-inner{font-size:12px}
+}
+
+</style>
+
+
+
+
+<style id="premium-v7-style">
+:root{
+  --bg:#0a0a0b;
+  --surface:#111214;
+  --surface-2:#17181b;
+  --text:#f5f5f7;
+  --muted:#b7bcc5;
+  --line:rgba(255,255,255,.08);
+  --hero-start:#101828;
+  --hero-end:#1b1f3b;
+  --problem-start:#2a0d10;
+  --problem-end:#4a171f;
+  --solution-start:#0d2419;
+  --solution-end:#14382b;
+  --crm-start:#0d1730;
+  --crm-end:#182753;
+  --feature-start:#15131f;
+  --feature-end:#221833;
+  --gallery-start:#171717;
+  --gallery-end:#202124;
+  --contact-start:#331124;
+  --contact-end:#531d39;
+  --accent:#ff4f8b;
+  --accent-2:#6ee7b7;
+  --apple-blur: blur(18px);
+}
+html{scroll-behavior:smooth}
+body.premium-theme{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  letter-spacing:-0.02em;
+}
+body.premium-theme *{box-sizing:border-box}
+body.premium-theme img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
+.company-link-bar{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(10,10,11,.72)!important;
+  backdrop-filter:var(--apple-blur);
+  border-bottom:1px solid var(--line);
+}
+.company-link-bar a{
+  color:var(--text)!important;
+  font-weight:700!important;
+  text-decoration:none!important;
+  opacity:.92;
+}
+.container{
+  max-width:1120px!important;
+  margin:0 auto!important;
+  padding:0 24px!important;
+}
+section{
+  position:relative;
+  padding:96px 0!important;
+}
+section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at top left, rgba(255,255,255,.05), transparent 28%);
+  opacity:.7;
+}
+.hero, .hero-section{
+  background:
+    radial-gradient(circle at top right, rgba(255,79,139,.18), transparent 24%),
+    linear-gradient(135deg, var(--hero-start), var(--hero-end))!important;
+}
+#problem, .problem-section{
+  background:linear-gradient(135deg, var(--problem-start), var(--problem-end))!important;
+}
+#solution, .solution-section{
+  background:linear-gradient(135deg, var(--solution-start), var(--solution-end))!important;
+}
+#crm, .crm-section{
+  background:linear-gradient(135deg, var(--crm-start), var(--crm-end))!important;
+}
+#features, .feature-section{
+  background:linear-gradient(135deg, var(--feature-start), var(--feature-end))!important;
+}
+#gallery, .gallery-section{
+  background:linear-gradient(135deg, var(--gallery-start), var(--gallery-end))!important;
+}
+#contact, .contact-section{
+  background:linear-gradient(135deg, var(--contact-start), var(--contact-end))!important;
+}
+h1,h2,h3,h4{
+  color:var(--text)!important;
+  font-weight:800!important;
+  letter-spacing:-0.04em;
+  line-height:1.08!important;
+}
+h1{
+  font-size: clamp(40px, 6vw, 78px)!important;
+}
+h2{
+  font-size: clamp(30px, 4vw, 54px)!important;
+  margin-bottom:16px!important;
+}
+h3{
+  font-size: clamp(22px, 2vw, 30px)!important;
+}
+p, li, .section-desc, .muted{
+  color:var(--muted)!important;
+  line-height:1.82!important;
+  font-size: clamp(15px, 1.35vw, 18px)!important;
+}
+.eyebrow, .brand-top, .chip{
+  text-transform:uppercase;
+  letter-spacing:.22em!important;
+  color:rgba(255,255,255,.72)!important;
+}
+.hero-img,.section-img,.img-card,.card,.mini-card,.cta-card,.gallery-card,.feature-card,.contact-info,.form-card,.crm-wrap,.diagram{
+  border-radius:28px!important;
+  border:1px solid var(--line)!important;
+  background:rgba(255,255,255,.045)!important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.06) inset,
+    0 24px 80px rgba(0,0,0,.34)!important;
+  backdrop-filter:var(--apple-blur);
+  overflow:hidden;
+}
+.hero-img,.section-img{
+  aspect-ratio:16/10!important;
+}
+.card-grid, .feature-grid, .gallery-grid, .mini-grid{
+  gap:22px!important;
+}
+.card, .feature-card, .gallery-card, .mini-card{
+  padding:28px!important;
+}
+.card.top{
+  background:linear-gradient(180deg, rgba(255,79,139,.16), rgba(255,255,255,.04))!important;
+}
+.num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:72px;
+  height:34px;
+  padding:0 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.05);
+  color:#fff;
+  font-size:12px!important;
+  font-weight:800!important;
+  letter-spacing:.12em!important;
+  margin-bottom:14px;
+}
+.btn, button, input[type="submit"]{
+  appearance:none;
+  border:none;
+  border-radius:18px!important;
+  padding:16px 24px!important;
+  font-weight:800!important;
+  font-size:16px!important;
+  letter-spacing:-0.02em;
+  cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+.btn:hover, button:hover, input[type="submit"]:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+.btn-primary, .btn-pink, .cta-primary{
+  background:linear-gradient(135deg, #ff4f8b, #ff7f50)!important;
+  color:#fff!important;
+}
+.btn-secondary, .cta-secondary{
+  background:rgba(255,255,255,.08)!important;
+  color:#fff!important;
+  border:1px solid var(--line)!important;
+}
+.btn-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.badge-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.badge{
+  border-radius:999px!important;
+  padding:10px 14px!important;
+  border:1px solid var(--line)!important;
+  background:rgba(255,255,255,.05)!important;
+  color:#fff!important;
+  font-size:13px!important;
+  font-weight:700!important;
+}
+.diagram, .crm-wrap{
+  max-width:980px!important;
+  margin:34px auto 0!important;
+  padding:28px!important;
+}
+.diagram-flow{
+  display:flex!important;
+  justify-content:center!important;
+  gap:12px!important;
+  flex-wrap:wrap!important;
+}
+.diagram-step{
+  flex:0 1 156px!important;
+  min-width:146px!important;
+  text-align:center!important;
+  padding:18px 16px!important;
+  border-radius:22px!important;
+  border:1px solid var(--line)!important;
+  background:rgba(255,255,255,.05)!important;
+}
+.diagram-arrow{
+  display:flex;
+  align-items:center;
+  color:rgba(255,255,255,.55)!important;
+  font-weight:900;
+}
+.crm-head{
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr .9fr .85fr .8fr .8fr .9fr!important;
+  gap:8px!important;
+  padding:16px 18px!important;
+  background:rgba(255,255,255,.06)!important;
+  border-bottom:1px solid var(--line)!important;
+  font-size:13px!important;
+  color:#fff!important;
+}
+.crm-row{
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr .9fr .85fr .8fr .8fr .9fr!important;
+  gap:8px!important;
+  padding:16px 18px!important;
+  border-bottom:1px solid rgba(255,255,255,.05)!important;
+  align-items:center!important;
+}
+.gallery-grid{
+  grid-template-columns:repeat(2, minmax(0, 1fr))!important;
+  max-width:980px!important;
+  margin:28px auto 0!important;
+}
+.gallery-card img{
+  aspect-ratio:16/10!important;
+  border-radius:20px!important;
+}
+.feature-card img{
+  aspect-ratio:16/10!important;
+  border-radius:20px!important;
+}
+.hero-copy, .section-head{
+  max-width:920px;
+}
+.section-head{
+  margin:0 auto 10px;
+  text-align:center;
+}
+input, textarea, select{
+  width:100%!important;
+  border-radius:18px!important;
+  border:1px solid var(--line)!important;
+  background:rgba(255,255,255,.06)!important;
+  color:#fff!important;
+  padding:16px 18px!important;
+  font-size:15px!important;
+  outline:none!important;
+}
+input::placeholder, textarea::placeholder{
+  color:rgba(255,255,255,.42)!important;
+}
+.form-grid, .contact-grid, .split-2{
+  max-width:980px!important;
+  margin:0 auto!important;
+  gap:24px!important;
+}
+.footer-inner{
+  color:rgba(255,255,255,.62)!important;
+}
+@media (max-width:768px){
+  .container{padding:0 16px!important}
+  section{padding:68px 0!important}
+  h1{font-size:42px!important}
+  h2{font-size:32px!important}
+  p,li,.section-desc,.muted{font-size:15px!important}
+  .hero-img,.section-img,.gallery-card img,.feature-card img{aspect-ratio:4/3!important}
+  .card-grid,.feature-grid,.gallery-grid,.mini-grid,.form-grid,.split-2,.contact-grid{grid-template-columns:1fr!important}
+  .btn-row{display:grid!important;grid-template-columns:1fr!important}
+  .btn, button, input[type="submit"]{width:100%!important}
+  .diagram,.crm-wrap{padding:18px!important;border-radius:22px!important}
+  .diagram-step{flex:1 1 100%!important}
+  .diagram-arrow{display:none!important}
+  .crm-head,.crm-row{
+    grid-template-columns:1fr 1fr 1fr 1fr!important;
+  }
+  .crm-head > *:nth-child(2),
+  .crm-row > *:nth-child(2),
+  .crm-head > *:nth-child(5),
+  .crm-row > *:nth-child(5),
+  .crm-head > *:nth-child(7),
+  .crm-row > *:nth-child(7){display:none!important}
+}
+</style>
+
+</head>
+<body class="premium-theme">
+<header class="header"><div class="container header-inner"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">이미지</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
+<section class="section-block" class="hero">
+<div class="container hero-grid">
+<div>
+<div class="chip">프랜차이즈 본부를 위한 유연한 영업 지원 구조</div>
+<h1>본사가 선택하고,<br/>시스템이 연결하는<br/><span class="grad">프랜차이즈 영업 플랫폼</span></h1>
+<div class="hero-desc">단순 홍보 홈페이지가 아니라, 오프라인 전문인력 매칭부터 랜딩페이지 제작, 온라인 리드 수집, 본부 실시간 DB관리, 어드민, SMS, 리드 배치까지 한 번에 연결되는 프랜차이즈 영업 운영 구조를 담았습니다.</div>
+<div class="badge-row"><span class="badge">초기 비용 0</span><span class="badge">온라인/오프라인 자율 선택</span><span class="badge">본부 실시간 확인형 CRM</span><span class="badge">오프라인 전문인력 배치</span></div>
+<div class="cta-grid" id="ctaTracks"></div>
+<div class="btn-row"><a class="btn btn-primary" href="#contact">도입 문의하기</a><a class="btn btn-secondary" href="#crm">CRM 보기</a></div>
+<div class="mini-grid"><div class="mini-card"><div class="mini-title">초기 비용 0</div><div class="mini-desc">건바이건 진행 가능</div></div><div class="mini-card"><div class="mini-title">자율 선택</div><div class="mini-desc">온라인/오프라인 자유 구성</div></div><div class="mini-card"><div class="mini-title">월별 계약</div><div class="mini-desc">원할 때 해지 가능</div></div></div>
+</div>
+<div><img alt="본사 운영 및 컨퍼런스 장면" class="hero-img" loading="lazy" src="https://images.pexels.com/photos/4940642/pexels-photo-4940642.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/></div>
+</div></section>
+<section class="section-block" id="service"><div class="container">
+<div class="section-head"><div class="eyebrow">WHY THIS SERVICE STANDS OUT</div><h2>아래 9가지가 이 홈페이지에서<br/>가장 먼저, 가장 강하게 보여야 합니다</h2><div class="section-desc">프랜차이즈 본부가 바로 이해해야 하는 핵심은 예쁜 디자인이 아니라 운영 구조입니다. 그래서 실제 도입 판단에 직결되는 장점과 기능을 전면에 배치했습니다.</div></div>
+<div class="card-grid" style="margin-top:28px">
+  <div class="card"><div class="num">BEFORE</div><h3>깜깜이 영업</h3><p>진행 상황을 본사가 알기 어려운 구조</p></div>
+  <div class="card top"><div class="num">AFTER</div><h3>실시간 공유</h3><p>리드부터 계약까지 본사가 같은 화면에서 확인</p></div>
+  <div class="card"><div class="num">POINT</div><h3>본사 주도권 회복</h3><p>감이 아니라 데이터와 기록으로 운영 판단</p></div>
+</div>
+
+<div class="card-grid" id="standoutGrid"></div>
+<div class="diagram"><div class="eyebrow">PROCESS DIAGRAM</div><h2 style="font-size:36px">유입 → 리드수집 → CRM → 영업배정 → 계약</h2><div class="diagram-flow"><div class="diagram-step"><div class="diagram-box">유입</div><div class="diagram-arrow">→</div></div><div class="diagram-step"><div class="diagram-box">리드수집</div><div class="diagram-arrow">→</div></div><div class="diagram-step"><div class="diagram-box">CRM</div><div class="diagram-arrow">→</div></div><div class="diagram-step"><div class="diagram-box">영업배정</div><div class="diagram-arrow">→</div></div><div class="diagram-step"><div class="diagram-box">계약</div></div></div></div>
+</div></section>
+<section class="section-block" id="crm"><div class="container">
+<div class="section-head"><div class="eyebrow">CRM UI</div><h2>실제 CRM처럼 보이는 관리 화면</h2><div class="section-desc">이름, 지역, 전화번호, 상태, 담당자, 등록일, 상담 메모 hover까지 넣어서 SaaS 느낌이 나도록 구성했습니다.</div></div>
+<div class="crm-wrap"><div class="filters" id="filters"></div><div class="crm-table"><div class="crm-head"><div>이름</div><div>지역</div><div>전화번호</div><div>상태</div><div>담당자</div><div>등록일</div><div>메모</div></div><div id="crmRows"></div></div></div>
+<div class="split-2" style="margin-top:28px"><img alt="노트북 기반 CRM 운영 장면" class="section-img" loading="lazy" src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/><div class="feature-grid" id="featureGrid"></div></div>
+</div></section>
+<section class="section-block" id="gallery"><div class="container"><div class="section-head"><div class="eyebrow">OPERATION SCENES</div><h2>운영 흐름 미리보기</h2><div class="section-desc">상담, 리드 수집, 배정, 계약 검토 등 실제 운영 문맥에 맞는 장면만 선별해 배치했습니다.</div></div>
+<div class="gallery-grid">
+<div class="gallery-card">
+<img alt="본사 회의와 커피 미팅 장면" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184310/pexels-photo-3184310.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">한국 프랜차이즈 본사 회의</div>
+<div class="gallery-desc">브랜드 확장 전략과 영업 구조를 논의하는 핵심 장면</div>
+</div>
+<div class="gallery-card">
+<img alt="가맹 문의 상담 공간" class="section-img" loading="lazy" src="https://images.pexels.com/photos/31741914/pexels-photo-31741914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">가맹 문의 상담</div>
+<div class="gallery-desc">본사와 예비 점주 문의를 정리하는 상담 중심 장면</div>
+</div>
+<div class="gallery-card">
+<img alt="오프라인 영업 인력 미팅" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">오프라인 영업 인력 매칭</div>
+<div class="gallery-desc">브랜드 상황에 맞는 전문인력 연결과 배치 장면</div>
+</div>
+<div class="gallery-card">
+<img alt="랜딩페이지와 리드 수집 기획" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">랜딩페이지와 리드 수집</div>
+<div class="gallery-desc">광고 유입을 실제 문의 DB로 전환</div>
+</div>
+<div class="gallery-card">
+<img alt="CRM 대시보드와 협업 검토" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">CRM 대시보드 운영</div>
+<div class="gallery-desc">이름·지역·전화번호·상태를 한눈에 관리</div>
+</div>
+<div class="gallery-card">
+<img alt="본사 실시간 DB 관리" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">본사 실시간 DB 관리</div>
+<div class="gallery-desc">신규·상담중·계약검토 상태를 구분</div>
+</div>
+<div class="gallery-card">
+<img alt="영업 배정 프로세스 회의" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">영업 배정 프로세스</div>
+<div class="gallery-desc">수집된 리드를 담당자와 영업사원에게 연결하는 장면</div>
+</div>
+<div class="gallery-card">
+<img alt="통합 광고 운영 장면" class="section-img" loading="lazy" src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">통합 광고 운영</div>
+<div class="gallery-desc">검색·메타·바이럴·옥외까지 원스톱</div>
+</div>
+<div class="gallery-card">
+<img alt="후속 응대와 콜백 대응" class="section-img" loading="lazy" src="https://images.pexels.com/photos/7709088/pexels-photo-7709088.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">후속 응대와 콜백</div>
+<div class="gallery-desc">메시지·콜백·미팅 일정을 이어가는 구조</div>
+</div>
+<div class="gallery-card">
+<img alt="계약 검토 단계 미팅" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">계약 검토 단계</div>
+<div class="gallery-desc">상담 이후 계약 가능성이 높은 리드 추적</div>
+</div>
+<div class="gallery-card">
+<img alt="브랜드 성장과 매장 운영 이미지" class="section-img" loading="lazy" src="https://images.pexels.com/photos/31735995/pexels-photo-31735995.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">브랜드 성장 파이프라인</div>
+<div class="gallery-desc">유입부터 계약까지 이어지는 브랜드 성장 장면</div>
+</div>
+<div class="gallery-card">
+<img alt="협업 제안과 파트너십 연결" class="section-img" loading="lazy" src="https://images.pexels.com/photos/31872733/pexels-photo-31872733.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<div class="gallery-title">협업 제안 및 파트너십</div>
+<div class="gallery-desc">외부 제휴와 광고 협업 문의 연결</div>
+</div>
+</div>
+</div></section>
+<section class="section-block" id="contact"><div class="container contact-grid">
+<div><div class="contact-info"><div class="eyebrow">CONTACT</div><h2 style="font-size:44px">프랜차이즈 본부 문의</h2><div style="margin-top:18px;font-size:16px;line-height:1.8;color:rgba(255,255,255,.65)">우리 브랜드에 온라인 리드가 맞는지, 오프라인 전문인력 매칭이 필요한지, 두 방식을 함께 가야 하는지 상담 후 구조를 제안합니다.</div><div class="contact-list"><div>• 브랜드명 / 담당자명 / 연락처</div><div>• 현재 가맹점 수 / 희망 확장 지역</div><div>• 온라인 리드 / 오프라인 영업 / 병행 운영 중 선택</div><div>• 월 예상 예산 / 희망 인센티브 구조</div></div></div>
+<div class="mail-wrap"><div class="mail-card"><div class="mail-label">Collaboration Mail</div><div class="mail-title">협업 제안은 메일로도 바로 받을 수 있게</div><div class="mail-desc">파트너십 제안, 광고 협업, 브랜드 제휴, 외부 제안서는 협업 메일로 직접 접수할 수 있게 구성했습니다. 홈페이지 문의폼과 별도로 중요한 협업 문의를 바로 연결할 수 있습니다.</div><a class="mail-link" href="mailto:sales@foil.com">sales@foil.com</a></div></div>
+</div>
+<form action="https://formsubmit.co/sales@foil.com" class="form-card" method="POST">
+<input name="_subject" type="hidden" value="[FOIL] 프랜차이즈 본부 문의 접수"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_autoresponse" type="hidden" value="문의가 정상 접수되었습니다. 확인 후 빠르게 연락드리겠습니다."/>
+<input name="_next" type="hidden" value="https://your-domain-or-github-pages-url/thanks.html"/>
+<div class="form-grid">
+<div><label>브랜드명</label><input name="브랜드명" placeholder="예: FOIL PARTNER" required=""/></div>
+<div><label>담당자명</label><input name="담당자명" placeholder="이름" required=""/></div>
+<div><label>연락처</label><input name="연락처" placeholder="010-0000-0000" required=""/></div>
+<div><label>현재 가맹점 수</label><input name="현재 가맹점 수" placeholder="예: 12개"/></div>
+<div><label>희망 확장 지역</label><input name="희망 확장 지역" placeholder="예: 수도권 / 부산"/></div>
+<div><label>월 예상 예산</label><input name="월 예상 예산" placeholder="예: 300만원 이상"/></div>
+</div>
+<div style="margin-top:14px"><label>희망 운영 방식</label><div class="mode-buttons" id="modeButtons"><button class="mode-btn" data-mode="온라인 리드" type="button">온라인 리드</button><button class="mode-btn" data-mode="오프라인 영업" type="button">오프라인 영업</button><button class="mode-btn" data-mode="병행 운영" type="button">병행 운영</button><button class="mode-btn active" data-mode="상담 후 결정" type="button">상담 후 결정</button></div><input id="operationModeInput" name="희망 운영 방식" type="hidden" value="상담 후 결정"/></div>
+<div class="inline-grid"><div><label>희망 인센티브 구조</label><input name="희망 인센티브 구조" placeholder="예: 계약당 지급 / 협의"/></div><div><label>문의 유형</label><input id="inquiryTypeInput" name="문의 유형" readonly="" value="통합 운영 문의"/></div></div>
+<div style="margin-top:14px"><label>문의 내용</label><textarea name="문의 내용" placeholder="브랜드 상황, 운영 방식, 원하는 구조를 남겨주세요."></textarea></div>
+<button class="btn btn-primary" style="width:100%;margin-top:18px;border:none;cursor:pointer" type="submit">문의 접수하기</button>
+<div style="margin-top:14px;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-size:12px;line-height:1.7;color:rgba(255,255,255,.55)">GitHub Pages용 정적 문의폼입니다. <code>_next</code> 주소만 실제 GitHub Pages 주소에 맞게 바꾸면 제출 후 완료 페이지로 이동합니다.</div>
+</form>
+</div></section>
+<footer><div class="container footer-inner"><div>© 2026 FOIL. Franchise Growth Partner.</div><div>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: sales@foil.com</div></div><div style="margin-top:12px;"><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:700;text-decoration:none;">회사소개</a></div></footer>
+<script>
+const ctaTracks=[{badge:'추천',title:'온라인 리드 문의',desc:'랜딩페이지 제작, 광고 운영, 리드 수집 중심으로 상담을 시작합니다.'},{badge:'현장형',title:'오프라인 영업 문의',desc:'브랜드에 맞는 가맹영업 전문인력 매칭과 인센티브 구조를 상담합니다.'},{badge:'통합형',title:'통합 운영 문의',desc:'온라인 유입부터 오프라인 영업 배치까지 한 번에 연결하는 구조를 제안합니다.'}];
+const standoutPoints=[['01','프랜차이즈 본부 × 오프라인 전문인력 매칭','브랜드 상황에 맞는 가맹영업 전문인력을 연결하고, 본부는 필요한 시점에 필요한 방식으로만 활용할 수 있습니다.'],['02','랜딩페이지 제작 + 온라인 리드 수집','브랜드 소개용 화면에서 끝나지 않고, 광고와 연결되는 전용 랜딩 구조로 실제 문의와 DB 수집까지 이어집니다.'],['03','본부 실시간 DB관리 · 어드민 · SMS','유입된 리드와 상담 상태, 담당 배정, 후속 응대까지 본부가 시의적으로 확인하고 즉시 대응할 수 있습니다.'],['04','수집된 리드의 오프라인 배치 가능','온라인에서 모인 리드를 그대로 두지 않고, 필요 시 오프라인 전문인력에게 이어 붙여 현장 영업까지 연결합니다.'],['05','인센티브 조건은 본부가 자율 결정','가맹영업 조건과 단가는 브랜드가 직접 설정할 수 있고, 적정 인센티브일수록 영업사원의 참여도와 실행력도 높아집니다.'],['06','초기 비용 0 · 건바이건 진행 가능','고정 구축비 부담 없이 시작할 수 있고, 필요에 따라 건별로 운영 가능합니다. 광고와 병행하면 효율은 더 높아집니다.'],['07','월별 계약 · 자유 해지','장기 묶음형 구조가 아니라 월 단위로 운영 판단이 가능해, 원할 때 해지하거나 방향을 조정할 수 있습니다.'],['08','온라인·오프라인 모두 본부가 선택','브랜드마다 필요한 방식이 다르기 때문에 온라인 리드, 오프라인 영업, 병행 운영 중 원하는 방식만 선택할 수 있습니다.'],['09','본부-영업사원 간 간편 대시보드','같은 데이터를 보며 배정과 응대를 이어갈 수 있도록, 본부와 영업사원이 함께 쓰는 간편한 운영 화면을 제공합니다.']];
+const features=['본사-영업사원 간 간편한 공용 대시보드','실시간 DB 목록 및 상태 관리','상담 메모, 배정 기록, 히스토리 저장','즉시 대응용 SMS 운영 지원','리드별 담당자 배치 기능','브랜드 맞춤 수집 항목 커스터마이징','초기 구축 부담을 낮춘 유연한 계약 구조','광고 병행 시 효율 상승 구조'];
+const crmData=[{name:'김대표',region:'서울',phone:'010-1234-5678',status:'신규',manager:'미배정',date:'2026-04-12',memo:'가맹 문의 강함'},{name:'이과장',region:'부산',phone:'010-2222-3333',status:'상담중',manager:'홍길동',date:'2026-04-11',memo:'조건 협의중'},{name:'박팀장',region:'경기',phone:'010-9999-8888',status:'계약검토',manager:'김영업',date:'2026-04-10',memo:'거의 확정'}];
+let currentFilter='전체';
+const ctaTracksEl=document.getElementById('ctaTracks'), standoutGrid=document.getElementById('standoutGrid'), featureGrid=document.getElementById('featureGrid'), crmRows=document.getElementById('crmRows'), filtersEl=document.getElementById('filters'), inquiryTypeInput=document.getElementById('inquiryTypeInput'), selectedTrackText=document.getElementById('selectedTrackText'), operationModeInput=document.getElementById('operationModeInput');
+function renderCtas(){ctaTracksEl.innerHTML=ctaTracks.map(item=>`<div class="cta-card ${inquiryTypeInput.value===item.title?'active':''}" data-title="${item.title}"><div><span class="cta-badge">${item.badge}</span></div><div class="cta-title">${item.title}</div><div class="cta-desc">${item.desc}</div></div>`).join(''); ctaTracksEl.querySelectorAll('.cta-card').forEach(card=>card.addEventListener('click',()=>{inquiryTypeInput.value=card.dataset.title; selectedTrackText.textContent=card.dataset.title; renderCtas();}));}
+standoutGrid.innerHTML=standoutPoints.map((item,idx)=>`<div class="card ${idx<3?'top':''}"><div><span class="num">${item[0]}</span>${idx<3?'<span class="label-pill">핵심 포인트</span>':''}</div><h3>${item[1]}</h3><p>${item[2]}</p></div>`).join('');
+featureGrid.innerHTML=features.map(item=>`<div class="feature-item">${item}</div>`).join('');
+function renderFilters(){const list=['전체','신규','상담중','계약검토']; filtersEl.innerHTML=list.map(item=>`<button class="filter-btn ${currentFilter===item?'active':''}" data-filter="${item}">${item}</button>`).join(''); filtersEl.querySelectorAll('.filter-btn').forEach(btn=>btn.addEventListener('click',()=>{currentFilter=btn.dataset.filter; renderFilters(); renderCrmRows();}));}
+function renderCrmRows(){const rows=currentFilter==='전체'?crmData:crmData.filter(r=>r.status===currentFilter); crmRows.innerHTML=rows.map(row=>`<div class="crm-row"><div>${row.name}</div><div>${row.region}</div><div>${row.phone}</div><div class="${row.status==='신규'?'status-new':row.status==='상담중'?'status-mid':'status-deal'}">${row.status}</div><div>${row.manager}</div><div>${row.date}</div><div><span class="memo">보기<span class="memo-tip">${row.memo}</span></span></div></div>`).join('');}
+renderCtas(); renderFilters(); renderCrmRows();
+document.querySelectorAll('.mode-btn').forEach(btn=>btn.addEventListener('click',()=>{operationModeInput.value=btn.dataset.mode; document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active');}));
+</script>
+</body></html>

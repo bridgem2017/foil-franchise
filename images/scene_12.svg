@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#0f172a"/><stop offset="60%" stop-color="#1e1b4b"/><stop offset="100%" stop-color="#09090b"/>
+</linearGradient>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#d946ef"/><stop offset="100%" stop-color="#8b5cf6"/>
+</linearGradient>
+</defs>
+<rect width="1280" height="720" fill="url(#bg)"/>
+<circle cx="170" cy="100" r="150" fill="#d946ef" opacity="0.16"/>
+<circle cx="1100" cy="100" r="180" fill="#8b5cf6" opacity="0.14"/>
+<rect x="40" y="40" width="1200" height="640" rx="28" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+<text x="84" y="118" font-size="54" font-family="Arial, Noto Sans KR, sans-serif" font-weight="800" fill="white">협업 제안 및 파트너십</text>
+<text x="84" y="162" font-size="24" font-family="Arial, Noto Sans KR, sans-serif" fill="rgba(255,255,255,0.75)">외부 제휴와 광고 협업 문의 연결</text>
+<rect x="72" y="210" width="520" height="320" rx="24" fill="rgba(255,255,255,0.06)"/>
+<rect x="700" y="130" width="470" height="340" rx="28" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+<rect x="732" y="164" width="180" height="22" rx="11" fill="url(#g1)"/>
+<rect x="732" y="218" width="380" height="34" rx="14" fill="rgba(255,255,255,0.08)"/>
+<rect x="732" y="272" width="336" height="34" rx="14" fill="rgba(255,255,255,0.08)"/>
+<rect x="732" y="326" width="290" height="34" rx="14" fill="rgba(255,255,255,0.08)"/>
+<rect x="732" y="380" width="210" height="34" rx="14" fill="rgba(255,255,255,0.08)"/>
+<rect x="104" y="246" width="456" height="118" rx="18" fill="rgba(255,255,255,0.08)"/>
+<rect x="104" y="384" width="456" height="118" rx="18" fill="rgba(255,255,255,0.08)"/>
+<g>
+  <circle cx="170" cy="292" r="34" fill="#f4c7a1"/>
+  <rect x="130" y="326" width="80" height="124" rx="20" fill="#1f2937"/>
+  <rect x="116" y="356" width="108" height="84" rx="14" fill="#374151"/>
+</g>
+<g>
+  <circle cx="312" cy="292" r="34" fill="#ebbb95"/>
+  <rect x="272" y="326" width="80" height="124" rx="20" fill="#4b5563"/>
+  <rect x="258" y="356" width="108" height="84" rx="14" fill="#64748b"/>
+</g>
+<g>
+  <circle cx="454" cy="292" r="34" fill="#f1c19b"/>
+  <rect x="414" y="326" width="80" height="124" rx="20" fill="#374151"/>
+  <rect x="400" y="356" width="108" height="84" rx="14" fill="#475569"/>
+</g>
+<rect x="72" y="610" width="290" height="42" rx="18" fill="url(#g1)" opacity="0.95"/>
+<text x="104" y="638" font-size="22" font-family="Arial, Noto Sans KR, sans-serif" font-weight="700" fill="white">FOIL Franchise Growth Partner</text>
+</svg>
