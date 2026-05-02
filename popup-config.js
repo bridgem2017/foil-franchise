@@ -1,17 +1,24 @@
-// FOIL 팝업배너 설정 파일
-// 수정/추가/삭제 방법:
-// - enabled:false 로 숨김
-// - position: bottom-right, bottom-left, top-right, top-left, center
+// FOIL 중앙 팝업배너 설정 파일
+// 수정/추가/삭제:
+// - enabled:false = 숨김
+// - position: center, bottom-right, bottom-left, top-right, top-left
+// - image: 배너 이미지 주소 또는 파일 경로
 // - 여러 개 추가 가능
 window.FOIL_POPUPS = [
   {
-    id: "popup-100",
+    id: "main-case-01",
     enabled: true,
-    title: "OO쭈꾸미 100호점 달성",
-    text: "가맹영업 성장 사례를 확인해보세요.",
+    type: "modal",
+    title: "요식업 브랜드 성장 사례",
+    brand: "지역 대표 매운요리 브랜드",
+    headline: "가맹 문의 상승 캠페인",
+    text: "온라인 리드 수집과 오프라인 영업 연결 구조를 한 번에 설계합니다.",
+    badge: "가맹영업 사례",
+    image: "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=85",
     button: "문의하기",
     link: "#contact",
-    position: "bottom-right",
-    theme: "pink"
+    position: "center",
+    theme: "green",
+    onceKey: "foil_main_popup_v1"
   }
 ];

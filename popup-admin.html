@@ -5,35 +5,55 @@
 <title>FOIL 팝업배너 관리자</title>
 <style>
 body{margin:0;background:#08090d;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",Arial,sans-serif;padding:28px}
-.wrap{max-width:980px;margin:0 auto}
-h1{font-size:42px;letter-spacing:-.05em}
-.card{background:#15171f;border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:24px;margin:18px 0}
-label{display:block;margin:14px 0 6px;font-weight:800}
+.wrap{max-width:1080px;margin:0 auto}
+h1{font-size:44px;letter-spacing:-.06em;margin:0 0 12px}
+p{color:#cbd5e1;line-height:1.7}.card{background:#15171f;border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:24px;margin:18px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.full{grid-column:1/-1}
+label{display:block;margin:12px 0 6px;font-weight:800}
 input,select,textarea{width:100%;box-sizing:border-box;background:#222634;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px}
-button{border:0;border-radius:14px;padding:14px 18px;font-weight:900;cursor:pointer;background:linear-gradient(135deg,#ff4f8b,#9b5cff);color:#fff;margin-top:14px}
-pre{white-space:pre-wrap;background:#111;border-radius:18px;padding:18px;color:#b8ffd8}
-.note{color:#ff6262;font-weight:900}
+button{border:0;border-radius:14px;padding:14px 18px;font-weight:900;cursor:pointer;background:linear-gradient(135deg,#34f5a6,#2dd4bf);color:#06110e;margin-top:14px}
+pre{white-space:pre-wrap;background:#111;border-radius:18px;padding:18px;color:#b8ffd8;overflow:auto}.note{color:#ff6262;font-weight:900}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<h1>팝업배너 관리자</h1>
-<p>정적 GitHub/Vercel 페이지라 관리자에서 바로 저장되지는 않습니다. 생성된 코드를 <b>popup-config.js</b>의 배열 안에 붙여넣으면 됩니다.</p>
+<h1>FOIL 팝업배너 관리자</h1>
+<p>정적 GitHub/Vercel 사이트라 이 페이지에서 바로 저장되지는 않습니다. 아래에서 코드를 만든 뒤 <b>popup-config.js</b>의 <b>window.FOIL_POPUPS</b> 배열 안에 붙여넣으면 됩니다.</p>
 <div class="card">
-<label>제목</label><input id="title" value="OO쭈꾸미 100호점 달성">
-<label>내용</label><textarea id="text">가맹영업 성장 사례를 확인해보세요.</textarea>
-<label>버튼명</label><input id="button" value="문의하기">
-<label>링크</label><input id="link" value="#contact">
-<label>위치</label><select id="position"><option>bottom-right</option><option>bottom-left</option><option>top-right</option><option>top-left</option><option>center</option></select>
-<label>테마</label><select id="theme"><option>pink</option><option>purple</option><option>dark</option></select>
+<div class="grid">
+<div><label>상단 배지</label><input id="badge" value="가맹영업 사례"></div>
+<div><label>브랜드/서브타이틀</label><input id="brand" value="지역 대표 매운요리 브랜드"></div>
+<div class="full"><label>큰 제목</label><input id="headline" value="가맹 문의 상승 캠페인"></div>
+<div class="full"><label>설명</label><textarea id="text">온라인 리드 수집과 오프라인 영업 연결 구조를 한 번에 설계합니다.</textarea></div>
+<div class="full"><label>이미지 주소</label><input id="image" value="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=900&q=85"></div>
+<div><label>버튼명</label><input id="button" value="문의하기"></div>
+<div><label>링크</label><input id="link" value="#contact"></div>
+<div><label>위치</label><select id="position"><option>center</option><option>bottom-right</option><option>bottom-left</option><option>top-right</option><option>top-left</option></select></div>
+<div><label>테마</label><select id="theme"><option>green</option><option>pink</option><option>purple</option><option>dark</option></select></div>
+</div>
 <button onclick="make()">팝업 코드 생성</button>
-<p class="note">생성된 코드를 popup-config.js의 window.FOIL_POPUPS 배열 안에 넣으면 됩니다.</p>
+<p class="note">생성된 코드를 popup-config.js에 복사하세요. 삭제는 해당 객체를 지우거나 enabled:false 로 바꾸면 됩니다.</p>
 <pre id="out"></pre>
 </div>
 </div>
 <script>
 function make(){
- const obj={id:"popup-"+Date.now(),enabled:true,title:title.value,text:text.value,button:button.value,link:link.value,position:position.value,theme:theme.value};
+ const obj={
+  id:"popup-"+Date.now(),
+  enabled:true,
+  type:"modal",
+  badge:badge.value,
+  brand:brand.value,
+  headline:headline.value,
+  text:text.value,
+  image:image.value,
+  button:button.value,
+  link:link.value,
+  position:position.value,
+  theme:theme.value,
+  onceKey:"foil_popup_"+Date.now()
+ };
  out.textContent=JSON.stringify(obj,null,2)+",";
 }
 make();
