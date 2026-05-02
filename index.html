@@ -589,6 +589,95 @@ html,body{overflow-x:hidden!important;max-width:100%!important}
 })();
 </script>
 
+
+<style id="foil-v17-final-requested-patch">
+html,body{overflow-x:hidden!important;max-width:100%!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+*{box-sizing:border-box}
+.hero .diagram,.diagram,.hero-chip-wrap,.hero-badge-wrap,.hero-stats,.hero-benefits,.hero-kpi-row{width:100%!important}
+.hero .diagram,.diagram{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:16px!important;align-items:stretch!important;overflow:visible!important}
+.hero .diagram div,.diagram div,.hero-chip,.hero-badge,.hero-feature,.hero-stat,.benefit-pill,.kpi-card{
+  min-width:0!important;width:100%!important;min-height:128px!important;padding:26px 18px!important;border-radius:28px!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;
+  font-weight:1000!important;font-size:clamp(22px,2.2vw,34px)!important;line-height:1.08!important;letter-spacing:-.06em!important;
+  word-break:keep-all!important;white-space:normal!important;transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,background .32s ease,color .32s ease,border-color .32s ease!important;
+  border:1px solid rgba(255,255,255,.15)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)
+}
+.hero .diagram div:nth-child(1),.diagram div:nth-child(1),.hero-chip:nth-child(1),.hero-badge:nth-child(1){background:linear-gradient(145deg,#ff4f8b,#6d2a87)!important;color:#fff!important}
+.hero .diagram div:nth-child(2),.diagram div:nth-child(2),.hero-chip:nth-child(2),.hero-badge:nth-child(2){background:linear-gradient(145deg,#6aa2ff,#7c3aed)!important;color:#fff!important}
+.hero .diagram div:nth-child(3),.diagram div:nth-child(3),.hero-chip:nth-child(3),.hero-badge:nth-child(3){background:linear-gradient(145deg,#35f5a6,#1f8a70)!important;color:#04130d!important}
+.hero .diagram div:nth-child(4),.diagram div:nth-child(4),.hero-chip:nth-child(4),.hero-badge:nth-child(4){background:linear-gradient(145deg,#ff9f45,#ff4f8b)!important;color:#fff!important}
+.hero .diagram div:nth-child(5),.diagram div:nth-child(5),.hero-chip:nth-child(5),.hero-badge:nth-child(5){background:linear-gradient(145deg,#fff,#d8e0ff)!important;color:#111827!important}
+.hero .diagram div:hover,.diagram div:hover,.hero-chip:hover,.hero-badge:hover,.hero-feature:hover,.hero-stat:hover,.benefit-pill:hover,.kpi-card:hover{
+  transform:translateY(-14px) scale(1.045)!important;box-shadow:0 34px 95px rgba(52,245,166,.24),inset 0 1px 0 rgba(255,255,255,.55)!important;
+  background:rgba(255,255,255,.84)!important;color:#07110d!important;border-color:rgba(255,255,255,.55)!important
+}
+.hero .diagram div:hover *,.diagram div:hover *,.hero-chip:hover *,.hero-badge:hover *,.hero-feature:hover *,.hero-stat:hover *,.benefit-pill:hover *,.kpi-card:hover *{color:#07110d!important}
+.process-diagram,.process-flow,.flow-diagram,[class*="process"]{overflow:hidden!important;max-width:100%!important}
+.process-diagram *,.process-flow *,.flow-diagram *,[class*="process"] *{scrollbar-width:none!important}
+.process-diagram *::-webkit-scrollbar,.process-flow *::-webkit-scrollbar,.flow-diagram *::-webkit-scrollbar,[class*="process"] *::-webkit-scrollbar{display:none!important}
+.process-diagram h1,.process-diagram h2,.process-flow h1,.process-flow h2,.flow-diagram h1,.flow-diagram h2,[class*="process"] h1,[class*="process"] h2{
+  font-size:clamp(30px,5vw,64px)!important;line-height:1.02!important;white-space:normal!important;word-break:keep-all!important;max-width:100%!important;overflow:visible!important
+}
+.process-diagram .step,.process-flow .step,.flow-diagram .step,[class*="process"] .step{min-width:0!important;max-width:100%!important}
+.operation-number{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin-right:8px;border-radius:999px;background:linear-gradient(135deg,#34f5a6,#9b5cff);color:#04130d;font-size:15px;font-weight:1000;vertical-align:middle}
+.foil-operation-centered,.foil-operation-centered *{text-align:center!important}
+.foil-operation-centered h3,.foil-operation-centered h4,.foil-operation-centered p{text-align:center!important}
+.feature,.feature-card,.strength-card,.advantage-card,.why-card,[class*="feature"],[class*="strength"],[class*="advantage"]{
+  transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,background .32s ease,color .32s ease,border-color .32s ease!important;border:1px solid rgba(255,255,255,.13)!important
+}
+.feature:hover,.feature-card:hover,.strength-card:hover,.advantage-card:hover,.why-card:hover,[class*="feature"]:hover,[class*="strength"]:hover,[class*="advantage"]:hover{
+  transform:translateY(-12px) scale(1.025)!important;background:linear-gradient(135deg,#effff7,#c7ffe6)!important;color:#06110e!important;border-color:rgba(52,245,166,.62)!important;box-shadow:0 30px 90px rgba(52,245,166,.20),inset 0 1px 0 rgba(255,255,255,.75)!important
+}
+.feature:hover *,.feature-card:hover *,.strength-card:hover *,.advantage-card:hover *,.why-card:hover *,[class*="feature"]:hover *,[class*="strength"]:hover *,[class*="advantage"]:hover *{color:#06110e!important}
+.privacy-consent-row{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:10px!important;width:100%!important;max-width:100%!important;min-height:auto!important;margin:14px 0 18px!important;padding:16px 18px!important;border-radius:18px!important;border:1px solid rgba(255,255,255,.18)!important;background:rgba(255,255,255,.07)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);writing-mode:horizontal-tb!important;text-orientation:mixed!important;white-space:normal!important}
+.privacy-consent-row label{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;width:100%!important;line-height:1.45!important;font-size:15px!important;font-weight:900!important;color:#fff!important;writing-mode:horizontal-tb!important;text-orientation:mixed!important;word-break:keep-all!important}
+.privacy-consent-row input{flex:0 0 auto!important;width:18px!important;height:18px!important;min-width:18px!important;accent-color:#34f5a6!important}
+.privacy-consent-row a{display:inline-flex!important;align-items:center!important;width:auto!important;color:#34f5a6!important;font-size:15px!important;font-weight:1000!important;text-decoration:underline!important;writing-mode:horizontal-tb!important}
+button[type="submit"],.foil-contact-form button,form button,.btn-submit,.submit-btn{
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,background .28s ease,border-color .28s ease,color .28s ease!important;
+  box-shadow:0 18px 55px rgba(255,79,139,.22)!important;border:1px solid rgba(255,255,255,.13)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important
+}
+button[type="submit"]:hover,.foil-contact-form button:hover,form button:hover,.btn-submit:hover,.submit-btn:hover{
+  transform:translateY(-8px) scale(1.018)!important;background:rgba(255,255,255,.72)!important;color:#111827!important;box-shadow:0 30px 95px rgba(255,255,255,.18),0 16px 70px rgba(52,245,166,.23)!important;border-color:rgba(255,255,255,.64)!important
+}
+img{max-width:100%;height:auto}
+@media(max-width:920px){.hero .diagram,.diagram{grid-template-columns:repeat(2,minmax(0,1fr))!important}.hero .diagram div,.diagram div,.hero-chip,.hero-badge{min-height:96px!important;font-size:clamp(20px,5vw,28px)!important}}
+@media(max-width:640px){
+  body{overflow-x:hidden!important}
+  h1{font-size:clamp(42px,14vw,68px)!important;line-height:1.02!important}
+  h2{font-size:clamp(34px,10vw,54px)!important;line-height:1.08!important}
+  .hero .diagram,.diagram{grid-template-columns:1fr!important;gap:12px!important}
+  .hero .diagram div,.diagram div,.hero-chip,.hero-badge{min-height:78px!important;padding:18px!important}
+  .process-diagram h1,.process-diagram h2,.process-flow h1,.process-flow h2,.flow-diagram h1,.flow-diagram h2,[class*="process"] h1,[class*="process"] h2{font-size:clamp(28px,11vw,44px)!important}
+  .privacy-consent-row{padding:14px!important}
+}
+</style>
+<script id="foil-v17-final-requested-script">
+(function(){
+  function ready(fn){document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn)}
+  ready(function(){
+    var operationTitles=["프랜차이즈 본사 회의","가맹영업문의","계약 체결","계약체결","랜딩페이지와 리드 수집","영업 배정 프로세스","오프라인 영업 인력 매칭"];
+    var count=0;
+    document.querySelectorAll("h3,h4,strong,b").forEach(function(el){
+      var text=(el.innerText||"").trim();
+      var normalized=text.replace(/^\d+\.?\s*/,"").trim();
+      if(operationTitles.includes(normalized) && count < 6){
+        count++;
+        var card=el.closest("article,.card,.scene-card,div");
+        if(card) card.classList.add("foil-operation-centered");
+        if(!el.querySelector(".operation-number")){
+          el.innerHTML='<span class="operation-number">'+String(count).padStart(2,"0")+'</span>'+normalized;
+        }
+      }
+    });
+    document.querySelectorAll(".privacy-consent-row,.privacy-consent-row *").forEach(function(el){
+      el.style.writingMode="horizontal-tb";
+      el.style.textOrientation="mixed";
+    });
+  });
+})();
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -630,7 +719,7 @@ html,body{overflow-x:hidden!important;max-width:100%!important}
 </div></section></div>
 </div></section>
 <section class="section-block" id="crm"><div class="container">
-<div class="section-head"><div class="eyebrow">CRM</div><h2>CRM 관리화면</h2></div>
+<div class="section-head"><div class="eyebrow">CRM</div><h2>본부 CRM 대시보드</h2></div>
 <div class="crm-wrap"><div class="filters" id="filters"></div><div class="crm-table"><div class="crm-head"><div>이름</div><div>지역</div><div>전화번호</div><div>상태</div><div>담당자</div><div>등록일</div><div>메모</div></div><div id="crmRows"></div></div></div>
 <div class="split-2 crm-visual-split" style="margin-top:28px">
   <div class="crm-screen-shot" role="img" aria-label="CRM 예시 관리화면">
@@ -649,9 +738,9 @@ html,body{overflow-x:hidden!important;max-width:100%!important}
   </div>
   <div class="feature-grid" id="featureGrid"></div>
 </div>
-<p class="crm-example-warning">해당 이미지는 예시 이미지입니다. CRM 은 목적에 맞게 변경될 수 있습니다.</p>
+<p class="crm-example-warning">해당 이미지는 예시 이미지입니다. 본부 CRM 대시보드는 서비스로 제공드리고 있으며, 시스템 내부 버그수정 등의 업데이트가 필요할 수 있으며, 목적에 맞게 변경되기 위해 일정시간이 소요될 수 있습니다.</p>
 </div></section>
-<section class="section-block" id="gallery"><div class="container"><div class="section-head"><div class="eyebrow">OPERATION SCENES</div><h2>운영 흐름</h2><div class="section-desc">가맹본부 상담부터 계약 검토, 리드 수집, FOIL 영업담당자 배정까지 실제 운영 순서에 맞춰 구성했습니다.</div></div>
+<section class="section-block" id="gallery"><div class="container"><div class="section-head"><div class="eyebrow">OPERATION SCENES</div><h2>운영 흐름</h2><div class="section-desc">가맹본부 상담부터 계약 검토, 리드 수집, FOIL 영업담당자 배정까지 실제 운영 순서입니다.</div></div>
 <div class="gallery-grid">
 <div class="gallery-card"><img alt="프랜차이즈 본사 회의" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184310/pexels-photo-3184310.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/><div class="gallery-title">프랜차이즈 본사 회의</div><div class="gallery-desc">브랜드 확장 전략과 온라인-오프라인 영업 구조 논의</div></div>
 <div class="gallery-card"><img alt="가맹영업문의 상담 사진" class="section-img" loading="lazy" src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/><div class="gallery-title">가맹영업문의</div><div class="gallery-desc">본사와 직영점에 대한 하단 입력폼 기재</div></div>
@@ -686,7 +775,7 @@ html,body{overflow-x:hidden!important;max-width:100%!important}
 </div></section>
 <section class="section-block" id="contact"><div class="container contact-grid">
 <div><div class="contact-info"><div class="eyebrow">CONTACT</div><h2 style="font-size:44px">프랜차이즈 본부 문의</h2><div style="margin-top:18px;font-size:16px;line-height:1.8;color:rgba(255,255,255,.65)">우리 브랜드에 온라인 리드가 맞는지, 오프라인 전문인력 매칭이 필요한지, 두 방식을 함께 가야 하는지 상담 후 구조를 제안합니다.</div><div class="contact-list"><div>• 브랜드명 / 담당자명 / 연락처</div><div>• 현재 가맹점 수 / 희망 확장 지역</div><div>• 온라인 리드 / 오프라인 영업 / 병행 운영 중 선택</div><div>• 월 예상 예산 / 희망 인센티브 구조</div></div></div>
-<div class="mail-wrap"><div class="mail-card"><div class="mail-label">Collaboration Mail</div><div class="mail-title">협업 제안은 메일로도 바로 받을 수 있게</div><div class="mail-desc">파트너십 제안, 광고 협업, 브랜드 제휴, 외부 제안서는 협업 메일로 직접 접수할 수 있게 구성했습니다. 홈페이지 문의폼과 별도로 중요한 협업 문의를 바로 연결할 수 있습니다.</div><a class="mail-link" href="mailto:admin@foil.co.kr">admin@foil.co.kr</a></div></div>
+<div class="mail-wrap"><div class="mail-card"><div class="mail-label">Collaboration Mail</div><div class="mail-title">협업 제안 및 파트너십</div><div class="mail-desc">파트너십 제안, 광고 협업, 브랜드 제휴, 기타 제안 등 은 아래 메일주소(admin@foil.co.kr)로 부탁드립니다.</div><a class="mail-link" href="mailto:admin@foil.co.kr">admin@foil.co.kr</a></div></div>
 </div>
 <form class="foil-contact-form" action="https://formsubmit.co/admin@foil.co.kr" method="POST">
   <input type="hidden" name="_subject" value="[FOIL] 가맹본부 영업 의뢰 문의">
