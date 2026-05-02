@@ -418,6 +418,18 @@ input::placeholder, textarea::placeholder{
 }
 </style>
 
+<style id="formsubmit-admin-final-fix">
+.foil-contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;width:100%}
+.foil-contact-form .form-row{display:flex;flex-direction:column;gap:9px;text-align:left}
+.foil-contact-form .form-row.full{grid-column:1 / -1}
+.foil-contact-form label{color:rgba(255,255,255,.86);font-weight:800;font-size:14px;letter-spacing:-.02em}
+.foil-contact-form input,.foil-contact-form select,.foil-contact-form textarea{width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.07);color:#fff;padding:16px 18px;font-size:15px;outline:none}
+.foil-contact-form select option{color:#111}
+.foil-contact-form input::placeholder,.foil-contact-form textarea::placeholder{color:rgba(255,255,255,.42)}
+.foil-contact-form button{grid-column:1 / -1;width:100%;min-height:58px;border:0;cursor:pointer}
+.foil-contact-form .form-warning{grid-column:1 / -1;margin:0;color:#ff3b3b!important;font-size:14px!important;font-weight:900!important;text-align:center;line-height:1.55!important}
+@media(max-width:760px){.foil-contact-form{grid-template-columns:1fr}}
+</style>
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">이미지</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -458,7 +470,7 @@ input::placeholder, textarea::placeholder{
 <div class="gallery-desc">브랜드 확장 전략과 영업 구조를 논의하는 핵심 장면</div>
 </div>
 <div class="gallery-card">
-<img alt="가맹 문의 상담 공간" class="section-img" loading="lazy" src="https://images.pexels.com/photos/31741914/pexels-photo-31741914.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/>
+<img src="assets/franchise-consulting-room.svg" alt="가맹 문의 상담 공간" loading="lazy">
 <div class="gallery-title">가맹 문의 상담</div>
 <div class="gallery-desc">본사와 예비 점주 문의를 정리하는 상담 중심 장면</div>
 </div>
@@ -516,30 +528,44 @@ input::placeholder, textarea::placeholder{
 </div></section>
 <section class="section-block" id="contact"><div class="container contact-grid">
 <div><div class="contact-info"><div class="eyebrow">CONTACT</div><h2 style="font-size:44px">프랜차이즈 본부 문의</h2><div style="margin-top:18px;font-size:16px;line-height:1.8;color:rgba(255,255,255,.65)">우리 브랜드에 온라인 리드가 맞는지, 오프라인 전문인력 매칭이 필요한지, 두 방식을 함께 가야 하는지 상담 후 구조를 제안합니다.</div><div class="contact-list"><div>• 브랜드명 / 담당자명 / 연락처</div><div>• 현재 가맹점 수 / 희망 확장 지역</div><div>• 온라인 리드 / 오프라인 영업 / 병행 운영 중 선택</div><div>• 월 예상 예산 / 희망 인센티브 구조</div></div></div>
-<div class="mail-wrap"><div class="mail-card"><div class="mail-label">Collaboration Mail</div><div class="mail-title">협업 제안은 메일로도 바로 받을 수 있게</div><div class="mail-desc">파트너십 제안, 광고 협업, 브랜드 제휴, 외부 제안서는 협업 메일로 직접 접수할 수 있게 구성했습니다. 홈페이지 문의폼과 별도로 중요한 협업 문의를 바로 연결할 수 있습니다.</div><a class="mail-link" href="mailto:sales@foil.com">sales@foil.com</a></div></div>
+<div class="mail-wrap"><div class="mail-card"><div class="mail-label">Collaboration Mail</div><div class="mail-title">협업 제안은 메일로도 바로 받을 수 있게</div><div class="mail-desc">파트너십 제안, 광고 협업, 브랜드 제휴, 외부 제안서는 협업 메일로 직접 접수할 수 있게 구성했습니다. 홈페이지 문의폼과 별도로 중요한 협업 문의를 바로 연결할 수 있습니다.</div><a class="mail-link" href="mailto:admin@foil.co.kr">admin@foil.co.kr</a></div></div>
 </div>
-<form action="https://formsubmit.co/sales@foil.com" class="form-card" method="POST">
-<input name="_subject" type="hidden" value="[FOIL] 프랜차이즈 본부 문의 접수"/>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_template" type="hidden" value="table"/>
-<input name="_autoresponse" type="hidden" value="문의가 정상 접수되었습니다. 확인 후 빠르게 연락드리겠습니다."/>
-<input name="_next" type="hidden" value="https://your-domain-or-github-pages-url/thanks.html"/>
-<div class="form-grid">
-<div><label>브랜드명</label><input name="브랜드명" placeholder="예: FOIL PARTNER" required=""/></div>
-<div><label>담당자명</label><input name="담당자명" placeholder="이름" required=""/></div>
-<div><label>연락처</label><input name="연락처" placeholder="010-0000-0000" required=""/></div>
-<div><label>현재 가맹점 수</label><input name="현재 가맹점 수" placeholder="예: 12개"/></div>
-<div><label>희망 확장 지역</label><input name="희망 확장 지역" placeholder="예: 수도권 / 부산"/></div>
-<div><label>월 예상 예산</label><input name="월 예상 예산" placeholder="예: 300만원 이상"/></div>
-</div>
-<div style="margin-top:14px"><label>희망 운영 방식</label><div class="mode-buttons" id="modeButtons"><button class="mode-btn" data-mode="온라인 리드" type="button">온라인 리드</button><button class="mode-btn" data-mode="오프라인 영업" type="button">오프라인 영업</button><button class="mode-btn" data-mode="병행 운영" type="button">병행 운영</button><button class="mode-btn active" data-mode="상담 후 결정" type="button">상담 후 결정</button></div><input id="operationModeInput" name="희망 운영 방식" type="hidden" value="상담 후 결정"/></div>
-<div class="inline-grid"><div><label>희망 인센티브 구조</label><input name="희망 인센티브 구조" placeholder="예: 계약당 지급 / 협의"/></div><div><label>문의 유형</label><input id="inquiryTypeInput" name="문의 유형" readonly="" value="통합 운영 문의"/></div></div>
-<div style="margin-top:14px"><label>문의 내용</label><textarea name="문의 내용" placeholder="브랜드 상황, 운영 방식, 원하는 구조를 남겨주세요."></textarea></div>
-<button class="btn btn-primary" style="width:100%;margin-top:18px;border:none;cursor:pointer" type="submit">문의 접수하기</button>
-<div style="margin-top:14px;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-size:12px;line-height:1.7;color:rgba(255,255,255,.55)">GitHub Pages용 정적 문의폼입니다. <code>_next</code> 주소만 실제 GitHub Pages 주소에 맞게 바꾸면 제출 후 완료 페이지로 이동합니다.</div>
+<form class="foil-contact-form" action="https://formsubmit.co/admin@foil.co.kr" method="POST">
+  <input type="hidden" name="_subject" value="[FOIL] 가맹본부 영업 의뢰 문의">
+  <input type="hidden" name="_captcha" value="true">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://franchise.foil.co.kr/thanks.html">
+  <input type="text" name="_honey" style="display:none">
+
+  <div class="form-row"><label>가맹본부명 / 브랜드명</label><input type="text" name="가맹본부명_브랜드명" placeholder="예: ○○치킨 / ○○푸드" required></div>
+  <div class="form-row"><label>담당자명</label><input type="text" name="담당자명" placeholder="담당자 성함" required></div>
+  <div class="form-row"><label>연락처</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
+  <div class="form-row"><label>회신 받을 이메일</label><input type="email" name="email" placeholder="example@company.com"></div>
+
+  <div class="form-row"><label>희망 문의 유형</label><select name="문의유형" required>
+    <option value="">문의 유형을 선택해주세요</option>
+    <option value="온라인 리드 수집">온라인 리드 수집</option>
+    <option value="오프라인 가맹영업 인력 매칭">오프라인 가맹영업 인력 매칭</option>
+    <option value="온라인+오프라인 통합">온라인+오프라인 통합</option>
+    <option value="광고/바이럴/체험단/옥외광고 상담">광고/바이럴/체험단/옥외광고 상담</option>
+    <option value="CRM 도입 및 DB관리 상담">CRM 도입 및 DB관리 상담</option>
+  </select></div>
+
+  <div class="form-row"><label>현재 운영 상황</label><select name="현재운영상황">
+    <option value="">선택해주세요</option>
+    <option value="가맹점 모집 준비 중">가맹점 모집 준비 중</option>
+    <option value="광고는 진행 중이나 계약 전환이 낮음">광고는 진행 중이나 계약 전환이 낮음</option>
+    <option value="오프라인 영업 인력이 필요함">오프라인 영업 인력이 필요함</option>
+    <option value="리드/DB 관리가 필요함">리드/DB 관리가 필요함</option>
+    <option value="전체 영업 구조 설계가 필요함">전체 영업 구조 설계가 필요함</option>
+  </select></div>
+
+  <div class="form-row full"><label>문의내용</label><textarea name="문의내용" rows="6" placeholder="현재 브랜드 상황, 희망 지역, 광고 진행 여부, 필요한 영업 지원 내용을 적어주세요." required></textarea></div>
+  <button type="submit" class="btn btn-primary">문의접수하기</button>
+  <p class="form-warning">견적 문의 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야 문의가 정상 접수됩니다.</p>
 </form>
 </div></section>
-<footer><div class="container footer-inner"><div>© 2026 FOIL. Franchise Growth Partner.</div><div>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: sales@foil.com</div></div><div style="margin-top:12px;"><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:700;text-decoration:none;">회사소개</a></div></footer>
+<footer><div class="container footer-inner"><div>© 2026 FOIL. Franchise Growth Partner.</div><div>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: admin@foil.co.kr</div></div><div style="margin-top:12px;"><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:700;text-decoration:none;">회사소개</a></div></footer>
 <script>
 const ctaTracks=[{badge:'추천',title:'온라인 리드 문의',desc:'랜딩페이지 제작, 광고 운영, 리드 수집 중심으로 상담을 시작합니다.'},{badge:'현장형',title:'오프라인 영업 문의',desc:'브랜드에 맞는 가맹영업 전문인력 매칭과 인센티브 구조를 상담합니다.'},{badge:'통합형',title:'통합 운영 문의',desc:'온라인 유입부터 오프라인 영업 배치까지 한 번에 연결하는 구조를 제안합니다.'}];
 const standoutPoints=[['01','프랜차이즈 본부 × 오프라인 전문인력 매칭','브랜드 상황에 맞는 가맹영업 전문인력을 연결하고, 본부는 필요한 시점에 필요한 방식으로만 활용할 수 있습니다.'],['02','랜딩페이지 제작 + 온라인 리드 수집','브랜드 소개용 화면에서 끝나지 않고, 광고와 연결되는 전용 랜딩 구조로 실제 문의와 DB 수집까지 이어집니다.'],['03','본부 실시간 DB관리 · 어드민 · SMS','유입된 리드와 상담 상태, 담당 배정, 후속 응대까지 본부가 시의적으로 확인하고 즉시 대응할 수 있습니다.'],['04','수집된 리드의 오프라인 배치 가능','온라인에서 모인 리드를 그대로 두지 않고, 필요 시 오프라인 전문인력에게 이어 붙여 현장 영업까지 연결합니다.'],['05','인센티브 조건은 본부가 자율 결정','가맹영업 조건과 단가는 브랜드가 직접 설정할 수 있고, 적정 인센티브일수록 영업사원의 참여도와 실행력도 높아집니다.'],['06','초기 비용 0 · 건바이건 진행 가능','고정 구축비 부담 없이 시작할 수 있고, 필요에 따라 건별로 운영 가능합니다. 광고와 병행하면 효율은 더 높아집니다.'],['07','월별 계약 · 자유 해지','장기 묶음형 구조가 아니라 월 단위로 운영 판단이 가능해, 원할 때 해지하거나 방향을 조정할 수 있습니다.'],['08','온라인·오프라인 모두 본부가 선택','브랜드마다 필요한 방식이 다르기 때문에 온라인 리드, 오프라인 영업, 병행 운영 중 원하는 방식만 선택할 수 있습니다.'],['09','본부-영업사원 간 간편 대시보드','같은 데이터를 보며 배정과 응대를 이어갈 수 있도록, 본부와 영업사원이 함께 쓰는 간편한 운영 화면을 제공합니다.']];
