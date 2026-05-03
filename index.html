@@ -2051,6 +2051,48 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+
+<style id="foil-v40-patch">
+/* checkbox 50% */
+.privacy-consent-row input[type="checkbox"],
+.privacy-line-v32 input[type="checkbox"]{
+  width:12px !important;
+  height:12px !important;
+  min-width:12px !important;
+  flex:0 0 12px !important;
+}
+
+/* kill ALL outline / stroke aggressively */
+.privacy-consent-row,
+.privacy-consent-row *,
+.privacy-line-v32,
+.privacy-line-v32 *{
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+  box-shadow:none !important;
+}
+
+/* pseudo elements */
+.privacy-consent-row *::before,
+.privacy-consent-row *::after,
+.privacy-line-v32 *::before,
+.privacy-line-v32 *::after{
+  content:none !important;
+  display:none !important;
+}
+</style>
+
+<script id="foil-v40-script">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll(".privacy-consent-row label span, .privacy-line-v32 span").forEach(function(el){
+    el.textContent = "개인정보처리방침에 동의합니다";
+  });
+});
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
