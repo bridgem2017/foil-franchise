@@ -1143,6 +1143,200 @@ footer > div:not(.container){display:none!important}
 }
 </style>
 
+
+<style id="foil-v29-fix">
+/* v29: 개인정보 동의 깨짐 수정 + 히어로 01~05 카드 폭 확장 */
+
+/* 1) 개인정보 동의 영역: 한 줄 안에서 겹치지 않게 재정렬 */
+.privacy-consent-row{
+  width:100%!important;
+  max-width:860px!important;
+  min-height:64px!important;
+  margin:18px auto 28px!important;
+  padding:12px 18px!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:14px!important;
+  border-radius:999px!important;
+  overflow:visible!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.055))!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 18px 60px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.16)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+}
+
+.privacy-consent-row label{
+  flex:0 1 auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:10px!important;
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow:visible!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+  color:#fff!important;
+  font-size:16px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  letter-spacing:-.03em!important;
+}
+
+.privacy-consent-row input[type="checkbox"]{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  flex:0 0 24px!important;
+  width:24px!important;
+  height:24px!important;
+  min-width:24px!important;
+  margin:0!important;
+  border-radius:8px!important;
+  border:1px solid rgba(255,255,255,.42)!important;
+  background:linear-gradient(135deg,#36f5a6,#15c987)!important;
+  box-shadow:0 8px 24px rgba(52,245,166,.24), inset 0 1px 0 rgba(255,255,255,.45)!important;
+  position:relative!important;
+}
+
+.privacy-consent-row input[type="checkbox"]::after{
+  content:"✓"!important;
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-55%)!important;
+  color:#07110d!important;
+  font-size:17px!important;
+  font-weight:1000!important;
+  line-height:1!important;
+}
+
+.privacy-consent-row a{
+  flex:0 0 auto!important;
+  margin-left:auto!important;
+  padding:12px 18px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  white-space:nowrap!important;
+  border-radius:999px!important;
+  background:rgba(52,245,166,.14)!important;
+  border:1px solid rgba(52,245,166,.38)!important;
+  color:#36f5a6!important;
+  font-size:15px!important;
+  line-height:1!important;
+  font-weight:1000!important;
+  text-decoration:none!important;
+  letter-spacing:-.03em!important;
+  transition:transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease!important;
+}
+
+.privacy-consent-row a:hover{
+  transform:translateY(-2px)!important;
+  background:#36f5a6!important;
+  color:#07110d!important;
+  box-shadow:0 16px 42px rgba(52,245,166,.28)!important;
+}
+
+.privacy-consent-row br{display:none!important}
+.privacy-consent-row *{
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+}
+
+/* 2) 01~05 카드: 기존 컬러/hover 효과는 유지하고 가로폭만 더 넓힘 */
+.premium-promise-diagram{
+  width:100%!important;
+  max-width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(150px,1fr))!important;
+  gap:20px!important;
+  align-items:stretch!important;
+}
+
+.premium-promise-diagram .promise-card{
+  width:100%!important;
+  min-width:150px!important;
+  min-height:190px!important;
+  padding-left:18px!important;
+  padding-right:18px!important;
+}
+
+.premium-promise-diagram .promise-card strong{
+  font-size:clamp(26px,2.4vw,40px)!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+}
+
+/* 혹시 v28의 좁은 카드 class가 사용된 경우도 같이 보정 */
+.foil-v24-hero-cards,
+.foil-v23-hero-cards{
+  grid-template-columns:repeat(5,minmax(150px,1fr))!important;
+  gap:20px!important;
+}
+.foil-v24-hero-card,
+.foil-v23-hero-card{
+  min-width:150px!important;
+  min-height:190px!important;
+  padding-left:18px!important;
+  padding-right:18px!important;
+}
+
+/* 반응형 */
+@media(max-width:1100px){
+  .premium-promise-diagram,
+  .foil-v24-hero-cards,
+  .foil-v23-hero-cards{
+    grid-template-columns:repeat(5,minmax(128px,1fr))!important;
+    gap:14px!important;
+  }
+  .premium-promise-diagram .promise-card,
+  .foil-v24-hero-card,
+  .foil-v23-hero-card{
+    min-width:128px!important;
+  }
+}
+
+@media(max-width:720px){
+  .privacy-consent-row{
+    max-width:100%!important;
+    border-radius:22px!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    padding:18px!important;
+  }
+  .privacy-consent-row label{
+    width:100%!important;
+    white-space:normal!important;
+    line-height:1.35!important;
+    font-size:15px!important;
+  }
+  .privacy-consent-row a{
+    width:100%!important;
+    margin-left:0!important;
+    padding:13px 16px!important;
+  }
+  .premium-promise-diagram,
+  .foil-v24-hero-cards,
+  .foil-v23-hero-cards{
+    grid-template-columns:1fr!important;
+  }
+  .premium-promise-diagram .promise-card,
+  .foil-v24-hero-card,
+  .foil-v23-hero-card{
+    min-width:0!important;
+    min-height:120px!important;
+  }
+}
+</style>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
