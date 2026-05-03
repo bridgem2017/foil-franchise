@@ -1147,77 +1147,283 @@ footer > div:not(.container){display:none!important}
 
 
 
-<style id="foil-v30-fix">
-/* 1 카드 가로폭 더 확장 */
-.premium-promise-diagram{
-  grid-template-columns:repeat(5,minmax(180px,1fr))!important;
-  gap:28px!important;
-}
-.premium-promise-diagram .promise-card{
-  min-width:180px!important;
-  min-height:210px!important;
-}
 
-/* 2 우측 이미지 제거 후 중앙 배치용 */
-.hero-right-img{
+
+<style id="foil-v31-final-patch">
+/* v31: 이미지 중앙 확대 + 개인정보 UI 깨짐 해결 + 전환형 인터랙션 */
+html,body{overflow-x:hidden!important;max-width:100%!important;scroll-behavior:smooth!important}
+*{box-sizing:border-box}
+
+/* 히어로는 1열 랜딩 구조로 전환 */
+.hero-grid{
+  display:block!important;
+}
+.hero-grid > div:first-child{
+  width:100%!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+}
+.hero-grid > div:not(:first-child){
   display:none!important;
 }
-.hero-center-img{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin:30px 0 20px;
+
+/* 1. 설명문 아래 / 카드 위 중앙 큰 이미지 */
+.hero-center-img-v31{
+  width:100%!important;
+  display:flex!important;
+  justify-content:center!important;
+  align-items:center!important;
+  margin:30px auto 28px!important;
 }
-.hero-center-img img{
-  width:60%;
-  max-width:900px;
-  border-radius:18px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+.hero-center-img-v31 img{
+  width:min(920px,88vw)!important;
+  max-height:440px!important;
+  object-fit:cover!important;
+  border-radius:30px!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  box-shadow:0 34px 110px rgba(0,0,0,.42),0 0 70px rgba(217,70,239,.10),inset 0 1px 0 rgba(255,255,255,.1)!important;
+  display:block!important;
 }
 
-/* 3 개인정보 완전 재구성 */
+/* 01~05 카드: 기존 색/효과 유지 + 더 넓게 */
+.premium-promise-diagram{
+  width:100%!important;
+  max-width:1180px!important;
+  margin:28px auto 34px!important;
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(190px,1fr))!important;
+  gap:26px!important;
+  align-items:stretch!important;
+}
+.premium-promise-diagram .promise-card{
+  width:100%!important;
+  min-width:190px!important;
+  min-height:210px!important;
+  padding:30px 20px!important;
+  transition:transform .34s cubic-bezier(.2,.8,.2,1),box-shadow .34s ease,filter .34s ease!important;
+}
+.premium-promise-diagram .promise-card:hover{
+  transform:translateY(-16px) scale(1.045)!important;
+  filter:saturate(1.14) contrast(1.05)!important;
+  box-shadow:0 34px 90px rgba(255,79,139,.18),0 22px 80px rgba(52,245,166,.14)!important;
+}
+.premium-promise-diagram .promise-card strong{
+  font-size:clamp(28px,2.8vw,42px)!important;
+  line-height:1.04!important;
+  word-break:keep-all!important;
+}
+
+/* 2. 개인정보 동의: 기존 DOM이 무엇이든 한 줄 카드로 강제 */
 .privacy-consent-row{
-  display:flex!important;
+  width:min(760px,100%)!important;
+  max-width:760px!important;
+  min-width:0!important;
+  min-height:64px!important;
+  margin:18px auto 28px!important;
+  padding:10px 12px!important;
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
   align-items:center!important;
-  justify-content:space-between!important;
-  gap:16px!important;
-  padding:16px 22px!important;
+  column-gap:12px!important;
+  row-gap:0!important;
   border-radius:999px!important;
-  background:rgba(255,255,255,0.12)!important;
-  border:1px solid rgba(255,255,255,0.25)!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.055))!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 18px 60px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.16)!important;
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  overflow:hidden!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
 }
-
 .privacy-consent-row label{
-  display:flex!important;
-  align-items:center!important;
-  gap:10px!important;
-  font-weight:700!important;
+  display:contents!important;
+  margin:0!important;
+  padding:0!important;
   white-space:nowrap!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
 }
-
+.privacy-consent-row input[type="checkbox"]{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  grid-column:1!important;
+  width:24px!important;
+  height:24px!important;
+  min-width:24px!important;
+  margin:0!important;
+  border-radius:8px!important;
+  border:1px solid rgba(255,255,255,.42)!important;
+  background:linear-gradient(135deg,#36f5a6,#15c987)!important;
+  box-shadow:0 8px 24px rgba(52,245,166,.24),inset 0 1px 0 rgba(255,255,255,.45)!important;
+  position:relative!important;
+}
+.privacy-consent-row input[type="checkbox"]::after{
+  content:"✓"!important;
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-55%)!important;
+  color:#07110d!important;
+  font-size:17px!important;
+  font-weight:1000!important;
+}
+.privacy-consent-row label,
+.privacy-consent-row label span,
+.privacy-consent-row label strong{
+  color:#fff!important;
+  font-size:16px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  letter-spacing:-.03em!important;
+}
 .privacy-consent-row a{
+  grid-column:3!important;
+  justify-self:end!important;
+  margin:0!important;
+  padding:12px 18px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
   white-space:nowrap!important;
-  padding:10px 16px!important;
   border-radius:999px!important;
   background:#36f5a6!important;
-  color:#000!important;
-  font-weight:700!important;
+  border:1px solid rgba(52,245,166,.55)!important;
+  color:#07110d!important;
+  font-size:15px!important;
+  line-height:1!important;
+  font-weight:1000!important;
+  text-decoration:none!important;
+  letter-spacing:-.03em!important;
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease!important;
+}
+.privacy-consent-row a:hover{
+  transform:translateY(-2px)!important;
+  box-shadow:0 16px 42px rgba(52,245,166,.28)!important;
+  filter:saturate(1.15)!important;
+}
+.privacy-consent-row br{display:none!important}
+.privacy-consent-row *{writing-mode:horizontal-tb!important;text-orientation:mixed!important}
+
+/* 3. CTA 버튼 애니메이션 */
+.btn,.foil-contact-form button,button[type="submit"]{
+  position:relative!important;
+  overflow:hidden!important;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,filter .28s ease!important;
+}
+.btn::before,.foil-contact-form button::before,button[type="submit"]::before{
+  content:""!important;
+  position:absolute!important;
+  top:0!important;
+  left:-130%!important;
+  width:80%!important;
+  height:100%!important;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent)!important;
+  transform:skewX(-18deg)!important;
+  transition:left .65s ease!important;
+}
+.btn:hover,.foil-contact-form button:hover,button[type="submit"]:hover{
+  transform:translateY(-4px) scale(1.018)!important;
+  box-shadow:0 26px 70px rgba(255,79,139,.32),0 12px 42px rgba(52,245,166,.12)!important;
+  filter:saturate(1.1)!important;
+}
+.btn:hover::before,.foil-contact-form button:hover::before,button[type="submit"]:hover::before{
+  left:130%!important;
+}
+
+/* 4. 카드 hover 고급 인터랙션 */
+.card,.gallery-card,.feature-item,.ops-strength-grid > *,.crm-screen-shot,.promise-card{
+  will-change:transform!important;
+}
+.card:hover,.gallery-card:hover{
+  transform:translateY(-10px) scale(1.018)!important;
+  box-shadow:0 34px 90px rgba(0,0,0,.34),0 0 70px rgba(244,114,182,.10)!important;
+  border-color:rgba(255,255,255,.24)!important;
+}
+.gallery-card img,.hero-center-img-v31 img{
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease!important;
+}
+.gallery-card:hover img{
+  transform:scale(1.035)!important;
+  filter:saturate(1.08) contrast(1.04)!important;
+}
+
+/* 5. 스크롤 등장 효과 */
+.reveal-v31{
+  opacity:0;
+  transform:translateY(36px);
+  transition:opacity .72s ease,transform .72s cubic-bezier(.2,.8,.2,1);
+}
+.reveal-v31.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* 6. A/B 테스트용 전환 구조: hero variant 표시만 부드럽게 */
+body[data-ab="b"] .chip::after{
+  content:" · 무료 상담 가능";
+  color:#34f5a6;
 }
 
 /* 모바일 */
-@media(max-width:768px){
+@media(max-width:1100px){
   .premium-promise-diagram{
-    grid-template-columns:1fr!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    max-width:760px!important;
   }
-  .hero-center-img img{
-    width:90%;
-  }
+  .premium-promise-diagram .promise-card{min-width:0!important}
+}
+@media(max-width:720px){
+  .hero-center-img-v31 img{width:94vw!important;max-height:300px!important;border-radius:22px!important}
+  .premium-promise-diagram{grid-template-columns:1fr!important;gap:14px!important}
+  .premium-promise-diagram .promise-card{min-height:112px!important}
   .privacy-consent-row{
-    flex-direction:column!important;
-    align-items:flex-start!important;
+    width:100%!important;
+    grid-template-columns:auto 1fr!important;
+    border-radius:22px!important;
+    padding:16px!important;
+    row-gap:12px!important;
+  }
+  .privacy-consent-row a{
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
+  .privacy-consent-row label,
+  .privacy-consent-row label span,
+  .privacy-consent-row label strong{
+    white-space:normal!important;
+    line-height:1.35!important;
+    font-size:15px!important;
   }
 }
 </style>
+
+<script id="foil-v31-final-script">
+(function(){
+  function ready(fn){document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn)}
+  ready(function(){
+    /* 스크롤 등장 효과 */
+    var targets=document.querySelectorAll(".section-block,.card,.gallery-card,.crm-screen-shot,.feature-item,.promise-card,.hero-center-img-v31");
+    targets.forEach(function(el){el.classList.add("reveal-v31")});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+    targets.forEach(function(el){io.observe(el)});
+
+    /* A/B 테스트용: 방문자별 히어로 소구 가볍게 분기 */
+    var key="foil_ab_variant";
+    var v=localStorage.getItem(key);
+    if(!v){v=Math.random()>.5?"a":"b";localStorage.setItem(key,v)}
+    document.body.setAttribute("data-ab",v);
+  });
+})();
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -1227,6 +1433,7 @@ footer > div:not(.container){display:none!important}
 <div class="chip">프랜차이즈 본부를 위한 유연한 영업 지원 구조</div>
 <h1>본사의 오프라인<br/>가맹영업 담당자를<br/>만날 수 있는<br/><span class="grad hero-platform-emphasis">프랜차이즈 영업 플랫폼</span></h1>
 <div class="hero-desc">온라인-오프라인 전문인력 매칭부터 랜딩페이지 제작, 온라인 리드 수집, 본부 실시간 DB관리, 어드민, SMS, 리드 배치까지 원스톱으로 연결되는 프랜차이즈 가맹영업 시스템을 제공합니다</div>
+<div class="hero-center-img-v31"><img alt="본사 운영 및 컨퍼런스 장면" loading="lazy" src="https://images.pexels.com/photos/4940642/pexels-photo-4940642.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/></div>
 <div class="premium-promise-diagram" aria-label="핵심 운영 조건">
   <div class="promise-card hot"><span>01</span><strong>초기 비용 0</strong></div>
   <div class="promise-card"><span>02</span><strong>온라인/오프라인<br/>자율 선택</strong></div>
@@ -1238,7 +1445,6 @@ footer > div:not(.container){display:none!important}
 <div class="btn-row"><a class="btn btn-primary" href="#contact">도입 문의하기</a><a class="btn btn-secondary" href="#crm">CRM 보기</a></div>
 <div class="mini-grid"><div class="mini-card"><div class="mini-title">초기 비용 0</div><div class="mini-desc">건바이건 진행 가능</div></div><div class="mini-card"><div class="mini-title">자율 선택</div><div class="mini-desc">온라인/오프라인 자유 구성</div></div><div class="mini-card"><div class="mini-title">월별 계약</div><div class="mini-desc">원할 때 해지 가능</div></div></div>
 </div>
-<div><img alt="본사 운영 및 컨퍼런스 장면" class="hero-img" loading="lazy" src="https://images.pexels.com/photos/4940642/pexels-photo-4940642.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"/></div>
 </div></section>
 <section class="section-block" id="service"><div class="container">
 <div class="section-head service-head-compact"><div class="eyebrow">CORE DIFFERENCE</div><h2>운영 구조가 달라지면<br/>가맹영업의 흐름도 달라집니다</h2></div>
