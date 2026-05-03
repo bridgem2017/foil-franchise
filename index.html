@@ -2681,6 +2681,24 @@ input[name="privacy_agree"]:checked::after{
 }
 </style>
 
+
+<style>
+.foil-footer-info-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:10px 20px;
+  margin-top:20px;
+  font-size:14px;
+  color:#1f2937;
+  text-align:center;
+}
+@media(max-width:900px){
+  .foil-footer-info-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+</style>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -2838,26 +2856,23 @@ input[name="privacy_agree"]:checked::after{
     <a href="privacy.html">개인정보보호정책</a>
   </nav>
 
-  <div class="foil-footer-info">
-    <div class="foil-footer-info-row">
-      <span>대표 : 김운기</span>
-      <span>사업자등록번호 : 127-28-86665</span>
-      <span>개인정보책임자 : 박성인</span>
-    </div>
-    <div class="foil-footer-info-row">
-      <span>대표전화 : 070-8098-5877</span>
-      <span>팩스번호 : 070-4253-1177</span>
-      <span>상담 메일 : admin@foil.co.kr</span>
-    </div>
-    <div class="foil-footer-info-row">
-      <span>영업시간 : 평일 09:00 - 18:00</span>
-      <span>주소 : 서울시 강서구 마곡중앙4로 22 A409</span>
-    </div>
-  </div>
+  
+<div class="foil-footer-info-grid">
+  <div>대표 : 김운기</div>
+  <div>사업자등록번호 : 127-28-86665</div>
+  <div>개인정보책임자 : 박성인</div>
+  <div>대표전화 : 070-8098-5877</div>
 
-  <div class="foil-footer-copy">
-    Copyrights 2026 BRIDGEM Co.,Ltd. All rights reserved.
-  </div>
+  <div>팩스번호 : 070-4253-1177</div>
+  <div>상담 메일 : admin@foil.co.kr</div>
+  <div>영업시간 : 평일 09:00 - 18:00</div>
+  <div>주소 : 서울시 강서구 마곡중앙4로 22 A409</div>
+</div>
+
+<div class="foil-footer-copy">
+  Copyrights 2026 BRIDGEM Co.,Ltd. All rights reserved.
+</div>
+
 </footer>
 
 
