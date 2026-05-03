@@ -2521,43 +2521,7 @@ document.addEventListener("DOMContentLoaded", function(){
 }
 </style>
 
-<script id="foil-v43-privacy-final-fix-script">
-document.addEventListener("DOMContentLoaded", function(){
-  document.querySelectorAll(".privacy-consent-row").forEach(function(row){
-    var oldInput = row.querySelector('input[type="checkbox"]');
-    var oldLink = row.querySelector('a');
-    var linkHref = oldLink ? oldLink.getAttribute("href") : "#";
-    var linkTarget = oldLink ? oldLink.getAttribute("target") : null;
 
-    row.innerHTML = "";
-
-    var label = document.createElement("label");
-    label.className = "privacy-agree-line-v43";
-
-    var cb = document.createElement("input");
-    cb.type = "checkbox";
-    cb.name = oldInput && oldInput.name ? oldInput.name : "privacy_agree";
-    cb.checked = true;
-    cb.defaultChecked = true;
-    cb.required = oldInput && oldInput.required ? true : true;
-
-    var span = document.createElement("span");
-    span.className = "privacy-agree-text-v43";
-    span.textContent = "개인정보보호에 동의합니다.";
-
-    label.appendChild(cb);
-    label.appendChild(span);
-    row.appendChild(label);
-
-    var a = document.createElement("a");
-    a.className = "privacy-link-v43";
-    a.href = linkHref || "#";
-    if(linkTarget) a.target = linkTarget;
-    a.textContent = "개인정보처리 방침 보기";
-    row.appendChild(a);
-  });
-});
-</script>
 
 </head>
 <body class="premium-theme">
@@ -2741,4 +2705,14 @@ document.querySelectorAll('.mode-btn').forEach(btn=>btn.addEventListener('click'
   });
 })();
 </script>
+
+<script id="foil-v44-checkbox-only-fix">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('.privacy-consent-row input[type="checkbox"]').forEach(function(cb){
+    cb.checked = true;
+    cb.defaultChecked = true;
+  });
+});
+</script>
+
 </body></html>
