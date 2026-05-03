@@ -1,0 +1,1 @@
+FOIL franchise v47 footer final
