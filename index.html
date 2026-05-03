@@ -2594,16 +2594,99 @@ input[name="privacy_agree"]:checked::after{
 </style>
 
 
-<style id="foil-v48-footer-style">
-#foil-v48-company-footer{width:100%;background:#f5efe5;border-top:1px solid rgba(15,23,42,.10);padding:42px 18px 20px;color:#071326;font-family:inherit}
-#foil-v48-company-footer .footer-inner{max-width:1280px;margin:0 auto;text-align:center}
-#foil-v48-company-footer .footer-nav{display:flex;justify-content:center;align-items:center;gap:48px;margin:0 0 24px;font-size:22px;font-weight:1000;letter-spacing:-.04em}
-#foil-v48-company-footer .footer-nav a{color:#071326;text-decoration:none;white-space:nowrap}
-#foil-v48-company-footer .footer-nav a:hover{opacity:.72}
-#foil-v48-company-footer .footer-info{display:flex;flex-direction:column;gap:12px;font-size:19px;line-height:1.4;font-weight:500;letter-spacing:-.035em}
-#foil-v48-company-footer .footer-info-row{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap}
-#foil-v48-company-footer .footer-copy{margin-top:18px;font-size:24px;line-height:1.25;font-weight:1000;letter-spacing:-.045em;color:#071326}
-@media(max-width:900px){#foil-v48-company-footer{padding:34px 16px 18px}#foil-v48-company-footer .footer-nav{gap:18px 24px;flex-wrap:wrap;font-size:18px;margin-bottom:20px}#foil-v48-company-footer .footer-info{font-size:15px;gap:8px}#foil-v48-company-footer .footer-info-row{gap:8px 14px}#foil-v48-company-footer .footer-copy{font-size:18px}}
+<style id="foil-v49-footer-style">
+/* FOIL v49 footer - added without changing existing page */
+#foil-v49-company-footer{
+  width:100%;
+  background:#f5efe5;
+  border-top:1px solid rgba(15,23,42,.10);
+  padding:38px 18px 18px;
+  color:#071326;
+  font-family:inherit;
+  box-sizing:border-box;
+}
+#foil-v49-company-footer *{box-sizing:border-box}
+#foil-v49-company-footer .footer-inner{
+  max-width:1280px;
+  margin:0 auto;
+  text-align:center;
+}
+#foil-v49-company-footer .footer-nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:46px;
+  margin:0 0 22px;
+  font-size:22px;
+  font-weight:1000;
+  letter-spacing:-.04em;
+  line-height:1.2;
+}
+#foil-v49-company-footer .footer-nav a{
+  color:#071326;
+  text-decoration:none;
+  white-space:nowrap;
+}
+#foil-v49-company-footer .footer-nav a:hover{opacity:.72}
+#foil-v49-company-footer .footer-existing{
+  margin:0 auto 18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  color:#071326;
+  font-size:15px;
+  line-height:1.45;
+  font-weight:600;
+}
+#foil-v49-company-footer .footer-info{
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+  font-size:19px;
+  line-height:1.4;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+#foil-v49-company-footer .footer-info-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+#foil-v49-company-footer .footer-copy{
+  margin-top:16px;
+  font-size:24px;
+  line-height:1.25;
+  font-weight:1000;
+  letter-spacing:-.045em;
+  color:#071326;
+}
+@media(max-width:900px){
+  #foil-v49-company-footer{padding:32px 16px 18px}
+  #foil-v49-company-footer .footer-nav{
+    gap:16px 22px;
+    flex-wrap:wrap;
+    font-size:18px;
+    margin-bottom:18px;
+  }
+  #foil-v49-company-footer .footer-existing{
+    font-size:13px;
+    gap:6px 10px;
+  }
+  #foil-v49-company-footer .footer-info{
+    font-size:15px;
+    gap:8px;
+  }
+  #foil-v49-company-footer .footer-info-row{
+    gap:8px 14px;
+  }
+  #foil-v49-company-footer .footer-copy{
+    font-size:18px;
+  }
+}
 </style>
 
 </head>
@@ -2819,7 +2902,7 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 
-<footer id="foil-v48-company-footer">
+<footer id="foil-v49-company-footer">
   <div class="footer-inner">
     <nav class="footer-nav" aria-label="하단 메뉴">
       <a href="index.html">HOME</a>
@@ -2827,6 +2910,12 @@ document.addEventListener("DOMContentLoaded", function(){
       <a href="terms.html">이용약관</a>
       <a href="privacy.html">개인정보보호정책</a>
     </nav>
+
+    <div class="footer-existing">
+      <span>© 2026 FOIL. Franchise Growth Partner.</span>
+      <span>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: admin@foil.co.kr</span>
+    </div>
+
     <div class="footer-info">
       <div class="footer-info-row">
         <span>대표 : 김운기</span>
@@ -2843,6 +2932,7 @@ document.addEventListener("DOMContentLoaded", function(){
         <span>주소 : 서울시 강서구 마곡중앙4로 22 A409</span>
       </div>
     </div>
+
     <div class="footer-copy">Copyrights 2026 BRIDGEM Co.,Ltd. All rights reserved.</div>
   </div>
 </footer>
