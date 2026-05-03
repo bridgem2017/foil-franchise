@@ -1013,6 +1013,52 @@ footer > div:not(.container){display:none!important}
 }
 </style>
 
+
+<style id="foil-v27-patch">
+/* 개인정보 동의 가로 1열 강제 */
+.privacy-consent-row{
+  width:100%!important;
+  max-width:900px!important;
+  margin:0 auto!important;
+  padding:22px 28px!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:16px!important;
+  border-radius:22px!important;
+}
+
+.privacy-consent-row label{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  gap:12px!important;
+  white-space:nowrap!important;
+  font-size:16px!important;
+  font-weight:900!important;
+}
+
+.privacy-consent-row a{
+  margin-left:auto!important;
+  white-space:nowrap!important;
+}
+
+/* 모바일에서는 줄바꿈 허용 */
+@media(max-width:720px){
+  .privacy-consent-row{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+  }
+  .privacy-consent-row label{
+    white-space:normal!important;
+  }
+  .privacy-consent-row a{
+    margin-left:0!important;
+  }
+}
+</style>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
