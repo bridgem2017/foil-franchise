@@ -2594,173 +2594,109 @@ input[name="privacy_agree"]:checked::after{
 </style>
 
 
-<style id="foil-v52-footer-final-style">
-/* FOIL v52 footer: 기존 페이지는 그대로 두고, 하단 푸터만 정확히 표시 */
-.foil-final-footer{
-  width:100%;
-  background:#f5efe5 !important;
-  color:#071326 !important;
-  border-top:1px solid rgba(15,23,42,.12);
-  padding:38px 16px 22px;
-  margin:0;
-  text-align:center;
-  box-sizing:border-box;
-  font-family:inherit;
-}
-.foil-final-footer *{box-sizing:border-box}
-.foil-final-footer a,
-.foil-final-footer span,
-.foil-final-footer div{
-  color:#071326 !important;
-  -webkit-text-fill-color:#071326 !important;
-  text-shadow:none !important;
-}
-.foil-final-footer .foil-footer-nav{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:46px;
-  flex-wrap:wrap;
-  margin:0 0 22px;
-  padding:0;
-  font-size:22px;
-  line-height:1.2;
-  font-weight:1000;
-  letter-spacing:-.04em;
-}
-.foil-final-footer .foil-footer-nav a{
-  text-decoration:none;
-  white-space:nowrap;
-}
-.foil-final-footer .foil-footer-nav a:hover{opacity:.72}
-.foil-final-footer .foil-footer-current{
-  max-width:1280px;
-  margin:0 auto 18px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px 18px;
-  flex-wrap:wrap;
-  font-size:15px;
-  line-height:1.45;
-  font-weight:650;
-  letter-spacing:-.03em;
-}
-.foil-final-footer .foil-footer-info{
-  max-width:1280px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:11px;
-  font-size:19px;
-  line-height:1.4;
-  font-weight:500;
-  letter-spacing:-.035em;
-}
-.foil-final-footer .foil-footer-info-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:28px;
-  flex-wrap:wrap;
-}
-.foil-final-footer .foil-footer-copy{
-  margin-top:16px;
-  font-size:24px;
-  line-height:1.25;
-  font-weight:1000;
-  letter-spacing:-.045em;
-}
-@media(max-width:900px){
-  .foil-final-footer{padding:32px 14px 20px}
-  .foil-final-footer .foil-footer-nav{gap:16px 22px;font-size:18px;margin-bottom:18px}
-  .foil-final-footer .foil-footer-current{font-size:13px;gap:6px 10px}
-  .foil-final-footer .foil-footer-info{font-size:15px;gap:8px}
-  .foil-final-footer .foil-footer-info-row{gap:8px 14px}
-  .foil-final-footer .foil-footer-copy{font-size:18px}
-}
-</style>
 
 
-<style id="foil-v55-footer-style">
-/* FOIL v55 footer final */
+
+<style id="foil-v56-footer-visible-style">
+/* FOIL v56 footer final - 강제 표시 버전 */
 .foil-final-footer{
-  width:100%;
+  width:100% !important;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative !important;
+  z-index:999 !important;
   background:#f5efe5 !important;
-  color:#071326 !important;
-  border-top:1px solid rgba(15,23,42,.12);
-  padding:42px 16px 24px;
-  margin:0;
-  text-align:center;
-  box-sizing:border-box;
-  font-family:inherit;
+  border-top:1px solid rgba(15,23,42,.12) !important;
+  padding:44px 16px 26px !important;
+  margin:0 !important;
+  text-align:center !important;
+  box-sizing:border-box !important;
+  overflow:visible !important;
+  height:auto !important;
+  min-height:auto !important;
+  max-height:none !important;
+  font-family:inherit !important;
 }
-.foil-final-footer *{box-sizing:border-box}
-.foil-final-footer a,
-.foil-final-footer div,
-.foil-final-footer span{
+.foil-final-footer,
+.foil-final-footer *{
+  box-sizing:border-box !important;
   color:#071326 !important;
   -webkit-text-fill-color:#071326 !important;
+  opacity:1 !important;
+  visibility:visible !important;
   text-shadow:none !important;
+  filter:none !important;
+  mix-blend-mode:normal !important;
 }
 .foil-final-footer .foil-footer-nav{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:46px;
-  flex-wrap:wrap;
-  margin:0 0 26px;
-  padding:0;
-  font-size:22px;
-  line-height:1.2;
-  font-weight:1000;
-  letter-spacing:-.04em;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  gap:46px !important;
+  flex-wrap:wrap !important;
+  margin:0 0 26px !important;
+  padding:0 !important;
+  font-size:22px !important;
+  line-height:1.2 !important;
+  font-weight:1000 !important;
+  letter-spacing:-.04em !important;
 }
 .foil-final-footer .foil-footer-nav a{
-  text-decoration:none;
-  white-space:nowrap;
+  display:inline-block !important;
+  text-decoration:none !important;
+  white-space:nowrap !important;
 }
-.foil-final-footer .foil-footer-nav a:hover{opacity:.72}
+.foil-final-footer .foil-footer-nav a:hover{
+  opacity:.72 !important;
+}
 .foil-final-footer .foil-footer-info-grid{
-  max-width:1280px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:12px 28px;
-  align-items:center;
-  text-align:center;
-  font-size:18px;
-  line-height:1.35;
-  font-weight:500;
-  letter-spacing:-.035em;
+  max-width:1280px !important;
+  margin:0 auto !important;
+  display:grid !important;
+  grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+  gap:12px 28px !important;
+  align-items:center !important;
+  text-align:center !important;
+  font-size:18px !important;
+  line-height:1.35 !important;
+  font-weight:500 !important;
+  letter-spacing:-.035em !important;
+}
+.foil-final-footer .foil-footer-info-grid div{
+  display:block !important;
+  min-height:1.35em !important;
+  white-space:normal !important;
 }
 .foil-final-footer .foil-footer-copy{
-  margin:22px auto 0;
-  font-size:24px;
-  line-height:1.25;
-  font-weight:1000;
-  letter-spacing:-.045em;
+  display:block !important;
+  margin:22px auto 0 !important;
+  padding:0 !important;
+  font-size:24px !important;
+  line-height:1.25 !important;
+  font-weight:1000 !important;
+  letter-spacing:-.045em !important;
 }
 @media(max-width:1000px){
   .foil-final-footer .foil-footer-nav{
-    gap:18px 26px;
-    font-size:18px;
+    gap:18px 26px !important;
+    font-size:18px !important;
   }
   .foil-final-footer .foil-footer-info-grid{
-    grid-template-columns:repeat(2, 1fr);
-    font-size:15px;
-    gap:10px 16px;
+    grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+    font-size:15px !important;
+    gap:10px 16px !important;
   }
   .foil-final-footer .foil-footer-copy{
-    font-size:18px;
+    font-size:18px !important;
   }
 }
 @media(max-width:560px){
   .foil-final-footer{
-    padding:32px 14px 20px;
+    padding:32px 14px 22px !important;
   }
   .foil-final-footer .foil-footer-info-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr !important;
   }
 }
 </style>
