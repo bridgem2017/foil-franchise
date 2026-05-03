@@ -2559,6 +2559,40 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+
+<style id="foil-v46-checkbox-only-style">
+/* v46: 개인정보 체크박스만 정상 체크 표시. 나머지 디자인/텍스트/외곽선 유지 */
+.privacy-consent-row input[type="checkbox"],
+.privacy-line-v32 input[type="checkbox"],
+.privacy-agree-line-v43 input[type="checkbox"],
+input[name="privacy_agree"]{
+  position:relative !important;
+  pointer-events:auto !important;
+  cursor:pointer !important;
+}
+
+/* 기존 커스텀 체크박스가 appearance:none 이라 checked가 안 보이는 문제 보정 */
+.privacy-consent-row input[type="checkbox"]:checked::after,
+.privacy-line-v32 input[type="checkbox"]:checked::after,
+.privacy-agree-line-v43 input[type="checkbox"]:checked::after,
+input[name="privacy_agree"]:checked::after{
+  content:"✓" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-56%) !important;
+  display:block !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  color:#06110e !important;
+  font-size:15px !important;
+  line-height:1 !important;
+  font-weight:1000 !important;
+  z-index:5 !important;
+  pointer-events:none !important;
+}
+</style>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -2741,4 +2775,34 @@ document.querySelectorAll('.mode-btn').forEach(btn=>btn.addEventListener('click'
   });
 })();
 </script>
+
+<script id="foil-v46-checkbox-only-script">
+document.addEventListener("DOMContentLoaded", function(){
+  const boxes = document.querySelectorAll(
+    '.privacy-consent-row input[type="checkbox"], .privacy-line-v32 input[type="checkbox"], .privacy-agree-line-v43 input[type="checkbox"], input[name="privacy_agree"]'
+  );
+
+  boxes.forEach(function(cb){
+    cb.checked = true;
+    cb.defaultChecked = true;
+    cb.setAttribute("checked", "checked");
+    cb.disabled = false;
+    cb.removeAttribute("disabled");
+    cb.style.pointerEvents = "auto";
+    cb.style.cursor = "pointer";
+  });
+
+  /* label 또는 박스 클릭 시 체크박스가 먹통인 경우를 방지 */
+  document.querySelectorAll('.privacy-consent-row label, .privacy-line-v32, .privacy-agree-line-v43').forEach(function(label){
+    label.addEventListener("click", function(e){
+      const cb = label.querySelector('input[type="checkbox"]');
+      if(cb && e.target !== cb){
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event("change", {bubbles:true}));
+      }
+    });
+  });
+});
+</script>
+
 </body></html>
