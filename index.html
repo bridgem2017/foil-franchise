@@ -678,6 +678,83 @@ ready(function(){
 })();
 </script>
 
+
+<style id="foil-v23-final-patch">
+html,body{overflow-x:hidden!important;max-width:100%!important}
+*{box-sizing:border-box}
+.foil-v23-hero-cards{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:18px!important;width:100%!important;max-width:100%!important;margin:30px 0 34px!important}
+.foil-v23-hero-card{min-height:168px!important;padding:30px 14px!important;border-radius:30px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;text-align:center!important;color:#fff!important;font-weight:1000!important;font-size:clamp(24px,2.45vw,38px)!important;line-height:1.08!important;letter-spacing:-.065em!important;word-break:keep-all!important;border:1px solid rgba(255,255,255,.18)!important;background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.035))!important;box-shadow:0 18px 58px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.08)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,background .32s ease,color .32s ease,border-color .32s ease!important}
+.foil-v23-hero-card .num{display:block!important;margin-bottom:12px!important;font-size:clamp(15px,1.3vw,20px)!important;letter-spacing:.1em!important;color:#ff8bd1!important}
+.foil-v23-hero-card:nth-child(1){background:linear-gradient(145deg,#ff4f8b,#59246c)!important}.foil-v23-hero-card:nth-child(2){background:linear-gradient(145deg,#6ea8ff,#7c3aed)!important}.foil-v23-hero-card:nth-child(3){background:linear-gradient(145deg,#32f5a6,#08796f)!important;color:#06110e!important}.foil-v23-hero-card:nth-child(4){background:linear-gradient(145deg,#ff9e45,#ff4f8b)!important}.foil-v23-hero-card:nth-child(5){background:linear-gradient(145deg,#ffffff,#dfe7ff)!important;color:#111827!important}
+.foil-v23-hero-card:hover{transform:translateY(-14px) scale(1.045)!important;background:rgba(255,255,255,.9)!important;color:#07110d!important;border-color:rgba(255,255,255,.72)!important;box-shadow:0 36px 110px rgba(52,245,166,.26),0 18px 70px rgba(255,79,139,.18),inset 0 1px 0 rgba(255,255,255,.78)!important}.foil-v23-hero-card:hover *{color:#07110d!important}.foil-v23-source-hidden{display:none!important}
+.hero-emphasis-v23,h1 .hero-emphasis-v23{display:inline-block!important;font-size:1.08em!important;line-height:.98!important;font-weight:1000!important;letter-spacing:-.08em!important;background:linear-gradient(90deg,#d8b4fe 0%,#ff86d7 45%,#34f5a6 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;text-shadow:0 0 44px rgba(216,180,254,.22)!important;font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif!important}
+.foil-v23-crm-card{position:relative!important;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,background .3s ease,color .3s ease,border-color .3s ease!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:22px!important;background:rgba(255,255,255,.045)!important;color:#fff!important;isolation:isolate!important}
+.foil-v23-crm-card:hover{transform:translateY(-10px) scale(1.025)!important;background:linear-gradient(135deg,#f0fff7,#c8ffe8)!important;color:#06110e!important;border-color:rgba(52,245,166,.68)!important;box-shadow:0 28px 85px rgba(52,245,166,.22),inset 0 1px 0 rgba(255,255,255,.78)!important}.foil-v23-crm-card:hover *{color:#06110e!important}
+.foil-v23-strength-card{text-align:center!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;min-height:170px!important;padding:28px 22px!important;border-radius:28px!important;background:linear-gradient(135deg,#dfffee 0%,#c9f7e8 48%,#d9d3ff 100%)!important;color:#06110e!important;border:1px solid rgba(52,245,166,.32)!important;box-shadow:0 18px 55px rgba(52,245,166,.08),inset 0 1px 0 rgba(255,255,255,.58)!important;transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,background .32s ease,color .32s ease,border-color .32s ease!important}
+.foil-v23-strength-card *{text-align:center!important;color:#06110e!important}.foil-v23-strength-card h3,.foil-v23-strength-card h4,.foil-v23-strength-card strong,.foil-v23-strength-card b{font-size:clamp(28px,3vw,40px)!important;line-height:1.12!important;letter-spacing:-.06em!important;font-weight:1000!important}.foil-v23-strength-card p{font-size:clamp(17px,1.55vw,21px)!important;line-height:1.6!important}
+.foil-v23-strength-card:hover{transform:translateY(-12px) scale(1.03)!important;background:linear-gradient(135deg,#111827,#25102b)!important;color:#fff!important;border-color:rgba(255,255,255,.3)!important;box-shadow:0 32px 95px rgba(255,79,139,.18),0 18px 70px rgba(52,245,166,.18)!important}.foil-v23-strength-card:hover *{color:#fff!important}
+.privacy-consent-row{width:100%!important;max-width:560px!important;min-width:min(560px,100%)!important;min-height:auto!important;padding:20px 24px!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:12px!important;border-radius:22px!important;background:rgba(255,255,255,.075)!important;border:1px solid rgba(255,255,255,.18)!important;writing-mode:horizontal-tb!important;text-orientation:mixed!important}
+.privacy-consent-row label{width:100%!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-start!important;gap:12px!important;white-space:nowrap!important;word-break:keep-all!important;writing-mode:horizontal-tb!important;text-orientation:mixed!important;font-size:17px!important;line-height:1.35!important;font-weight:900!important}
+.privacy-consent-row input{flex:0 0 auto!important;width:20px!important;height:20px!important;min-width:20px!important}.privacy-consent-row a{writing-mode:horizontal-tb!important;text-orientation:mixed!important}.foil-v23-form-notice{color:#ff3939!important;font-weight:1000!important;text-align:center!important;word-break:keep-all!important}
+@media(max-width:980px){.foil-v23-hero-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}.foil-v23-hero-card{min-height:118px!important}.privacy-consent-row{max-width:100%!important;min-width:0!important}}
+@media(max-width:640px){.foil-v23-hero-cards{grid-template-columns:1fr!important;gap:12px!important}.foil-v23-hero-card{min-height:88px!important;padding:20px!important;font-size:clamp(22px,7vw,32px)!important}.privacy-consent-row label{white-space:normal!important}}
+</style>
+<script id="foil-v23-final-script">
+(function(){
+function ready(fn){document.readyState!=='loading'?fn():document.addEventListener('DOMContentLoaded',fn)}
+ready(function(){
+ var labels=['초기 비용 0','온라인/오프라인 자율 선택','본부 실시간 확인형 CRM','오프라인 전문인력 배치','월별 계약'];
+ if(!document.querySelector('.foil-v23-hero-cards')){
+  var matches=[];
+  document.querySelectorAll('div,article,li').forEach(function(el){
+   var t=(el.innerText||'').replace(/\s+/g,'').trim();
+   labels.forEach(function(label){
+    var key=label.replace(/\s+/g,'');
+    if((t===key || (t.includes(key)&&t.length<60)) && !matches.includes(el)){matches.push(el)}
+   });
+  });
+  if(matches.length>=5){
+   var first=matches[0], parent=first.parentElement;
+   matches.slice(0,5).forEach(function(el){el.classList.add('foil-v23-source-hidden')});
+   var row=document.createElement('div');row.className='foil-v23-hero-cards';
+   labels.forEach(function(label,i){
+    var card=document.createElement('div');card.className='foil-v23-hero-card';
+    var txt=label.replace('온라인/오프라인 자율 선택','온라인/오프라인<br>자율 선택').replace('본부 실시간 확인형 CRM','본부 실시간<br>확인형 CRM').replace('오프라인 전문인력 배치','오프라인<br>전문인력 배치');
+    card.innerHTML='<span class="num">'+String(i+1).padStart(2,'0')+'</span>'+txt;
+    row.appendChild(card);
+   });
+   parent.insertBefore(row,first);
+  }
+ }
+ document.querySelectorAll('h1,h2').forEach(function(el){
+  var txt=(el.innerText||'').replace(/\s+/g,'');
+  if(txt.includes('본사가선택하고시스템이연결하는프랜차이즈영업플랫폼') || txt.includes('본사의오프라인가맹영업담당자를만날수있는프랜차이즈영업플랫폼')){
+   el.innerHTML='본사의 오프라인<br>가맹영업 담당자를<br>만날 수 있는<br><span class="hero-emphasis-v23">프랜차이즈 영업 플랫폼</span>';
+  }
+ });
+ var crmKeys=['본사와 FOIL','실시간 DB','상담 메모','즉시 대응용 SMS','리드별 FOIL','브랜드 맞춤','초기 구축','광고 병행'];
+ document.querySelectorAll('div,article,li').forEach(function(el){
+  var t=(el.innerText||'').trim();
+  if(t.length>4 && t.length<100 && crmKeys.some(function(k){return t.includes(k)})){el.classList.add('foil-v23-crm-card')}
+ });
+ document.querySelectorAll('.foil-v23-crm-card').forEach(function(card){var p=card.parentElement;if(p){p.style.transition='none'}});
+ var strengthKeys=['요식업 프로세스','물류','CRM 대시보드 운영','본사 실시간 DB 관리','통합 광고 운영','후속 응대와 콜백','계약 검토 단계','브랜드 성장 파이프라인','협업 제안 및 파트너십'];
+ document.querySelectorAll('div,article,li').forEach(function(el){
+  var t=(el.innerText||'').trim();
+  if(t.length>4 && t.length<150 && strengthKeys.some(function(k){return t.includes(k)})){el.classList.add('foil-v23-strength-card')}
+ });
+ document.querySelectorAll('.privacy-consent-row,.privacy-consent-row *').forEach(function(el){el.style.writingMode='horizontal-tb';el.style.textOrientation='mixed'});
+ document.querySelectorAll('p,div,span,small').forEach(function(el){
+  var text=(el.innerText||'').trim();
+  if(text.includes('문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야')){
+   el.innerText='문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야 정상 접수됩니다.';
+   el.classList.add('foil-v23-form-notice');
+  }
+ });
+});
+})();
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -822,7 +899,7 @@ ready(function(){
 </div>
 
 <button type="submit" class="btn btn-primary">문의접수하기</button>
-  <p class="form-warning">문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야 문의가 정상 접수됩니다.</p>
+  <p class="form-warning">문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야 정상 접수됩니다.</p>
 </form>
 </div></section>
 <footer><div class="container footer-inner"><div>© 2026 FOIL. Franchise Growth Partner.</div><div>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: admin@foil.co.kr</div></div><div style="margin-top:12px;"><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:700;text-decoration:none;">회사소개</a></div></footer>
