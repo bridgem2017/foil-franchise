@@ -1676,6 +1676,62 @@ body[data-ab="b"] .chip::after{
 }
 </style>
 
+
+<style id="foil-v34-privacy-apple-glow">
+/* v34: 개인정보 동의 첫 줄 외곽선 완전 제거 + Apple glow */
+.privacy-consent-row label,
+.privacy-consent-row .privacy-line-v32,
+.privacy-line-v32{
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:
+    0 22px 65px rgba(0,0,0,.24),
+    0 0 45px rgba(52,245,166,.10),
+    inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+
+/* 기존 border가 ::before/::after로 들어간 경우까지 제거 */
+.privacy-consent-row label::before,
+.privacy-consent-row label::after,
+.privacy-line-v32::before,
+.privacy-line-v32::after{
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:none !important;
+}
+
+/* 체크+문구 박스는 테두리 없이 부드러운 글래스 배경만 */
+.privacy-consent-row label{
+  background:
+    radial-gradient(circle at 20% 15%, rgba(52,245,166,.18), transparent 32%),
+    linear-gradient(135deg, rgba(255,255,255,.13), rgba(255,255,255,.045)) !important;
+  backdrop-filter:blur(22px) saturate(1.15) !important;
+  -webkit-backdrop-filter:blur(22px) saturate(1.15) !important;
+}
+
+/* hover 때도 외곽선 생기지 않게 고정 */
+.privacy-consent-row label:hover,
+.privacy-line-v32:hover{
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:
+    0 28px 85px rgba(0,0,0,.26),
+    0 0 60px rgba(52,245,166,.18),
+    0 0 36px rgba(255,79,139,.08),
+    inset 0 1px 0 rgba(255,255,255,.18) !important;
+  transform:translateY(-2px) !important;
+}
+
+/* 버튼은 기존 느낌 유지하되 더 깊이감 있게 */
+.privacy-consent-row a,
+.privacy-link-v32{
+  box-shadow:
+    0 18px 55px rgba(52,245,166,.13),
+    0 0 36px rgba(52,245,166,.09),
+    inset 0 1px 0 rgba(255,255,255,.16) !important;
+}
+</style>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
