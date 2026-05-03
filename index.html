@@ -884,9 +884,138 @@ footer > div:not(.container){display:none!important}
 }
 </style>
 
+
+<style id="foil-v26-final-patch">
+/* v26 final: 기존 디자인 유지 + 요청 3개만 안정 보정 */
+
+/* 3. FOIL 로고 헤더 삽입 */
+.foil-brand-wrap{
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+}
+.foil-header-logo{
+  width:48px!important;
+  height:48px!important;
+  object-fit:contain!important;
+  display:block!important;
+  filter:drop-shadow(0 10px 28px rgba(255,255,255,.18)) drop-shadow(0 0 18px rgba(52,245,166,.12))!important;
+}
+@media(max-width:720px){
+  .foil-header-logo{width:38px!important;height:38px!important}
+  .foil-brand-wrap{gap:9px!important}
+}
+
+/* 1. CRM 오른쪽 텍스트카드: 부모/그룹 hover는 무력화하고 카드 개별 hover만 적용 */
+#crm .feature-grid,
+#crm .features,
+#crm .feature-list,
+#crm .crm-features,
+.crm-wrap .feature-grid,
+.crm-wrap .features,
+.crm-wrap .feature-list,
+.crm-wrap .crm-features{
+  transform:none!important;
+  transition:none!important;
+  box-shadow:none!important;
+}
+#crm .feature-grid:hover,
+#crm .features:hover,
+#crm .feature-list:hover,
+#crm .crm-features:hover,
+.crm-wrap .feature-grid:hover,
+.crm-wrap .features:hover,
+.crm-wrap .feature-list:hover,
+.crm-wrap .crm-features:hover{
+  transform:none!important;
+  box-shadow:none!important;
+  background:transparent!important;
+}
+
+/* v25에서 걸린 그룹성 hover를 피하기 위해 실제 feature-item에만 스타일 강제 */
+#crm .feature-item,
+.crm-wrap .feature-item{
+  position:relative!important;
+  z-index:1!important;
+  overflow:hidden!important;
+  transform:none!important;
+  opacity:1!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  border-radius:22px!important;
+  background:rgba(255,255,255,.045)!important;
+  color:#fff!important;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1), background .28s ease, color .28s ease, box-shadow .28s ease, border-color .28s ease!important;
+}
+#crm .feature-item *,
+.crm-wrap .feature-item *{
+  color:inherit!important;
+}
+#crm .feature-item:hover,
+.crm-wrap .feature-item:hover{
+  transform:translateY(-10px) scale(1.025)!important;
+  background:linear-gradient(135deg,#f0fff7,#c8ffe8)!important;
+  color:#06110e!important;
+  border-color:rgba(52,245,166,.68)!important;
+  box-shadow:0 28px 85px rgba(52,245,166,.22),inset 0 1px 0 rgba(255,255,255,.78)!important;
+}
+#crm .feature-item:hover *,
+.crm-wrap .feature-item:hover *{
+  color:#06110e!important;
+}
+
+/* 2. 개인정보 동의 박스: 텍스트가 박스 안에 여유 있게 들어가도록 박스만 확장 */
+.privacy-consent-row{
+  width:100%!important;
+  max-width:720px!important;
+  min-width:0!important;
+  min-height:auto!important;
+  padding:22px 28px!important;
+  border-radius:24px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:13px!important;
+  background:rgba(255,255,255,.075)!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+}
+.privacy-consent-row label{
+  width:100%!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:12px!important;
+  white-space:normal!important;
+  word-break:keep-all!important;
+  overflow-wrap:normal!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+  font-size:17px!important;
+  line-height:1.35!important;
+  font-weight:900!important;
+}
+.privacy-consent-row input{
+  flex:0 0 auto!important;
+  width:20px!important;
+  height:20px!important;
+  min-width:20px!important;
+  margin:0!important;
+}
+.privacy-consent-row a{
+  display:inline-block!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+}
+@media(max-width:720px){
+  .privacy-consent-row{max-width:100%!important;padding:18px 18px!important}
+  .privacy-consent-row label{font-size:15px!important;white-space:normal!important}
+}
+</style>
+
 </head>
 <body class="premium-theme">
-<header class="header"><div class="container header-inner"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
+<header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
 <section class="section-block" class="hero">
 <div class="container hero-grid">
 <div>
