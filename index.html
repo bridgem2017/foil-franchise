@@ -2682,19 +2682,85 @@ input[name="privacy_agree"]:checked::after{
 </style>
 
 
-<style>
-.foil-footer-info-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:10px 20px;
-  margin-top:20px;
-  font-size:14px;
-  color:#1f2937;
+<style id="foil-v55-footer-style">
+/* FOIL v55 footer final */
+.foil-final-footer{
+  width:100%;
+  background:#f5efe5 !important;
+  color:#071326 !important;
+  border-top:1px solid rgba(15,23,42,.12);
+  padding:42px 16px 24px;
+  margin:0;
   text-align:center;
+  box-sizing:border-box;
+  font-family:inherit;
 }
-@media(max-width:900px){
-  .foil-footer-info-grid{
-    grid-template-columns: repeat(2,1fr);
+.foil-final-footer *{box-sizing:border-box}
+.foil-final-footer a,
+.foil-final-footer div,
+.foil-final-footer span{
+  color:#071326 !important;
+  -webkit-text-fill-color:#071326 !important;
+  text-shadow:none !important;
+}
+.foil-final-footer .foil-footer-nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:46px;
+  flex-wrap:wrap;
+  margin:0 0 26px;
+  padding:0;
+  font-size:22px;
+  line-height:1.2;
+  font-weight:1000;
+  letter-spacing:-.04em;
+}
+.foil-final-footer .foil-footer-nav a{
+  text-decoration:none;
+  white-space:nowrap;
+}
+.foil-final-footer .foil-footer-nav a:hover{opacity:.72}
+.foil-final-footer .foil-footer-info-grid{
+  max-width:1280px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:12px 28px;
+  align-items:center;
+  text-align:center;
+  font-size:18px;
+  line-height:1.35;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+.foil-final-footer .foil-footer-copy{
+  margin:22px auto 0;
+  font-size:24px;
+  line-height:1.25;
+  font-weight:1000;
+  letter-spacing:-.045em;
+}
+@media(max-width:1000px){
+  .foil-final-footer .foil-footer-nav{
+    gap:18px 26px;
+    font-size:18px;
+  }
+  .foil-final-footer .foil-footer-info-grid{
+    grid-template-columns:repeat(2, 1fr);
+    font-size:15px;
+    gap:10px 16px;
+  }
+  .foil-final-footer .foil-footer-copy{
+    font-size:18px;
+  }
+}
+@media(max-width:560px){
+  .foil-final-footer{
+    padding:32px 14px 20px;
+  }
+  .foil-final-footer .foil-footer-info-grid{
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -2848,32 +2914,7 @@ input[name="privacy_agree"]:checked::after{
 </div></section>
 
 
-<footer class="foil-final-footer">
-  <nav class="foil-footer-nav" aria-label="하단 메뉴">
-    <a href="index.html">HOME</a>
-    <a href="https://bridgem.wixsite.com/bridgem" target="_blank">회사소개</a>
-    <a href="terms.html">이용약관</a>
-    <a href="privacy.html">개인정보보호정책</a>
-  </nav>
 
-  
-<div class="foil-footer-info-grid">
-  <div>대표 : 김운기</div>
-  <div>사업자등록번호 : 127-28-86665</div>
-  <div>개인정보책임자 : 박성인</div>
-  <div>대표전화 : 070-8098-5877</div>
-
-  <div>팩스번호 : 070-4253-1177</div>
-  <div>상담 메일 : admin@foil.co.kr</div>
-  <div>영업시간 : 평일 09:00 - 18:00</div>
-  <div>주소 : 서울시 강서구 마곡중앙4로 22 A409</div>
-</div>
-
-<div class="foil-footer-copy">
-  Copyrights 2026 BRIDGEM Co.,Ltd. All rights reserved.
-</div>
-
-</footer>
 
 
 <script>
@@ -2939,5 +2980,28 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 });
 </script>
+
+
+<footer class="foil-final-footer">
+  <nav class="foil-footer-nav" aria-label="하단 메뉴">
+    <a href="index.html">HOME</a>
+    <a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener">회사소개</a>
+    <a href="terms.html">이용약관</a>
+    <a href="privacy.html">개인정보보호정책</a>
+  </nav>
+
+  <div class="foil-footer-info-grid">
+    <div>대표 : 김운기</div>
+    <div>사업자등록번호 : 127-28-86665</div>
+    <div>개인정보책임자 : 박성인</div>
+    <div>대표전화 : 070-8098-5877</div>
+    <div>팩스번호 : 070-4253-1177</div>
+    <div>상담 메일 : admin@foil.co.kr</div>
+    <div>영업시간 : 평일 09:00 - 18:00</div>
+    <div>주소 : 서울시 강서구 마곡중앙4로 22 A409</div>
+  </div>
+
+  <div class="foil-footer-copy">Copyrights 2026 BRIDGEM Co.,Ltd. All rights reserved.</div>
+</footer>
 
 </body></html>
