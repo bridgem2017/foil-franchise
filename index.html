@@ -1424,6 +1424,249 @@ body[data-ab="b"] .chip::after{
 })();
 </script>
 
+
+<style id="foil-v32-privacy-glass-patch">
+/* v32: 개인정보 동의 영역 Apple glass + 2-line layout */
+.privacy-consent-row{
+  width:100%!important;
+  max-width:720px!important;
+  margin:22px auto 30px!important;
+  padding:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  gap:12px!important;
+  border:none!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+}
+
+/* 기존 label 안에 링크가 같이 있어도 1행/2행으로 분리되도록 처리 */
+.privacy-consent-row label{
+  width:100%!important;
+  min-height:64px!important;
+  margin:0!important;
+  padding:18px 22px!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:12px!important;
+  border-radius:22px!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.17),rgba(255,255,255,.055))!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 22px 70px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.18)!important;
+  backdrop-filter:blur(20px)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  white-space:nowrap!important;
+  word-break:keep-all!important;
+  overflow:visible!important;
+  color:#fff!important;
+  font-size:17px!important;
+  line-height:1!important;
+  font-weight:950!important;
+  letter-spacing:-.035em!important;
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease,background .28s ease!important;
+}
+.privacy-consent-row label:hover{
+  transform:translateY(-3px)!important;
+  border-color:rgba(52,245,166,.45)!important;
+  box-shadow:0 30px 90px rgba(52,245,166,.13),0 18px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.28)!important;
+}
+.privacy-consent-row label *{
+  writing-mode:horizontal-tb!important;
+  text-orientation:mixed!important;
+  white-space:nowrap!important;
+}
+.privacy-consent-row br{display:none!important}
+
+.privacy-consent-row input[type="checkbox"]{
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  flex:0 0 26px!important;
+  width:26px!important;
+  height:26px!important;
+  min-width:26px!important;
+  margin:0!important;
+  border-radius:9px!important;
+  border:1px solid rgba(255,255,255,.42)!important;
+  background:linear-gradient(135deg,#41f7ae,#18ce8d)!important;
+  box-shadow:0 10px 28px rgba(52,245,166,.26),inset 0 1px 0 rgba(255,255,255,.5)!important;
+  position:relative!important;
+  cursor:pointer!important;
+}
+.privacy-consent-row input[type="checkbox"]::after{
+  content:"✓"!important;
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  transform:translate(-50%,-56%)!important;
+  color:#07110d!important;
+  font-size:18px!important;
+  font-weight:1000!important;
+  line-height:1!important;
+}
+.privacy-consent-row input[type="checkbox"]:not(:checked){
+  background:rgba(255,255,255,.08)!important;
+}
+.privacy-consent-row input[type="checkbox"]:not(:checked)::after{
+  opacity:0!important;
+}
+
+/* 개인정보처리 방침 보기: 아래 한 줄 버튼 */
+.privacy-consent-row a,
+.privacy-consent-row .privacy-link{
+  width:100%!important;
+  min-height:54px!important;
+  margin:0!important;
+  padding:16px 20px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,rgba(52,245,166,.18),rgba(52,245,166,.08))!important;
+  border:1px solid rgba(52,245,166,.38)!important;
+  box-shadow:0 16px 46px rgba(52,245,166,.10),inset 0 1px 0 rgba(255,255,255,.16)!important;
+  color:#38f7ad!important;
+  text-decoration:none!important;
+  font-size:16px!important;
+  line-height:1!important;
+  font-weight:1000!important;
+  letter-spacing:-.03em!important;
+  white-space:nowrap!important;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),background .28s ease,color .28s ease,box-shadow .28s ease,border-color .28s ease!important;
+}
+.privacy-consent-row a:hover,
+.privacy-consent-row .privacy-link:hover{
+  transform:translateY(-3px)!important;
+  background:linear-gradient(135deg,#38f7ad,#baffdf)!important;
+  color:#06110e!important;
+  border-color:rgba(255,255,255,.58)!important;
+  box-shadow:0 24px 70px rgba(52,245,166,.26),inset 0 1px 0 rgba(255,255,255,.52)!important;
+}
+
+/* fallback: if script creates wrapper */
+.privacy-consent-wrap-v32{
+  width:100%!important;
+  max-width:720px!important;
+  margin:22px auto 30px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:12px!important;
+}
+.privacy-line-v32{
+  min-height:64px!important;
+  padding:18px 22px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:12px!important;
+  border-radius:22px!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.17),rgba(255,255,255,.055))!important;
+  border:1px solid rgba(255,255,255,.22)!important;
+  box-shadow:0 22px 70px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.18)!important;
+  backdrop-filter:blur(20px)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  color:#fff!important;
+  font-size:17px!important;
+  font-weight:950!important;
+  white-space:nowrap!important;
+}
+.privacy-link-v32{
+  width:100%!important;
+  min-height:54px!important;
+  padding:16px 20px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border-radius:18px!important;
+  background:linear-gradient(135deg,rgba(52,245,166,.18),rgba(52,245,166,.08))!important;
+  border:1px solid rgba(52,245,166,.38)!important;
+  color:#38f7ad!important;
+  font-weight:1000!important;
+  text-decoration:none!important;
+}
+
+@media(max-width:720px){
+  .privacy-consent-row,
+  .privacy-consent-wrap-v32{
+    max-width:100%!important;
+    margin:18px auto 26px!important;
+  }
+  .privacy-consent-row label,
+  .privacy-line-v32{
+    white-space:normal!important;
+    line-height:1.35!important;
+    font-size:15px!important;
+    padding:17px 18px!important;
+  }
+  .privacy-consent-row label *,
+  .privacy-line-v32 *{
+    white-space:normal!important;
+  }
+  .privacy-consent-row a,
+  .privacy-link-v32{
+    min-height:50px!important;
+    font-size:15px!important;
+  }
+}
+</style>
+
+<script id="foil-v32-privacy-glass-script">
+(function(){
+  function ready(fn){document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn)}
+  ready(function(){
+    var rows = document.querySelectorAll(".privacy-consent-row");
+    rows.forEach(function(row){
+      var input = row.querySelector('input[type="checkbox"]');
+      var link = row.querySelector("a");
+
+      if(input) input.checked = true;
+
+      /* 링크가 label 내부에 들어가 겹치는 구조면 label 밖으로 이동 */
+      if(link && link.parentElement && link.parentElement.tagName && link.parentElement.tagName.toLowerCase()==="label"){
+        row.appendChild(link);
+      }
+
+      /* 개인정보 문구가 텍스트 노드로 쪼개져 있으면 정리 */
+      var label = row.querySelector("label");
+      if(label){
+        var oldLink = row.querySelector("a");
+        var checked = input ? input.checked : true;
+        label.innerHTML = "";
+        var cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.checked = checked;
+        cb.name = input && input.name ? input.name : "privacy_agree";
+        cb.required = input && input.required ? true : false;
+        label.appendChild(cb);
+
+        var span = document.createElement("span");
+        span.textContent = "개인정보처리방침 동의에 동의합니다.";
+        label.appendChild(span);
+
+        if(oldLink){
+          oldLink.textContent = "개인정보처리 방침 보기";
+          row.appendChild(oldLink);
+        }else{
+          var a = document.createElement("a");
+          a.href = "#";
+          a.textContent = "개인정보처리 방침 보기";
+          row.appendChild(a);
+        }
+      }
+    });
+  });
+})();
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
@@ -1561,7 +1804,7 @@ body[data-ab="b"] .chip::after{
   
 <div class="privacy-consent-row">
   <label>
-    <input type="checkbox" name="개인정보처리방침_동의" value="동의" checked required>
+    <input type="checkbox" name="개인정보처리방침_동의" value="동의" checked required checked>
     개인정보처리방침 동의에 동의합니다.
   </label>
   <a href="terms_privacy.html" target="_blank" rel="noopener">개인정보처리 방침 보기</a>
