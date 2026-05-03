@@ -2597,160 +2597,97 @@ input[name="privacy_agree"]:checked::after{
 
 
 
-<style id="foil-v50-footer-force-style">
-/* =========================
-   FOIL v50 final footer force
-   기존 검정 푸터는 숨기고, 요청한 회사정보 푸터를 최하단에 표시
-   ========================= */
 
-/* 기존 푸터/검정 푸터 숨김: 새 푸터는 제외 */
-body > footer:not(#foil-v50-company-footer),
-.footer:not(#foil-v50-company-footer),
-.site-footer:not(#foil-v50-company-footer),
-.bottom-footer:not(#foil-v50-company-footer),
-.footer-bar:not(#foil-v50-company-footer){
-  display:none !important;
+
+
+<style id="foil-v51-footer-style">
+/* FOIL v51 footer - 기존 페이지/문의폼 숨김 없이 footer만 추가 */
+#foil-v51-company-footer{
+  width:100%;
+  display:block;
+  background:#f5efe5;
+  border-top:1px solid rgba(15,23,42,.12);
+  padding:38px 18px 20px;
+  margin:0;
+  color:#071326;
+  font-family:inherit;
+  box-sizing:border-box;
+  text-align:center;
 }
-
-/* 기존 검정 copyright 줄이 div/section으로 있으면 숨김 */
-body > div:has(> span):has(+ #foil-v50-company-footer),
-body > section:has(+ #foil-v50-company-footer){
-  /* 일부 브라우저만 적용. 새 푸터에는 영향 없음 */
+#foil-v51-company-footer *{box-sizing:border-box}
+#foil-v51-company-footer .foil-footer-inner{
+  max-width:1280px;
+  margin:0 auto;
+  text-align:center;
 }
-
-/* 새 최종 푸터 */
-#foil-v50-company-footer{
-  width:100% !important;
-  display:block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-  position:relative !important;
-  z-index:50 !important;
-  background:#f5efe5 !important;
-  border-top:1px solid rgba(15,23,42,.12) !important;
-  padding:42px 18px 20px !important;
-  margin:0 !important;
-  color:#071326 !important;
-  font-family:inherit !important;
-  box-sizing:border-box !important;
-  text-align:center !important;
+#foil-v51-company-footer .foil-footer-nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:46px;
+  flex-wrap:wrap;
+  margin:0 0 22px;
+  padding:0;
+  font-size:22px;
+  font-weight:1000;
+  letter-spacing:-.04em;
+  line-height:1.2;
 }
-
-#foil-v50-company-footer *,
-#foil-v50-company-footer *::before,
-#foil-v50-company-footer *::after{
-  box-sizing:border-box !important;
+#foil-v51-company-footer .foil-footer-nav a{
+  color:#071326;
+  text-decoration:none;
+  white-space:nowrap;
 }
-
-#foil-v50-company-footer .foil-footer-inner{
-  max-width:1280px !important;
-  margin:0 auto !important;
-  text-align:center !important;
+#foil-v51-company-footer .foil-footer-nav a:hover{opacity:.72}
+#foil-v51-company-footer .foil-footer-current{
+  margin:0 auto 18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px 18px;
+  color:#071326;
+  font-size:15px;
+  line-height:1.45;
+  font-weight:650;
+  letter-spacing:-.03em;
 }
-
-#foil-v50-company-footer .foil-footer-nav{
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  gap:46px !important;
-  flex-wrap:wrap !important;
-  margin:0 0 24px !important;
-  padding:0 !important;
-  font-size:22px !important;
-  font-weight:1000 !important;
-  letter-spacing:-.04em !important;
-  line-height:1.2 !important;
+#foil-v51-company-footer .foil-footer-info{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:11px;
+  margin:0;
+  color:#071326;
+  font-size:19px;
+  line-height:1.4;
+  font-weight:500;
+  letter-spacing:-.035em;
 }
-
-#foil-v50-company-footer .foil-footer-nav a{
-  display:inline-block !important;
-  color:#071326 !important;
-  -webkit-text-fill-color:#071326 !important;
-  text-decoration:none !important;
-  white-space:nowrap !important;
-  font:inherit !important;
-  text-shadow:none !important;
+#foil-v51-company-footer .foil-footer-info-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+  width:100%;
 }
-
-#foil-v50-company-footer .foil-footer-nav a:hover{
-  opacity:.72 !important;
+#foil-v51-company-footer .foil-footer-copy{
+  margin:18px 0 0;
+  padding:0;
+  color:#071326;
+  font-size:24px;
+  line-height:1.25;
+  font-weight:1000;
+  letter-spacing:-.045em;
 }
-
-#foil-v50-company-footer .foil-footer-current{
-  margin:0 auto 18px !important;
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  flex-wrap:wrap !important;
-  gap:8px 18px !important;
-  color:#071326 !important;
-  -webkit-text-fill-color:#071326 !important;
-  font-size:15px !important;
-  line-height:1.45 !important;
-  font-weight:650 !important;
-  letter-spacing:-.03em !important;
-  text-shadow:none !important;
-}
-
-#foil-v50-company-footer .foil-footer-info{
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  gap:11px !important;
-  margin:0 !important;
-  color:#071326 !important;
-  -webkit-text-fill-color:#071326 !important;
-  font-size:19px !important;
-  line-height:1.4 !important;
-  font-weight:500 !important;
-  letter-spacing:-.035em !important;
-  text-shadow:none !important;
-}
-
-#foil-v50-company-footer .foil-footer-info-row{
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  gap:28px !important;
-  flex-wrap:wrap !important;
-  width:100% !important;
-}
-
-#foil-v50-company-footer .foil-footer-copy{
-  margin:18px 0 0 !important;
-  padding:0 !important;
-  color:#071326 !important;
-  -webkit-text-fill-color:#071326 !important;
-  font-size:24px !important;
-  line-height:1.25 !important;
-  font-weight:1000 !important;
-  letter-spacing:-.045em !important;
-  text-shadow:none !important;
-}
-
 @media(max-width:900px){
-  #foil-v50-company-footer{
-    padding:32px 16px 18px !important;
-  }
-  #foil-v50-company-footer .foil-footer-nav{
-    gap:16px 22px !important;
-    font-size:18px !important;
-    margin-bottom:18px !important;
-  }
-  #foil-v50-company-footer .foil-footer-current{
-    font-size:13px !important;
-    gap:6px 10px !important;
-  }
-  #foil-v50-company-footer .foil-footer-info{
-    font-size:15px !important;
-    gap:8px !important;
-  }
-  #foil-v50-company-footer .foil-footer-info-row{
-    gap:8px 14px !important;
-  }
-  #foil-v50-company-footer .foil-footer-copy{
-    font-size:18px !important;
-  }
+  #foil-v51-company-footer{padding:32px 16px 18px}
+  #foil-v51-company-footer .foil-footer-nav{gap:16px 22px;font-size:18px;margin-bottom:18px}
+  #foil-v51-company-footer .foil-footer-current{font-size:13px;gap:6px 10px}
+  #foil-v51-company-footer .foil-footer-info{font-size:15px;gap:8px}
+  #foil-v51-company-footer .foil-footer-info-row{gap:8px 14px}
+  #foil-v51-company-footer .foil-footer-copy{font-size:18px}
 }
 </style>
 
@@ -2971,6 +2908,42 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 <footer id="foil-v50-company-footer" aria-label="회사 정보 푸터">
+  <div class="foil-footer-inner">
+    <nav class="foil-footer-nav" aria-label="하단 메뉴">
+      <a href="index.html">HOME</a>
+      <a href="#company">회사소개</a>
+      <a href="terms.html">이용약관</a>
+      <a href="privacy.html">개인정보보호정책</a>
+    </nav>
+
+    <div class="foil-footer-current">
+      <span>© 2026 FOIL. Franchise Growth Partner.</span>
+      <span>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: admin@foil.co.kr</span>
+    </div>
+
+    <div class="foil-footer-info">
+      <div class="foil-footer-info-row">
+        <span>대표 : 김운기</span>
+        <span>사업자등록번호 : 127-28-86665</span>
+        <span>개인정보책임자 : 박성인</span>
+      </div>
+      <div class="foil-footer-info-row">
+        <span>대표전화 : 070-8098-5877</span>
+        <span>팩스번호 : 070-4253-1177</span>
+        <span>상담 메일 : admin@foil.co.kr</span>
+      </div>
+      <div class="foil-footer-info-row">
+        <span>영업시간 : 평일 09:00 - 18:00</span>
+        <span>주소 : 서울시 강서구 마곡중앙4로 22 A409</span>
+      </div>
+    </div>
+
+    <div class="foil-footer-copy">Copyrights 2026 BRIDGEM Co.,Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+
+<footer id="foil-v51-company-footer" aria-label="회사 정보 푸터">
   <div class="foil-footer-inner">
     <nav class="foil-footer-nav" aria-label="하단 메뉴">
       <a href="index.html">HOME</a>
