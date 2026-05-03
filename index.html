@@ -2347,6 +2347,218 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+
+<style id="foil-v43-privacy-final-fix">
+/* ==============================
+   FOIL v43 개인정보 동의 최종 수정
+   - 체크박스 기본 체크
+   - 체크박스 눈에 보이는 크기
+   - 텍스트 외곽선/번짐 원천 차단
+   ============================== */
+
+.privacy-consent-row{
+  width:100% !important;
+  max-width:520px !important;
+  margin:22px 0 26px !important;
+  padding:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:12px !important;
+  border:0 !important;
+  outline:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  overflow:visible !important;
+}
+
+/* 체크 + 텍스트 박스 */
+.privacy-consent-row .privacy-agree-line-v43{
+  width:auto !important;
+  min-width:360px !important;
+  max-width:100% !important;
+  min-height:54px !important;
+  padding:14px 22px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:12px !important;
+  border-radius:18px !important;
+  border:0 !important;
+  outline:0 !important;
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.045)) !important;
+  box-shadow:0 20px 54px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12) !important;
+  backdrop-filter:blur(18px) saturate(1.08) !important;
+  -webkit-backdrop-filter:blur(18px) saturate(1.08) !important;
+  cursor:pointer !important;
+  overflow:visible !important;
+  writing-mode:horizontal-tb !important;
+}
+
+/* 기존 label 스타일 무력화 */
+.privacy-consent-row label{
+  all:unset;
+  box-sizing:border-box !important;
+}
+
+/* 체크박스 자체: 눈에 보이는 크기 */
+.privacy-consent-row .privacy-agree-line-v43 input[type="checkbox"]{
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  width:22px !important;
+  height:22px !important;
+  min-width:22px !important;
+  max-width:22px !important;
+  flex:0 0 22px !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  outline:0 !important;
+  border-radius:7px !important;
+  background:linear-gradient(135deg,#48ffc0,#24dc97) !important;
+  box-shadow:0 10px 26px rgba(52,245,166,.28), inset 0 1px 0 rgba(255,255,255,.45) !important;
+  position:relative !important;
+  cursor:pointer !important;
+}
+
+.privacy-consent-row .privacy-agree-line-v43 input[type="checkbox"]::after{
+  content:"✓" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-56%) !important;
+  font-size:15px !important;
+  line-height:1 !important;
+  font-weight:1000 !important;
+  color:#06110e !important;
+}
+
+/* 문구: 외곽선/번짐/중복 레이어 제거 */
+.privacy-consent-row .privacy-agree-text-v43{
+  display:inline-block !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  font-size:16px !important;
+  line-height:1.2 !important;
+  font-weight:900 !important;
+  letter-spacing:-.04em !important;
+  white-space:nowrap !important;
+
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  filter:none !important;
+  paint-order:normal !important;
+  background:none !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+  outline:0 !important;
+}
+
+/* 기존/잔여 요소에 있던 외곽선 전부 제거 */
+.privacy-consent-row,
+.privacy-consent-row *,
+.privacy-consent-row *::before,
+.privacy-consent-row *::after{
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+}
+
+/* 개인정보처리 방침 보기 버튼 */
+.privacy-consent-row a,
+.privacy-consent-row .privacy-link-v43{
+  width:auto !important;
+  min-width:360px !important;
+  max-width:100% !important;
+  min-height:50px !important;
+  padding:14px 22px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:17px !important;
+  border:1px solid rgba(52,245,166,.45) !important;
+  outline:0 !important;
+  background:rgba(255,255,255,.07) !important;
+  color:#34f5a6 !important;
+  -webkit-text-fill-color:#34f5a6 !important;
+  text-decoration:none !important;
+  font-size:15px !important;
+  line-height:1 !important;
+  font-weight:950 !important;
+  letter-spacing:-.03em !important;
+  white-space:nowrap !important;
+  box-shadow:0 16px 42px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  transition:transform .24s ease, background .24s ease, color .24s ease, box-shadow .24s ease !important;
+}
+
+.privacy-consent-row a:hover,
+.privacy-consent-row .privacy-link-v43:hover{
+  transform:translateY(-2px) !important;
+  background:linear-gradient(135deg,#34f5a6,#c9ffe7) !important;
+  color:#06110e !important;
+  -webkit-text-fill-color:#06110e !important;
+  box-shadow:0 22px 60px rgba(52,245,166,.24), inset 0 1px 0 rgba(255,255,255,.45) !important;
+}
+
+@media(max-width:720px){
+  .privacy-consent-row{
+    max-width:100% !important;
+  }
+  .privacy-consent-row .privacy-agree-line-v43,
+  .privacy-consent-row a,
+  .privacy-consent-row .privacy-link-v43{
+    width:100% !important;
+    min-width:0 !important;
+  }
+  .privacy-consent-row .privacy-agree-text-v43{
+    font-size:15px !important;
+    white-space:normal !important;
+  }
+}
+</style>
+
+<script id="foil-v43-privacy-final-fix-script">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll(".privacy-consent-row").forEach(function(row){
+    var oldInput = row.querySelector('input[type="checkbox"]');
+    var oldLink = row.querySelector('a');
+    var linkHref = oldLink ? oldLink.getAttribute("href") : "#";
+    var linkTarget = oldLink ? oldLink.getAttribute("target") : null;
+
+    row.innerHTML = "";
+
+    var label = document.createElement("label");
+    label.className = "privacy-agree-line-v43";
+
+    var cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.name = oldInput && oldInput.name ? oldInput.name : "privacy_agree";
+    cb.checked = true;
+    cb.defaultChecked = true;
+    cb.required = oldInput && oldInput.required ? true : true;
+
+    var span = document.createElement("span");
+    span.className = "privacy-agree-text-v43";
+    span.textContent = "개인정보보호에 동의합니다.";
+
+    label.appendChild(cb);
+    label.appendChild(span);
+    row.appendChild(label);
+
+    var a = document.createElement("a");
+    a.className = "privacy-link-v43";
+    a.href = linkHref || "#";
+    if(linkTarget) a.target = linkTarget;
+    a.textContent = "개인정보처리 방침 보기";
+    row.appendChild(a);
+  });
+});
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
