@@ -679,93 +679,106 @@ ready(function(){
 </script>
 
 
-<style id="foil-v24-safe-patch">
-/* v24 safe: 문의폼 구조는 건드리지 않고 요청 영역만 보정 */
+
+
+
+
+
+<style id="foil-v25-fixed-patch">
+/* v25: 문의폼 깨짐 원인 JS 제거 후 CSS만 안전 보정 */
 html,body{overflow-x:hidden!important;max-width:100%!important}
 *{box-sizing:border-box}
 
-/* 1. 히어로 01~05 카드 확대/강조 */
-.foil-v24-hero-cards{
+/* 1. 히어로 01~05 박스 크게, 전체 폭 사용 */
+.premium-promise-diagram{
   display:grid!important;
   grid-template-columns:repeat(5,minmax(0,1fr))!important;
   gap:18px!important;
   width:100%!important;
   max-width:100%!important;
-  margin:30px 0 34px!important;
+  margin:34px 0 34px!important;
 }
-.foil-v24-hero-card{
+.premium-promise-diagram .promise-card{
   min-height:168px!important;
-  padding:30px 14px!important;
+  padding:28px 14px!important;
   border-radius:30px!important;
   display:flex!important;
   flex-direction:column!important;
   align-items:center!important;
   justify-content:center!important;
   text-align:center!important;
-  color:#fff!important;
-  font-size:clamp(24px,2.45vw,38px)!important;
-  font-weight:1000!important;
-  line-height:1.08!important;
-  letter-spacing:-.065em!important;
   word-break:keep-all!important;
   border:1px solid rgba(255,255,255,.18)!important;
-  box-shadow:0 18px 58px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.08)!important;
-  transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s ease,color .3s ease,box-shadow .3s ease,border-color .3s ease!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035))!important;
+  box-shadow:0 20px 60px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.08)!important;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), background .3s ease, color .3s ease, box-shadow .3s ease, border-color .3s ease!important;
 }
-.foil-v24-hero-card .num{
-  display:block!important;
+.premium-promise-diagram .promise-card span{
   margin-bottom:12px!important;
   font-size:clamp(15px,1.3vw,20px)!important;
-  letter-spacing:.1em!important;
+  letter-spacing:.08em!important;
   color:#ff8bd1!important;
+  font-weight:1000!important;
 }
-.foil-v24-hero-card:nth-child(1){background:linear-gradient(145deg,#ff4f8b,#59246c)!important}
-.foil-v24-hero-card:nth-child(2){background:linear-gradient(145deg,#6ea8ff,#7c3aed)!important}
-.foil-v24-hero-card:nth-child(3){background:linear-gradient(145deg,#32f5a6,#08796f)!important;color:#06110e!important}
-.foil-v24-hero-card:nth-child(4){background:linear-gradient(145deg,#ff9e45,#ff4f8b)!important}
-.foil-v24-hero-card:nth-child(5){background:linear-gradient(145deg,#fff,#dfe7ff)!important;color:#111827!important}
-.foil-v24-hero-card:hover{
+.premium-promise-diagram .promise-card strong{
+  font-size:clamp(24px,2.45vw,38px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.065em!important;
+  font-weight:1000!important;
+  color:#fff!important;
+}
+.premium-promise-diagram .promise-card:nth-child(1){background:linear-gradient(145deg,#ff4f8b,#59246c)!important}
+.premium-promise-diagram .promise-card:nth-child(2){background:linear-gradient(145deg,#6ea8ff,#7c3aed)!important}
+.premium-promise-diagram .promise-card:nth-child(3){background:linear-gradient(145deg,#32f5a6,#08796f)!important}
+.premium-promise-diagram .promise-card:nth-child(4){background:linear-gradient(145deg,#ff9e45,#ff4f8b)!important}
+.premium-promise-diagram .promise-card:nth-child(5){background:linear-gradient(145deg,#ffffff,#dfe7ff)!important}
+.premium-promise-diagram .promise-card:nth-child(3) strong,
+.premium-promise-diagram .promise-card:nth-child(5) strong{color:#07110d!important}
+.premium-promise-diagram .promise-card:hover{
   transform:translateY(-14px) scale(1.045)!important;
   background:rgba(255,255,255,.92)!important;
   color:#07110d!important;
   border-color:rgba(255,255,255,.72)!important;
   box-shadow:0 36px 110px rgba(52,245,166,.26),0 18px 70px rgba(255,79,139,.18),inset 0 1px 0 rgba(255,255,255,.78)!important;
 }
-.foil-v24-hero-card:hover *{color:#07110d!important}
-.foil-v24-source-hidden{display:none!important}
+.premium-promise-diagram .promise-card:hover *{color:#07110d!important}
 
-/* 2. 히어로 강조 텍스트 */
-.hero-emphasis-v24,
-h1 .hero-emphasis-v24{
+/* 2. 히어로 강조 */
+.hero-platform-emphasis{
   display:inline-block!important;
-  font-size:1.1em!important;
+  font-size:1.12em!important;
   line-height:.98!important;
-  font-weight:1000!important;
-  letter-spacing:-.08em!important;
-  background:linear-gradient(90deg,#d8b4fe 0%,#ff86d7 45%,#34f5a6 100%)!important;
+  background:linear-gradient(90deg,#d8b4fe 0%,#ff86d7 44%,#34f5a6 100%)!important;
   -webkit-background-clip:text!important;
   background-clip:text!important;
   color:transparent!important;
   text-shadow:0 0 46px rgba(216,180,254,.24)!important;
+  letter-spacing:-.08em!important;
 }
 
-/* 3. CRM 우측 카드만 독립 hover */
-.foil-v24-crm-card{
-  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease,background .3s ease,color .3s ease,border-color .3s ease!important;
+/* 3. CRM 우측 feature-item만 개별 hover */
+#crm .feature-item,
+.crm-wrap .feature-item{
+  transition:transform .28s cubic-bezier(.2,.8,.2,1), background .28s ease, color .28s ease, box-shadow .28s ease, border-color .28s ease!important;
+  border:1px solid rgba(255,255,255,.13)!important;
   border-radius:22px!important;
-  border:1px solid rgba(255,255,255,.14)!important;
 }
-.foil-v24-crm-card:hover{
+#crm .feature-item:hover,
+.crm-wrap .feature-item:hover{
   transform:translateY(-10px) scale(1.025)!important;
   background:linear-gradient(135deg,#f0fff7,#c8ffe8)!important;
   color:#06110e!important;
   border-color:rgba(52,245,166,.68)!important;
   box-shadow:0 28px 85px rgba(52,245,166,.22),inset 0 1px 0 rgba(255,255,255,.78)!important;
 }
-.foil-v24-crm-card:hover *{color:#06110e!important}
+#crm .feature-item:hover *,
+.crm-wrap .feature-item:hover *{color:#06110e!important}
 
 /* 4. 강점 카드 전체 동일 배경/중앙정렬 */
-.foil-v24-strength-card{
+.ops-strength-grid > *,
+.ops-strength-grid .ops-strength,
+.ops-strength-grid .feature-card,
+.ops-strength-grid .foil-extra-strength{
   text-align:center!important;
   display:flex!important;
   flex-direction:column!important;
@@ -778,35 +791,45 @@ h1 .hero-emphasis-v24{
   color:#06110e!important;
   border:1px solid rgba(52,245,166,.32)!important;
   box-shadow:0 18px 55px rgba(52,245,166,.08),inset 0 1px 0 rgba(255,255,255,.58)!important;
-  transition:transform .32s cubic-bezier(.2,.8,.2,1),box-shadow .32s ease,background .32s ease,color .32s ease,border-color .32s ease!important;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), background .3s ease, color .3s ease, box-shadow .3s ease, border-color .3s ease!important;
 }
-.foil-v24-strength-card *{
+.ops-strength-grid > * *,
+.ops-strength-grid .ops-strength *,
+.ops-strength-grid .feature-card *,
+.ops-strength-grid .foil-extra-strength *{
   text-align:center!important;
   color:#06110e!important;
 }
-.foil-v24-strength-card h3,
-.foil-v24-strength-card h4,
-.foil-v24-strength-card strong,
-.foil-v24-strength-card b{
+.ops-strength-grid b,
+.ops-strength-grid h3,
+.ops-strength-grid h4,
+.ops-strength-grid strong{
   font-size:clamp(28px,3vw,40px)!important;
   line-height:1.12!important;
   letter-spacing:-.06em!important;
   font-weight:1000!important;
 }
-.foil-v24-strength-card p{
+.ops-strength-grid span,
+.ops-strength-grid p{
   font-size:clamp(17px,1.55vw,21px)!important;
   line-height:1.6!important;
 }
-.foil-v24-strength-card:hover{
+.ops-strength-grid > *:hover,
+.ops-strength-grid .ops-strength:hover,
+.ops-strength-grid .feature-card:hover,
+.ops-strength-grid .foil-extra-strength:hover{
   transform:translateY(-12px) scale(1.03)!important;
   background:linear-gradient(135deg,#111827,#25102b)!important;
   color:#fff!important;
   border-color:rgba(255,255,255,.3)!important;
   box-shadow:0 32px 95px rgba(255,79,139,.18),0 18px 70px rgba(52,245,166,.18)!important;
 }
-.foil-v24-strength-card:hover *{color:#fff!important}
+.ops-strength-grid > *:hover *,
+.ops-strength-grid .ops-strength:hover *,
+.ops-strength-grid .feature-card:hover *,
+.ops-strength-grid .foil-extra-strength:hover *{color:#fff!important}
 
-/* 5. 개인정보 동의 박스: 폼 전체는 건드리지 않고 동의 박스만 넓힘 */
+/* 5. 개인정보 동의 박스 넓힘 */
 .privacy-consent-row{
   width:100%!important;
   max-width:560px!important;
@@ -824,9 +847,7 @@ h1 .hero-emphasis-v24{
 .privacy-consent-row label{
   width:100%!important;
   display:flex!important;
-  flex-direction:row!important;
   align-items:center!important;
-  justify-content:flex-start!important;
   gap:12px!important;
   white-space:nowrap!important;
   word-break:keep-all!important;
@@ -840,103 +861,28 @@ h1 .hero-emphasis-v24{
   height:20px!important;
   min-width:20px!important;
 }
-.foil-v24-form-notice{
+.form-warning{
   color:#ff3939!important;
   font-weight:1000!important;
   text-align:center!important;
   word-break:keep-all!important;
 }
 
+/* footer 정리 */
+footer > div:not(.container){display:none!important}
+
 @media(max-width:980px){
-  .foil-v24-hero-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .foil-v24-hero-card{min-height:118px!important}
+  .premium-promise-diagram{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .premium-promise-diagram .promise-card{min-height:118px!important}
   .privacy-consent-row{max-width:100%!important;min-width:0!important}
 }
 @media(max-width:640px){
-  .foil-v24-hero-cards{grid-template-columns:1fr!important;gap:12px!important}
-  .foil-v24-hero-card{min-height:88px!important;padding:20px!important;font-size:clamp(22px,7vw,32px)!important}
+  .premium-promise-diagram{grid-template-columns:1fr!important;gap:12px!important}
+  .premium-promise-diagram .promise-card{min-height:88px!important;padding:20px!important}
+  .premium-promise-diagram .promise-card strong{font-size:clamp(22px,7vw,32px)!important}
   .privacy-consent-row label{white-space:normal!important}
 }
 </style>
-
-<script id="foil-v24-safe-script">
-(function(){
-  function ready(fn){document.readyState!=="loading"?fn():document.addEventListener("DOMContentLoaded",fn)}
-  ready(function(){
-
-    /* 1. 히어로 01~05 카드만 새로 크게 표시 */
-    var labels=["초기 비용 0","온라인/오프라인 자율 선택","본부 실시간 확인형 CRM","오프라인 전문인력 배치","월별 계약"];
-    if(!document.querySelector(".foil-v24-hero-cards")){
-      var matches=[];
-      document.querySelectorAll("div,article,li").forEach(function(el){
-        var t=(el.innerText||"").replace(/\s+/g,"").trim();
-        labels.forEach(function(label){
-          var key=label.replace(/\s+/g,"");
-          if((t===key || (t.includes(key)&&t.length<60)) && !matches.includes(el)){
-            matches.push(el);
-          }
-        });
-      });
-      if(matches.length>=5){
-        var first=matches[0];
-        var parent=first.parentElement;
-        matches.slice(0,5).forEach(function(el){el.classList.add("foil-v24-source-hidden")});
-        var row=document.createElement("div");
-        row.className="foil-v24-hero-cards";
-        labels.forEach(function(label,i){
-          var card=document.createElement("div");
-          card.className="foil-v24-hero-card";
-          var txt=label
-            .replace("온라인/오프라인 자율 선택","온라인/오프라인<br>자율 선택")
-            .replace("본부 실시간 확인형 CRM","본부 실시간<br>확인형 CRM")
-            .replace("오프라인 전문인력 배치","오프라인<br>전문인력 배치");
-          card.innerHTML='<span class="num">'+String(i+1).padStart(2,"0")+'</span>'+txt;
-          row.appendChild(card);
-        });
-        parent.insertBefore(row, first);
-      }
-    }
-
-    /* 2. 히어로 문구 변경 + 강조 */
-    document.querySelectorAll("h1,h2").forEach(function(el){
-      var txt=(el.innerText||"").replace(/\s+/g,"");
-      if(
-        txt.includes("본사가선택하고시스템이연결하는프랜차이즈영업플랫폼") ||
-        txt.includes("본사의오프라인가맹영업담당자를만날수있는프랜차이즈영업플랫폼")
-      ){
-        el.innerHTML='본사의 오프라인<br>가맹영업 담당자를<br>만날 수 있는<br><span class="hero-emphasis-v24">프랜차이즈 영업 플랫폼</span>';
-      }
-    });
-
-    /* 3. CRM 우측 텍스트 카드 개별 class */
-    var crmKeys=["본사와 FOIL","실시간 DB","상담 메모","즉시 대응용 SMS","리드별 FOIL","브랜드 맞춤","초기 구축","광고 병행"];
-    document.querySelectorAll("div,article,li").forEach(function(el){
-      var t=(el.innerText||"").trim();
-      if(t.length>4 && t.length<100 && crmKeys.some(function(k){return t.includes(k)})){
-        el.classList.add("foil-v24-crm-card");
-      }
-    });
-
-    /* 4. 강점 카드 전체 class */
-    var strengthKeys=["요식업 프로세스","물류","CRM 대시보드 운영","본사 실시간 DB 관리","통합 광고 운영","후속 응대와 콜백","계약 검토 단계","브랜드 성장 파이프라인","협업 제안 및 파트너십"];
-    document.querySelectorAll("div,article,li").forEach(function(el){
-      var t=(el.innerText||"").trim();
-      if(t.length>4 && t.length<150 && strengthKeys.some(function(k){return t.includes(k)})){
-        el.classList.add("foil-v24-strength-card");
-      }
-    });
-
-    /* 6. 안내문구 변경 */
-    document.querySelectorAll("p,div,span,small").forEach(function(el){
-      var text=(el.innerText||"").trim();
-      if(text.includes("문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야")){
-        el.innerText="문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야 정상 접수됩니다.";
-        el.classList.add("foil-v24-form-notice");
-      }
-    });
-  });
-})();
-</script>
 
 </head>
 <body class="premium-theme">
@@ -945,7 +891,7 @@ h1 .hero-emphasis-v24{
 <div class="container hero-grid">
 <div>
 <div class="chip">프랜차이즈 본부를 위한 유연한 영업 지원 구조</div>
-<h1>본사가 선택하고,<br/>시스템이 연결하는<br/><span class="grad">프랜차이즈 영업 플랫폼</span></h1>
+<h1>본사의 오프라인<br/>가맹영업 담당자를<br/>만날 수 있는<br/><span class="grad hero-platform-emphasis">프랜차이즈 영업 플랫폼</span></h1>
 <div class="hero-desc">온라인-오프라인 전문인력 매칭부터 랜딩페이지 제작, 온라인 리드 수집, 본부 실시간 DB관리, 어드민, SMS, 리드 배치까지 원스톱으로 연결되는 프랜차이즈 가맹영업 시스템을 제공합니다</div>
 <div class="premium-promise-diagram" aria-label="핵심 운영 조건">
   <div class="promise-card hot"><span>01</span><strong>초기 비용 0</strong></div>
@@ -1085,7 +1031,7 @@ h1 .hero-emphasis-v24{
   <p class="form-warning">문의접수 버튼을 누른 후 다음 화면에서 스팸 방지 체크해주셔야 정상 접수됩니다.</p>
 </form>
 </div></section>
-<footer><div class="container footer-inner"><div>© 2026 FOIL. Franchise Growth Partner.</div><div>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: admin@foil.co.kr</div></div><div style="margin-top:12px;"><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:700;text-decoration:none;">회사소개</a></div></footer>
+<footer><div class="container footer-inner"><div>© 2026 FOIL. Franchise Growth Partner.</div><div>오프라인 전문인력 매칭 · 랜딩페이지 · 리드수집 · CRM · SMS · Collaboration Mail: admin@foil.co.kr</div></div></footer>
 <script>
 const ctaTracks=[{badge:'추천',title:'온라인 리드 문의',desc:'랜딩페이지 제작, 광고 운영, 리드 수집 중심으로 상담을 시작합니다.'},{badge:'현장형',title:'오프라인 영업 문의',desc:'브랜드에 맞는 가맹영업 전문인력 매칭과 인센티브 구조를 상담합니다.'},{badge:'통합형',title:'통합 운영 문의',desc:'온라인 유입부터 오프라인 영업 배치까지 한 번에 연결하는 구조를 제안합니다.'}];
 const standoutPoints=[['01','프랜차이즈 본부 × 오프라인 전문인력 매칭','브랜드 상황에 맞는 가맹영업 전문인력을 연결하고, 본부는 필요한 시점에 필요한 방식으로만 활용할 수 있습니다.'],['02','랜딩페이지 제작 + 온라인 리드 수집','브랜드 소개용 화면에서 끝나지 않고, 광고와 연결되는 전용 랜딩 구조로 실제 문의와 DB 수집까지 이어집니다.'],['03','본부 실시간 DB관리 · 어드민 · SMS','유입된 리드와 상담 상태, 담당 배정, 후속 응대까지 본부가 시의적으로 확인하고 즉시 대응할 수 있습니다.'],['04','수집된 리드의 오프라인 배치 가능','온라인에서 모인 리드를 그대로 두지 않고, 필요 시 오프라인 전문인력에게 이어 붙여 현장 영업까지 연결합니다.'],['05','인센티브 조건은 본부가 자율 결정','가맹영업 조건과 단가는 브랜드가 직접 설정할 수 있고, 적정 인센티브일수록 영업사원의 참여도와 실행력도 높아집니다.'],['06','초기 비용 0 · 건바이건 진행 가능','고정 구축비 부담 없이 시작할 수 있고, 필요에 따라 건별로 운영 가능합니다. 광고와 병행하면 효율은 더 높아집니다.'],['07','월별 계약 · 자유 해지','장기 묶음형 구조가 아니라 월 단위로 운영 판단이 가능해, 원할 때 해지하거나 방향을 조정할 수 있습니다.'],['08','온라인·오프라인 모두 본부가 선택','브랜드마다 필요한 방식이 다르기 때문에 온라인 리드, 오프라인 영업, 병행 운영 중 원하는 방식만 선택할 수 있습니다.'],['09','본부-영업사원 간 간편 대시보드','같은 데이터를 보며 배정과 응대를 이어갈 수 있도록, 본부와 영업사원이 함께 쓰는 간편한 운영 화면을 제공합니다.']];
