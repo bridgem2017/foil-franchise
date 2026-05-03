@@ -643,7 +643,7 @@ ready(function(){
   document.querySelectorAll('h1').forEach(function(h){
     var t=(h.innerText||'').replace(/\s+/g,'');
     if(t.includes('본사의오프라인가맹영업담당자를만날수있는프랜차이즈영업플랫폼')){
-      h.innerHTML='본사의 오프라인<br>가맹영업 담당자를<br>만날 수 있는<br><span class="grad"><span class="v36-platform-emphasis">프랜차이즈 영업 플랫폼</span></span>';
+      h.innerHTML='본사의 오프라인<br>가맹영업 담당자를<br>만날 수 있는<br><span class="grad">프랜차이즈 영업 플랫폼</span>';
     }
   });
   /* CRM 섹션 안에 잘못 들어간 프로세스 관련 잔여 요소 삭제 */
@@ -1786,209 +1786,16 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 
-<style id="foil-v36-final-patch">
-/* v36-1: 상단 히어로 텍스트 가로 중앙정렬 + 핵심 문구 강조 */
-.hero,
-.hero-inner,
-.hero-grid,
-.hero-grid > div:first-child{
-  text-align:center !important;
-  align-items:center !important;
-  justify-content:center !important;
-}
-
-.hero h1,
-.hero-title,
-h1.hero-title{
-  text-align:center !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  max-width:1180px !important;
-}
-
-.hero h1 .accent,
-.hero h1 .highlight,
-.hero-title .accent,
-.hero-title .highlight,
-.hero h1 strong,
-.hero-title strong{
-  font-size:1.12em !important;
-  line-height:.98 !important;
-  font-weight:1000 !important;
-  letter-spacing:-.045em !important;
-}
-
-.hero p,
-.hero-desc,
-.hero-copy{
-  text-align:center !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  max-width:980px !important;
-}
-
-/* 제목 안의 '프랜차이즈 영업 플랫폼'이 span 없이 들어간 경우에도 전체 강조 유지 */
-.hero h1{
-  text-wrap:balance;
-}
-
-/* v36-2: 개인정보 동의 텍스트 외곽 라인/테두리 완전 제거 */
+<style id="foil-v38-final-patch">
+/* v38-1: 개인정보 동의 텍스트 외곽선/번짐 제거 */
 .privacy-consent-row label,
 .privacy-consent-row label:hover,
 .privacy-line-v32,
 .privacy-line-v32:hover{
-  border:0 !important;
-  outline:0 !important;
-  -webkit-text-stroke:0 transparent !important;
-  text-shadow:none !important;
-  box-shadow:
-    0 22px 70px rgba(0,0,0,.22),
-    0 0 34px rgba(52,245,166,.09),
-    inset 0 1px 0 rgba(255,255,255,.10) !important;
-}
-
-.privacy-consent-row label *,
-.privacy-line-v32 *,
-.privacy-consent-row label span,
-.privacy-line-v32 span{
-  border:0 !important;
-  outline:0 !important;
-  -webkit-text-stroke:0 transparent !important;
-  text-shadow:none !important;
-  box-shadow:none !important;
-}
-
-.privacy-consent-row label::before,
-.privacy-consent-row label::after,
-.privacy-line-v32::before,
-.privacy-line-v32::after{
-  content:none !important;
-  display:none !important;
-  border:0 !important;
-  outline:0 !important;
-  box-shadow:none !important;
-}
-
-/* v36-3: 팝업 FOIL 로고 + 문의하기 버튼 강조 */
-.popup-banner .popup-logo-img,
-.popup-modal .popup-logo-img,
-.foil-popup .popup-logo-img,
-.popup-logo-img{
-  width:92px !important;
-  height:auto !important;
-  display:block !important;
-  margin:0 auto 10px !important;
-  object-fit:contain !important;
-  filter:drop-shadow(0 12px 28px rgba(255,255,255,.22)) !important;
-}
-
-/* 팝업 안 문의하기 버튼 노랑/황색 강조 */
-.popup-banner a[href*="contact"],
-.popup-banner button,
-.popup-modal a[href*="contact"],
-.popup-modal button,
-.foil-popup a[href*="contact"],
-.foil-popup button,
-.popup a[href*="contact"],
-.popup button,
-[id*="popup"] a[href*="contact"],
-[id*="popup"] button{
-  background:linear-gradient(135deg,#ffe66d,#ffb000) !important;
-  color:#080808 !important;
-  border:0 !important;
-  box-shadow:0 16px 42px rgba(255,190,0,.34), inset 0 1px 0 rgba(255,255,255,.55) !important;
-  font-weight:1000 !important;
-}
-
-.popup-banner a[href*="contact"]:hover,
-.popup-banner button:hover,
-.popup-modal a[href*="contact"]:hover,
-.popup-modal button:hover,
-.foil-popup a[href*="contact"]:hover,
-.foil-popup button:hover,
-.popup a[href*="contact"]:hover,
-.popup button:hover,
-[id*="popup"] a[href*="contact"]:hover,
-[id*="popup"] button:hover{
-  transform:translateY(-3px) scale(1.02) !important;
-  box-shadow:0 24px 64px rgba(255,190,0,.46), inset 0 1px 0 rgba(255,255,255,.7) !important;
-}
-
-/* 모바일도 중앙정렬 유지 */
-@media(max-width:720px){
-  .hero h1,
-  .hero-title{
-    text-align:center !important;
-  }
-  .hero h1 .accent,
-  .hero h1 .highlight,
-  .hero-title .accent,
-  .hero-title .highlight{
-    font-size:1.08em !important;
-  }
-}
-</style>
-
-<script id="foil-v36-final-script">
-document.addEventListener("DOMContentLoaded", function(){
-  /* 개인정보 문구 정리 */
-  document.querySelectorAll(".privacy-consent-row label span, .privacy-line-v32 span").forEach(function(el){
-    el.textContent = "개인정보처리방침에 동의합니다";
-    el.style.webkitTextStroke = "0 transparent";
-    el.style.textShadow = "none";
-  });
-
-  /* 팝업 내부 FOIL 텍스트를 로고 이미지로 교체 */
-  var logoPath = "assets/foil-logo-popup.png";
-  var candidates = Array.from(document.querySelectorAll(
-    ".popup-banner, .popup-modal, .foil-popup, .popup, [id*='popup'], [class*='popup']"
-  ));
-
-  candidates.forEach(function(box){
-    Array.from(box.querySelectorAll("h1,h2,h3,strong,b,span,div,p")).forEach(function(el){
-      var txt = (el.textContent || "").trim();
-      if(txt === "FOIL" || txt === "foil"){
-        var img = document.createElement("img");
-        img.src = logoPath;
-        img.alt = "FOIL";
-        img.className = "popup-logo-img";
-        el.replaceWith(img);
-      }
-    });
-
-    /* 문의하기 버튼이 흰색/기본색이면 노란색 CTA class 부여 */
-    Array.from(box.querySelectorAll("a,button")).forEach(function(btn){
-      var txt = (btn.textContent || "").trim();
-      if(txt.indexOf("문의") > -1){
-        btn.classList.add("popup-yellow-cta");
-        btn.style.background = "linear-gradient(135deg,#ffe66d,#ffb000)";
-        btn.style.color = "#080808";
-        btn.style.fontWeight = "1000";
-        btn.style.border = "0";
-        btn.style.boxShadow = "0 16px 42px rgba(255,190,0,.34), inset 0 1px 0 rgba(255,255,255,.55)";
-      }
-    });
-  });
-});
-</script>
-
-<style>.v36-platform-emphasis{font-size:1.18em!important;font-weight:1000!important;background:linear-gradient(90deg,#f0abfc,#f9a8d4,#5eead4,#34f5a6);-webkit-background-clip:text;background-clip:text;color:transparent!important;display:inline-block;}</style>
-<style>.popup-yellow-cta{background:linear-gradient(135deg,#ffe66d,#ffb000)!important;color:#080808!important;border:0!important;font-weight:1000!important;}</style>
-
-<style id="foil-v37-final-patch">
-/* v37-1: 개인정보 동의 텍스트 외곽선/글로우 완전 제거 */
-.privacy-consent-row label,
-.privacy-consent-row label:hover,
-.privacy-line-v32,
-.privacy-line-v32:hover{
-  border:0 !important;
-  outline:0 !important;
-  text-shadow:none !important;
   -webkit-text-stroke:0 !important;
-  box-shadow:
-    0 22px 70px rgba(0,0,0,.22),
-    0 0 34px rgba(52,245,166,.10),
-    inset 0 1px 0 rgba(255,255,255,.08) !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
 }
 
 .privacy-consent-row label span,
@@ -1997,131 +1804,82 @@ document.addEventListener("DOMContentLoaded", function(){
 .privacy-line-v32 span,
 .privacy-line-v32 strong,
 .privacy-line-v32 b{
-  color:#fff !important;
-  text-shadow:none !important;
   -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
   filter:none !important;
   paint-order:normal !important;
-  box-shadow:none !important;
-  border:0 !important;
-  outline:0 !important;
 }
 
+/* 기존 스타일의 가상 외곽선도 제거 */
+.privacy-consent-row label span::before,
+.privacy-consent-row label span::after,
 .privacy-consent-row label::before,
 .privacy-consent-row label::after,
+.privacy-line-v32 span::before,
+.privacy-line-v32 span::after,
 .privacy-line-v32::before,
 .privacy-line-v32::after{
   content:none !important;
   display:none !important;
-  opacity:0 !important;
-  border:0 !important;
-  box-shadow:none !important;
-}
-
-/* 체크박스 자체는 유지 */
-.privacy-consent-row input[type="checkbox"]{
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
   filter:none !important;
 }
 
-/* v37-2: 팝업 FOIL 로고 영역 세로폭 최소화 */
-.popup-logo-img{
-  width:74px !important;
-  max-width:74px !important;
-  height:auto !important;
-  margin:8px auto 10px !important;
-  display:block !important;
-  object-fit:contain !important;
+/* v38-2: 팝업배너 문의하기 버튼만 노랑/황금 CTA로 강조 */
+.popup-banner a,
+.popup-banner button,
+.popup-modal a,
+.popup-modal button,
+.foil-popup a,
+.foil-popup button,
+.popup a,
+.popup button,
+[id*="popup"] a,
+[id*="popup"] button,
+[class*="popup"] a,
+[class*="popup"] button{
+  transition:transform .25s ease, box-shadow .25s ease, filter .25s ease !important;
 }
 
-/* 로고를 감싸는 중간 영역이 과하게 커지는 것 방지 */
-.popup-banner .popup-logo-img,
-.popup-modal .popup-logo-img,
-.foil-popup .popup-logo-img,
-.popup .popup-logo-img,
-[id*="popup"] .popup-logo-img,
-[class*="popup"] .popup-logo-img{
-  width:74px !important;
-  max-width:74px !important;
-  margin-top:6px !important;
-  margin-bottom:8px !important;
+/* JS가 붙이는 문의하기 버튼 class */
+.foil-popup-inquiry-cta{
+  background:linear-gradient(135deg,#ffe45e,#ffb300) !important;
+  color:#111 !important;
+  border:0 !important;
+  box-shadow:0 14px 36px rgba(255,190,0,.38), inset 0 1px 0 rgba(255,255,255,.6) !important;
+  font-weight:1000 !important;
 }
 
-/* 팝업 내부 이미지/로고 섹션 높이 압축 */
-.popup-banner img.popup-logo-img,
-.popup-modal img.popup-logo-img,
-.foil-popup img.popup-logo-img,
-.popup img.popup-logo-img{
-  padding:0 !important;
-}
-
-/* 로고 주변 빈 공간을 만드는 요소들까지 압축 */
-.popup-banner .logo-area,
-.popup-banner .brand-logo,
-.popup-banner .popup-logo,
-.popup-modal .logo-area,
-.popup-modal .brand-logo,
-.popup-modal .popup-logo,
-.foil-popup .logo-area,
-.foil-popup .brand-logo,
-.foil-popup .popup-logo,
-.popup .logo-area,
-.popup .brand-logo,
-.popup .popup-logo,
-[id*="popup"] .logo-area,
-[id*="popup"] .brand-logo,
-[id*="popup"] .popup-logo{
-  min-height:0 !important;
-  height:auto !important;
-  padding:0 !important;
-  margin:6px auto 8px !important;
-  line-height:1 !important;
-}
-
-/* 팝업 전체 과도한 세로 여백도 살짝 축소 */
-.popup-banner,
-.popup-modal,
-.foil-popup,
-.popup,
-[id*="popup"][class*="banner"],
-[class*="popup"][class*="banner"]{
-  gap:10px !important;
-}
-
-.popup-banner p,
-.popup-modal p,
-.foil-popup p,
-.popup p{
-  margin-top:8px !important;
-  margin-bottom:8px !important;
+.foil-popup-inquiry-cta:hover{
+  transform:translateY(-2px) scale(1.02) !important;
+  filter:saturate(1.08) !important;
+  box-shadow:0 20px 52px rgba(255,190,0,.52), inset 0 1px 0 rgba(255,255,255,.72) !important;
 }
 </style>
 
-<script id="foil-v37-final-script">
+<script id="foil-v38-final-script">
 document.addEventListener("DOMContentLoaded", function(){
-  /* 개인정보 문구 재정리 + 텍스트 외곽선 제거 */
-  document.querySelectorAll(".privacy-consent-row label span, .privacy-line-v32 span").forEach(function(el){
-    el.textContent = "개인정보처리방침에 동의합니다";
+  /* 개인정보 문구 외곽선 제거: 인라인 스타일까지 강제 */
+  document.querySelectorAll(".privacy-consent-row label, .privacy-consent-row label span, .privacy-line-v32, .privacy-line-v32 span").forEach(function(el){
     el.style.webkitTextStroke = "0";
+    el.style.textStroke = "0";
     el.style.textShadow = "none";
     el.style.filter = "none";
     el.style.paintOrder = "normal";
   });
 
-  /* 팝업 로고 이미지 주변에 불필요한 높이가 생기는 경우 강제 축소 */
-  document.querySelectorAll(".popup-logo-img").forEach(function(img){
-    img.style.width = "74px";
-    img.style.maxWidth = "74px";
-    img.style.height = "auto";
-    img.style.margin = "6px auto 8px";
-    var p = img.parentElement;
-    if(p){
-      p.style.minHeight = "0";
-      p.style.height = "auto";
-      p.style.paddingTop = "0";
-      p.style.paddingBottom = "0";
-      p.style.marginTop = "6px";
-      p.style.marginBottom = "8px";
-      p.style.lineHeight = "1";
+  /* 팝업배너에서 '문의하기' 버튼만 강조 */
+  document.querySelectorAll(".popup-banner a, .popup-banner button, .popup-modal a, .popup-modal button, .foil-popup a, .foil-popup button, .popup a, .popup button, [id*='popup'] a, [id*='popup'] button, [class*='popup'] a, [class*='popup'] button").forEach(function(el){
+    var txt = (el.textContent || "").replace(/\s+/g, "");
+    if(txt.indexOf("문의하기") !== -1 || txt.indexOf("문의") !== -1){
+      el.classList.add("foil-popup-inquiry-cta");
+      el.style.background = "linear-gradient(135deg,#ffe45e,#ffb300)";
+      el.style.color = "#111";
+      el.style.border = "0";
+      el.style.fontWeight = "1000";
+      el.style.boxShadow = "0 14px 36px rgba(255,190,0,.38), inset 0 1px 0 rgba(255,255,255,.6)";
     }
   });
 });
