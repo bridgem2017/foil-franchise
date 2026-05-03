@@ -2221,6 +2221,132 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+
+<style id="foil-v42-checkbox-text-fix">
+/* v42: 체크박스는 v41보다 2배 크게, 텍스트보다는 작게 */
+.privacy-consent-row input[type="checkbox"],
+.privacy-line-v32 input[type="checkbox"],
+input[name="privacy_agree"]{
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  width:12px !important;
+  height:12px !important;
+  min-width:12px !important;
+  max-width:12px !important;
+  flex:0 0 12px !important;
+  border-radius:4px !important;
+  padding:0 !important;
+  margin:0 10px 0 0 !important;
+  transform:none !important;
+  background:linear-gradient(135deg,#42f7ad,#20d994) !important;
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:0 0 14px rgba(52,245,166,.42), inset 0 1px 0 rgba(255,255,255,.35) !important;
+  position:relative !important;
+}
+
+.privacy-consent-row input[type="checkbox"]::after,
+.privacy-line-v32 input[type="checkbox"]::after,
+input[name="privacy_agree"]::after{
+  content:"✓" !important;
+  position:absolute !important;
+  left:50% !important;
+  top:50% !important;
+  transform:translate(-50%,-56%) !important;
+  font-size:9px !important;
+  line-height:1 !important;
+  font-weight:1000 !important;
+  color:#06110e !important;
+}
+
+/* v42: 개인정보 동의 텍스트 외곽선/번짐 원인 전부 제거 */
+.privacy-consent-row label,
+.privacy-consent-row label:hover,
+.privacy-line-v32,
+.privacy-line-v32:hover{
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+}
+
+/* 문구를 단일 레이어 일반 흰색 텍스트로 강제 */
+.privacy-consent-row label span,
+.privacy-consent-row label strong,
+.privacy-consent-row label b,
+.privacy-line-v32 span,
+.privacy-line-v32 strong,
+.privacy-line-v32 b{
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+  background:none !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+  outline:0 !important;
+}
+
+/* 가짜 텍스트/외곽선이 pseudo로 남아있는 경우 차단 */
+.privacy-consent-row label::before,
+.privacy-consent-row label::after,
+.privacy-consent-row label span::before,
+.privacy-consent-row label span::after,
+.privacy-line-v32::before,
+.privacy-line-v32::after,
+.privacy-line-v32 span::before,
+.privacy-line-v32 span::after{
+  content:none !important;
+  display:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+}
+
+/* label 내부 모든 텍스트 계열 초기화 */
+.privacy-consent-row label *:not(input),
+.privacy-line-v32 *:not(input){
+  -webkit-text-stroke:0 !important;
+  text-stroke:0 !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+}
+</style>
+
+<script id="foil-v42-checkbox-text-fix-script">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll(".privacy-consent-row label span, .privacy-line-v32 span").forEach(function(el){
+    el.textContent = "개인정보처리방침에 동의합니다";
+    el.style.color = "#fff";
+    el.style.webkitTextFillColor = "#fff";
+    el.style.webkitTextStroke = "0";
+    el.style.textShadow = "none";
+    el.style.filter = "none";
+    el.style.paintOrder = "normal";
+    el.style.background = "none";
+    el.style.boxShadow = "none";
+  });
+
+  document.querySelectorAll(".privacy-consent-row input[type='checkbox'], .privacy-line-v32 input[type='checkbox'], input[name='privacy_agree']").forEach(function(cb){
+    cb.checked = true;
+    cb.style.width = "12px";
+    cb.style.height = "12px";
+    cb.style.minWidth = "12px";
+    cb.style.maxWidth = "12px";
+    cb.style.flexBasis = "12px";
+    cb.style.borderRadius = "4px";
+  });
+});
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
