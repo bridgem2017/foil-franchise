@@ -1885,6 +1885,172 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
+
+<style id="foil-v39-final-patch">
+/* v39-1: 히어로 메인 카피/설명문 중앙 정렬 */
+.hero,
+.hero-inner,
+.hero-grid,
+.hero-grid > div:first-child,
+.hero-copy-wrap,
+.hero-text{
+  text-align:center !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+
+.hero h1,
+.hero-title,
+h1.hero-title{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  max-width:1120px !important;
+  display:block !important;
+  width:100% !important;
+  text-wrap:balance !important;
+}
+
+.hero p,
+.hero-desc,
+.hero-copy,
+.hero .desc,
+.hero .lead{
+  text-align:center !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  max-width:980px !important;
+}
+
+/* '프랜차이즈 영업 플랫폼' 강조 */
+.v39-platform-emphasis{
+  display:inline-block !important;
+  font-size:1.16em !important;
+  line-height:.98 !important;
+  font-weight:1000 !important;
+  letter-spacing:-.055em !important;
+  background:linear-gradient(90deg,#f0abfc 0%,#f9a8d4 38%,#a7f3d0 68%,#34f5a6 100%) !important;
+  -webkit-background-clip:text !important;
+  background-clip:text !important;
+  color:transparent !important;
+  filter:drop-shadow(0 12px 34px rgba(217,70,239,.18)) !important;
+}
+
+/* v39-2: 개인정보 체크박스 50% 축소 */
+.privacy-consent-row input[type="checkbox"],
+.privacy-line-v32 input[type="checkbox"],
+input[name="privacy_agree"],
+input[type="checkbox"][required]{
+  width:13px !important;
+  height:13px !important;
+  min-width:13px !important;
+  flex:0 0 13px !important;
+  border-radius:4px !important;
+  box-shadow:0 5px 14px rgba(52,245,166,.24), inset 0 1px 0 rgba(255,255,255,.35) !important;
+}
+
+.privacy-consent-row input[type="checkbox"]::after,
+.privacy-line-v32 input[type="checkbox"]::after{
+  font-size:10px !important;
+  line-height:1 !important;
+}
+
+/* v39-3: 개인정보 문구 외곽선/그림자/번짐 완전 제거 */
+.privacy-consent-row label,
+.privacy-consent-row label:hover,
+.privacy-line-v32,
+.privacy-line-v32:hover{
+  -webkit-text-stroke:0px transparent !important;
+  text-stroke:0px transparent !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+}
+
+.privacy-consent-row label span,
+.privacy-consent-row label strong,
+.privacy-consent-row label b,
+.privacy-consent-row label *,
+.privacy-line-v32 span,
+.privacy-line-v32 strong,
+.privacy-line-v32 b,
+.privacy-line-v32 *{
+  -webkit-text-stroke:0px transparent !important;
+  text-stroke:0px transparent !important;
+  text-shadow:none !important;
+  filter:none !important;
+  paint-order:normal !important;
+  color:#fff !important;
+  -webkit-font-smoothing:antialiased !important;
+  -moz-osx-font-smoothing:grayscale !important;
+}
+
+/* 혹시 pseudo로 만든 외곽 텍스트가 있으면 제거 */
+.privacy-consent-row label::before,
+.privacy-consent-row label::after,
+.privacy-consent-row label span::before,
+.privacy-consent-row label span::after,
+.privacy-line-v32::before,
+.privacy-line-v32::after,
+.privacy-line-v32 span::before,
+.privacy-line-v32 span::after{
+  content:none !important;
+  display:none !important;
+  opacity:0 !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  filter:none !important;
+}
+
+@media(max-width:720px){
+  .hero h1,
+  .hero-title{
+    text-align:center !important;
+  }
+  .v39-platform-emphasis{
+    font-size:1.10em !important;
+  }
+}
+</style>
+
+<script id="foil-v39-final-script">
+document.addEventListener("DOMContentLoaded", function(){
+  /* 1) 히어로 문구에서 '프랜차이즈 영업 플랫폼'만 확실히 강조 */
+  var phrase = "프랜차이즈 영업 플랫폼";
+  var headings = document.querySelectorAll(".hero h1, .hero-title, h1");
+  headings.forEach(function(h){
+    if(h.dataset.v39Done) return;
+    if((h.textContent || "").indexOf(phrase) > -1 && h.innerHTML.indexOf("v39-platform-emphasis") === -1){
+      h.innerHTML = h.innerHTML.replace(phrase, '<span class="v39-platform-emphasis">'+phrase+'</span>');
+      h.dataset.v39Done = "1";
+    }
+  });
+
+  /* 2) 개인정보 문구 외곽선 제거 + 문구 정리 */
+  document.querySelectorAll(".privacy-consent-row label span, .privacy-line-v32 span").forEach(function(el){
+    el.textContent = "개인정보처리방침에 동의합니다";
+  });
+
+  document.querySelectorAll(".privacy-consent-row label, .privacy-consent-row label *, .privacy-line-v32, .privacy-line-v32 *").forEach(function(el){
+    el.style.webkitTextStroke = "0px transparent";
+    el.style.textShadow = "none";
+    el.style.filter = "none";
+    el.style.paintOrder = "normal";
+  });
+
+  /* 3) 체크박스 50% 축소를 인라인으로도 강제 */
+  document.querySelectorAll(".privacy-consent-row input[type='checkbox'], .privacy-line-v32 input[type='checkbox']").forEach(function(cb){
+    cb.checked = true;
+    cb.style.width = "13px";
+    cb.style.height = "13px";
+    cb.style.minWidth = "13px";
+    cb.style.flexBasis = "13px";
+  });
+});
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
