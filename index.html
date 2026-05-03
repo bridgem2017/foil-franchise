@@ -1974,6 +1974,159 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <style>.v36-platform-emphasis{font-size:1.18em!important;font-weight:1000!important;background:linear-gradient(90deg,#f0abfc,#f9a8d4,#5eead4,#34f5a6);-webkit-background-clip:text;background-clip:text;color:transparent!important;display:inline-block;}</style>
 <style>.popup-yellow-cta{background:linear-gradient(135deg,#ffe66d,#ffb000)!important;color:#080808!important;border:0!important;font-weight:1000!important;}</style>
+
+<style id="foil-v37-final-patch">
+/* v37-1: 개인정보 동의 텍스트 외곽선/글로우 완전 제거 */
+.privacy-consent-row label,
+.privacy-consent-row label:hover,
+.privacy-line-v32,
+.privacy-line-v32:hover{
+  border:0 !important;
+  outline:0 !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  box-shadow:
+    0 22px 70px rgba(0,0,0,.22),
+    0 0 34px rgba(52,245,166,.10),
+    inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+
+.privacy-consent-row label span,
+.privacy-consent-row label strong,
+.privacy-consent-row label b,
+.privacy-line-v32 span,
+.privacy-line-v32 strong,
+.privacy-line-v32 b{
+  color:#fff !important;
+  text-shadow:none !important;
+  -webkit-text-stroke:0 !important;
+  filter:none !important;
+  paint-order:normal !important;
+  box-shadow:none !important;
+  border:0 !important;
+  outline:0 !important;
+}
+
+.privacy-consent-row label::before,
+.privacy-consent-row label::after,
+.privacy-line-v32::before,
+.privacy-line-v32::after{
+  content:none !important;
+  display:none !important;
+  opacity:0 !important;
+  border:0 !important;
+  box-shadow:none !important;
+}
+
+/* 체크박스 자체는 유지 */
+.privacy-consent-row input[type="checkbox"]{
+  filter:none !important;
+}
+
+/* v37-2: 팝업 FOIL 로고 영역 세로폭 최소화 */
+.popup-logo-img{
+  width:74px !important;
+  max-width:74px !important;
+  height:auto !important;
+  margin:8px auto 10px !important;
+  display:block !important;
+  object-fit:contain !important;
+}
+
+/* 로고를 감싸는 중간 영역이 과하게 커지는 것 방지 */
+.popup-banner .popup-logo-img,
+.popup-modal .popup-logo-img,
+.foil-popup .popup-logo-img,
+.popup .popup-logo-img,
+[id*="popup"] .popup-logo-img,
+[class*="popup"] .popup-logo-img{
+  width:74px !important;
+  max-width:74px !important;
+  margin-top:6px !important;
+  margin-bottom:8px !important;
+}
+
+/* 팝업 내부 이미지/로고 섹션 높이 압축 */
+.popup-banner img.popup-logo-img,
+.popup-modal img.popup-logo-img,
+.foil-popup img.popup-logo-img,
+.popup img.popup-logo-img{
+  padding:0 !important;
+}
+
+/* 로고 주변 빈 공간을 만드는 요소들까지 압축 */
+.popup-banner .logo-area,
+.popup-banner .brand-logo,
+.popup-banner .popup-logo,
+.popup-modal .logo-area,
+.popup-modal .brand-logo,
+.popup-modal .popup-logo,
+.foil-popup .logo-area,
+.foil-popup .brand-logo,
+.foil-popup .popup-logo,
+.popup .logo-area,
+.popup .brand-logo,
+.popup .popup-logo,
+[id*="popup"] .logo-area,
+[id*="popup"] .brand-logo,
+[id*="popup"] .popup-logo{
+  min-height:0 !important;
+  height:auto !important;
+  padding:0 !important;
+  margin:6px auto 8px !important;
+  line-height:1 !important;
+}
+
+/* 팝업 전체 과도한 세로 여백도 살짝 축소 */
+.popup-banner,
+.popup-modal,
+.foil-popup,
+.popup,
+[id*="popup"][class*="banner"],
+[class*="popup"][class*="banner"]{
+  gap:10px !important;
+}
+
+.popup-banner p,
+.popup-modal p,
+.foil-popup p,
+.popup p{
+  margin-top:8px !important;
+  margin-bottom:8px !important;
+}
+</style>
+
+<script id="foil-v37-final-script">
+document.addEventListener("DOMContentLoaded", function(){
+  /* 개인정보 문구 재정리 + 텍스트 외곽선 제거 */
+  document.querySelectorAll(".privacy-consent-row label span, .privacy-line-v32 span").forEach(function(el){
+    el.textContent = "개인정보처리방침에 동의합니다";
+    el.style.webkitTextStroke = "0";
+    el.style.textShadow = "none";
+    el.style.filter = "none";
+    el.style.paintOrder = "normal";
+  });
+
+  /* 팝업 로고 이미지 주변에 불필요한 높이가 생기는 경우 강제 축소 */
+  document.querySelectorAll(".popup-logo-img").forEach(function(img){
+    img.style.width = "74px";
+    img.style.maxWidth = "74px";
+    img.style.height = "auto";
+    img.style.margin = "6px auto 8px";
+    var p = img.parentElement;
+    if(p){
+      p.style.minHeight = "0";
+      p.style.height = "auto";
+      p.style.paddingTop = "0";
+      p.style.paddingBottom = "0";
+      p.style.marginTop = "6px";
+      p.style.marginBottom = "8px";
+      p.style.lineHeight = "1";
+    }
+  });
+});
+</script>
+
 </head>
 <body class="premium-theme">
 <header class="header"><div class="container header-inner"><div class="foil-brand-wrap"><img class="foil-header-logo" src="assets/foil-logo.png" alt="FOIL 로고"><div><div class="brand-top">FOIL FRANCHISE PARTNER SYSTEM</div><div class="brand-name">가맹영업 매칭 · 리드수집 · 본사 대시보드</div></div></div><nav class="nav"><a href="#service">서비스</a><a href="#crm">CRM</a><a href="#gallery">운영흐름</a><a href="#contact">문의</a><a href="https://bridgem.wixsite.com/bridgem" target="_blank" rel="noopener noreferrer">회사소개</a></nav></div></header>
