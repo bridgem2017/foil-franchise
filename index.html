@@ -2710,17 +2710,6 @@ input[name="privacy_agree"]:checked::after{
 }
 </style>
 
-<style id="dropdown-dark-fix">
-.foil-contact-form select{
-  background:#4b1833 !important;
-  color:#fff !important;
-}
-
-.foil-contact-form select option{
-  background:#4b1833 !important;
-  color:#fff !important;
-}
-</style>
 
 </head>
 <body class="premium-theme">
@@ -2834,23 +2823,83 @@ input[name="privacy_agree"]:checked::after{
   <div class="form-row"><label>연락처</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
   <div class="form-row"><label>회신 받을 이메일</label><input type="email" name="email" placeholder="example@company.com"></div>
 
-  <div class="form-row"><label>희망 문의 유형</label><select name="문의유형" required>
-    <option value="">문의 유형을 선택해주세요</option>
-    <option value="온라인 리드 수집">온라인 리드 수집</option>
-    <option value="오프라인 가맹영업 인력 매칭">오프라인 가맹영업 인력 매칭</option>
-    <option value="온라인+오프라인 통합">온라인+오프라인 통합</option>
-    <option value="광고/바이럴/체험단/옥외광고 상담">광고/바이럴/체험단/옥외광고 상담</option>
-    <option value="CRM 도입 및 DB관리 상담">CRM 도입 및 DB관리 상담</option>
-  </select></div>
+  <div class="form-row">
+<label>희망 문의 유형</label>
 
-  <div class="form-row"><label>현재 운영 상황</label><select name="현재운영상황">
-    <option value="">선택해주세요</option>
-    <option value="가맹점 모집 준비 중">가맹점 모집 준비 중</option>
-    <option value="광고는 진행 중이나 계약 전환이 낮음">광고는 진행 중이나 계약 전환이 낮음</option>
-    <option value="오프라인 영업 인력이 필요함">오프라인 영업 인력이 필요함</option>
-    <option value="리드/DB 관리가 필요함">리드/DB 관리가 필요함</option>
-    <option value="전체 영업 구조 설계가 필요함">전체 영업 구조 설계가 필요함</option>
-  </select></div>
+<select name="문의유형" required
+style="background:#4b1833;color:#fff;border:1px solid rgba(255,255,255,.15);">
+
+<option value=""
+style="background:#4b1833;color:#fff;">
+문의 유형을 선택해주세요
+</option>
+
+<option value="온라인 리드 수집"
+style="background:#4b1833;color:#fff;">
+온라인 리드 수집
+</option>
+
+<option value="오프라인 가맹영업 인력 매칭"
+style="background:#4b1833;color:#fff;">
+오프라인 가맹영업 인력 매칭
+</option>
+
+<option value="온라인+오프라인 통합"
+style="background:#4b1833;color:#fff;">
+온라인+오프라인 통합
+</option>
+
+<option value="광고/바이럴/체험단/옥외광고 상담"
+style="background:#4b1833;color:#fff;">
+광고/바이럴/체험단/옥외광고 상담
+</option>
+
+<option value="CRM 도입 및 DB관리 상담"
+style="background:#4b1833;color:#fff;">
+CRM 도입 및 DB관리 상담
+</option>
+
+</select>
+</div>
+
+<div class="form-row">
+<label>현재 운영 상황</label>
+
+<select name="현재운영상황"
+style="background:#4b1833;color:#fff;border:1px solid rgba(255,255,255,.15);">
+
+<option value=""
+style="background:#4b1833;color:#fff;">
+선택해주세요
+</option>
+
+<option value="가맹점 모집 준비 중"
+style="background:#4b1833;color:#fff;">
+가맹점 모집 준비 중
+</option>
+
+<option value="광고는 진행 중이나 계약 전환이 낮음"
+style="background:#4b1833;color:#fff;">
+광고는 진행 중이나 계약 전환이 낮음
+</option>
+
+<option value="오프라인 영업 인력이 필요함"
+style="background:#4b1833;color:#fff;">
+오프라인 영업 인력이 필요함
+</option>
+
+<option value="리드/DB 관리가 필요함"
+style="background:#4b1833;color:#fff;">
+리드/DB 관리가 필요함
+</option>
+
+<option value="전체 영업 구조 설계가 필요함"
+style="background:#4b1833;color:#fff;">
+전체 영업 구조 설계가 필요함
+</option>
+
+</select>
+</div>
 
 
   <div class="form-row"><label>직영점 위치</label><input type="text" name="직영점_위치" placeholder="예: 서울 강남구 / 경기 수원시"></div>
