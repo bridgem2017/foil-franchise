@@ -9,7 +9,7 @@ window.FOIL_POPUPS = [
   "id": "popup-1777789431096",
   "enabled": true,
   "type": "modal",
-  "badge": "가맹영업 사례",
+  "badge": "영업 사례",
   "brand": "1KM 휴게소 분식",
   "headline": "100호점 돌파!!",
   "text": "온라인 리드 수집과 오프라인 영업 병행으로 가맹점 확대!",
